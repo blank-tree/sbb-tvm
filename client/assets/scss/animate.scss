@@ -1,0 +1,74 @@
+//.ui-view-container {
+//  position: relative;
+//  height: 65px;
+//}
+
+[ui-view].ng-enter-active, [ui-view].ng-leave-active, [ui-view].ng-enter, [ui-view].ng-leave {
+  div.grid-block.main {
+	padding-left: rem-calc(36);
+	padding-right: rem-calc(36);
+  }
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  //position: absolute;
+  //left: 0;
+  //right: 0;
+  //padding-left: rem-calc(36);
+  //padding-right: rem-calc(36);
+
+  transition: all 1.0s;
+}
+
+#home, #schedule {
+  transition: all 1.0s;
+}
+
+[ui-view].ng-enter { // start animation
+  opacity: 0;
+
+  #home {
+	transform: translate(-1000px);
+  }
+
+  #schedule {
+	transform: translate(1000px);
+  }
+}
+
+[ui-view].ng-enter-active { // ende animation
+  opacity: 1;
+
+  #home {
+	transform: translate(0px);
+  }
+
+  #schedule {
+	transform: translate(0);
+  }
+
+}
+
+[ui-view].ng-leave { // start animation
+  opacity: 1;
+
+  #home {
+	transform: translate(0px);
+  }
+
+  #schedule {
+	transform: translate(0px);
+  }
+}
+
+[ui-view].ng-leave-active { // ende animation
+  opacity: 0;
+
+  #home {
+	transform: translate(-1000px);
+  }
+
+  #schedule {
+	transform: translate(1000px);
+  }
+}

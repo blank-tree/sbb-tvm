@@ -30,10 +30,16 @@
 
   // the header is positioned absolute; to make sure that the content always start after the header
   margin-top: rem-calc(160);
+
+  label {
+	font-weight: bold;
+	text-shadow: $text-shadow;
+	font-size: rem-calc(20);
+  }
 }
 
 /* Buttons */
-
+/* Large Buttons */
 // extend the standard foundation button with general settings for all standard sbb tvm buttons
 @mixin sbb-button {
   @extend %button;
@@ -91,6 +97,63 @@
   box-shadow: $box-shadow;
 }
 
+/* Medium Buttons */
+// extend the standard foundation button with general settings for all standard sbb tvm buttons small
+@mixin sbb-button-small {
+  @extend %button;
+
+  height: rem-calc(80);
+  width: rem-calc(140);
+
+  margin-bottom: rem-calc(30);
+
+  // center the text vertically in the fixed size
+  padding-top: rem-calc(27);
+
+  font-size: rem-calc(28);
+}
+
+.sbb-button-red-medium {
+  @include sbb-button-small;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-red
+  );
+  background: $gradient-red;
+  background: -moz-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  background: -webkit-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  background: -ms-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  box-shadow: $box-shadow;
+
+}
+
+.sbb-button-blue-medium {
+  @include sbb-button-small;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-blue
+  );
+  background: $gradient-blue;
+  background: -moz-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 106));
+  background: -webkit-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
+  background: -ms-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
+  box-shadow: $box-shadow;
+}
+
+.sbb-button-grey-medium {
+  @include sbb-button-small;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-grey
+  );
+  background: $gradient-grey;
+  background: -moz-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  background: -webkit-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  background: -ms-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  box-shadow: $box-shadow;
+}
+
+/* Small Buttons */
 // extend the standard foundation button with general settings for all standard sbb tvm buttons small
 @mixin sbb-button-small {
   @extend %button;
@@ -160,7 +223,7 @@
 	font-size: rem-calc(28);
 	padding: rem-calc(27) rem-calc(27+80) rem-calc(27) rem-calc(27);
 	overflow: hidden;
-  	white-space: nowrap;
+	white-space: nowrap;
 	max-width: 82.5%;
   }
   a {
@@ -228,9 +291,59 @@ footer {
 
 /* Home */
 #home {
-	.main-panel div {
-		label, .text-center a {
-		  margin-top: rem-calc(60);
-		}
+  .main-panel div {
+	label, .text-center a {
+	  margin-top: rem-calc(60);
 	}
+  }
 }
+
+/* Schedule */
+#schedule {
+  .labels {
+	// same height as the other pages; the labels are above the panels
+	margin: rem-calc(-40) 0 rem-calc(10) 0;
+	padding: 0 rem-calc(40);
+  }
+  .results {
+	// full width of the parent
+	width: 100%;
+	.result-panel {
+	  height: rem-calc(170);
+	  background: $panel-bg;
+	  margin: 0;
+	  padding: rem-calc(30) rem-calc(40) rem-calc(25) rem-calc(40);
+	  margin-bottom: rem-calc(30);
+
+	  // Connection
+	  .connection p {
+		font-size: rem-calc(28);
+	  }
+	  .connection p.via {
+		font-size: rem-calc(20);
+	  }
+	  p {
+		font-size: rem-calc(24);
+		margin: 0;
+	  }
+	  p.destination {
+		position: absolute;
+		//bottom: rem-calc(30);
+	  }
+	  .vertical-bla {
+		//vertical-align: middle;
+	  }
+	}
+	.ticket {
+	  position: absolute;
+	  right: rem-calc(15);
+	}
+  }
+  .specify {
+	display: flex;
+	a {
+
+	}
+  }
+}
+
