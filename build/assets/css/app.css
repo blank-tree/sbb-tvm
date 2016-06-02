@@ -5884,15 +5884,22 @@ blockquote p {
  * @author: Fernando Obieta
  * @date: 160531
  */
+/* Fix */
+.grid-block {
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
 /* General Setup */
 .grid-frame {
-  padding-left: 2.25rem;
-  padding-right: 2.25rem;
   width: 1366px;
   height: 1024px !important;
   margin: auto;
   background: url("../img/background.png") no-repeat center center fixed;
   background-size: cover; }
+
+.grid-content {
+  padding-left: 2.375rem;
+  padding-right: 2.375rem; }
 
 .main {
   margin-top: 10rem; }
@@ -6111,13 +6118,14 @@ blockquote p {
   .input-field a {
     position: absolute;
     right: 0;
-    margin: 0; }
+    margin: 0;
+    box-shadow: none; }
 
 /* Header */
 header {
   position: absolute;
   width: 1294px;
-  padding-top: 2.25rem; }
+  padding: 2.375rem; }
   header p {
     font-weight: bold;
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); }
@@ -6142,9 +6150,9 @@ footer {
   bottom: 0;
   width: 100%; }
   footer div.footer-buttons {
-    margin-left: -2.25rem;
-    margin-right: -2.25rem;
-    padding: 2.25rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2.375rem;
     background-color: rgba(38, 39, 43, 0.8); }
     footer div.footer-buttons a {
       margin-right: 1.875rem;
@@ -6191,10 +6199,6 @@ footer {
 #schedule .specify {
   display: -ms-flexbox;
   display: flex; }
-
-[ui-view].ng-enter-active div.grid-block.main, [ui-view].ng-leave-active div.grid-block.main, [ui-view].ng-enter div.grid-block.main, [ui-view].ng-leave div.grid-block.main {
-  padding-left: 2.25rem;
-  padding-right: 2.25rem; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   transition: all 1.0s; }

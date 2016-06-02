@@ -3,12 +3,13 @@
 //  height: 65px;
 //}
 
-[ui-view].ng-enter-active, [ui-view].ng-leave-active, [ui-view].ng-enter, [ui-view].ng-leave {
-  div.grid-block.main {
-	padding-left: rem-calc(36);
-	padding-right: rem-calc(36);
-  }
-}
+// da funktioniert leider nöd
+//[ui-view].ng-enter-active, [ui-view].ng-leave-active, [ui-view].ng-enter, [ui-view].ng-leave {
+//  div.grid-block.main {
+//	padding-left: rem-calc(36);
+//	padding-right: rem-calc(36);
+//  }
+//}
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   //position: absolute;
