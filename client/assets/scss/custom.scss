@@ -143,14 +143,40 @@
   box-shadow: $box-shadow;
 }
 
+/* Input field */
+.input-field {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: rem-calc(80);
+  background-color: #fff;
+  box-shadow: $box-shadow;
+  span {
+	display: inline-block;
+	color: $dark-body-font-color;
+	font-size: rem-calc(28);
+	padding: rem-calc(27) rem-calc(27+80) rem-calc(27) rem-calc(27);
+	overflow: hidden;
+  	white-space: nowrap;
+	max-width: 82.5%;
+  }
+  a {
+	position: absolute;
+	right: 0;
+	margin: 0;
+  }
+}
+
 /* Header */
 header {
+  position: absolute;
+  width: 1294px;
+  padding-top: rem-calc(36);
   p {
 	font-weight: bold;
 	text-shadow: $text-shadow;
   }
   img {
-	margin: rem-calc(36) 0 0 rem-calc(36);
 	width: rem-calc(248);
   }
   p.time {
@@ -164,8 +190,8 @@ header {
   p.date {
 	font-size: rem-calc(20);
 	position: absolute;
-	top: rem-calc(20);
-	right: rem-calc(20);
+	top: rem-calc(36);
+	right: 0;
   }
 }
 
@@ -199,5 +225,9 @@ footer {
 
 /* Home */
 #home {
-
+	.main-panel div {
+		label, .text-center a {
+		  margin-top: rem-calc(60);
+		}
+	}
 }
