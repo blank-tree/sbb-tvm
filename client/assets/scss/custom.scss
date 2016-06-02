@@ -115,6 +115,9 @@
   background: -webkit-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
   background: -ms-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
   box-shadow: $box-shadow;
+
+  // If an images or icon is inside the button
+  padding: rem-calc(22) rem-calc(23) rem-calc(23) rem-calc(25);
 }
 
 .sbb-button-blue-small {
