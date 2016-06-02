@@ -31,6 +31,16 @@
 
 @import "helpers/functions";
 
+@font-face {
+  font-family: 'SBB';
+  src: url('../fonts/SBBWeb-Light.ttf');
+}
+@font-face {
+  font-family: 'SBB';
+  src: url('../fonts/SBBWeb-Bold.ttf');
+  font-weight: bold;
+}
+
 // 1. CSS Exports
 // - - - - - - - - - - - - - - -
 
@@ -91,15 +101,15 @@
 
 // We use these to control various global styles
 // $body-background: #fff;
-// $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-color: #fff;
+$body-font-family: "SBB" ,"Helvetica Neue", Arial, sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 // $body-antialiased: true;
 
 // Application Colors
-// $primary-color: #00558b;
-// $secondary-color: #f1f1f1;
+$primary-color: #EB0000;
+$secondary-color: #2D327D;
 // $alert-color: #F04124;
 // $info-color: #A0D3E8;
 // $success-color: #43AC6A;
@@ -108,6 +118,13 @@
 // $gray: #dfdfdf;
 // $gray-dark: darken($gray, 8);
 // $gray-light: lighten($gray, 8);
+$gradient-red: linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+$gradient-blue: linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 106));
+$gradient-grey: linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+$footer-bg: rgba(38,39,43,0.8);
+$panel-bg: rgba(38,39,43,0.5);
+$text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+$box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4);
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 4px;
@@ -371,7 +388,7 @@
 // Labels
 // $form-label-fontsize: 0.9rem;
 // $form-label-margin: 0.5rem;
-// $form-label-color: #333;
+$form-label-color: $body-font-color;
 
 // Inline labels
 // $inlinelabel-color: #333;
