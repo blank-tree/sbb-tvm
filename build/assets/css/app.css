@@ -5908,6 +5908,133 @@ blockquote p {
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     font-size: 1.25rem; }
 
+/* Header */
+header {
+  position: absolute;
+  width: 1294px;
+  padding: 2.375rem; }
+  header p {
+    font-weight: bold;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); }
+  header img {
+    width: 15.5rem; }
+  header p.time {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 2.25rem;
+    left: 0;
+    right: 0;
+    text-align: center; }
+  header p.date {
+    font-size: 1.25rem;
+    position: absolute;
+    top: 2.25rem;
+    right: 0; }
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  footer div.footer-buttons {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2.375rem;
+    background-color: rgba(38, 39, 43, 0.8); }
+    footer div.footer-buttons a {
+      margin-right: 1.875rem;
+      margin-bottom: 0; }
+
+/* Panel */
+.main-panel {
+  background: rgba(38, 39, 43, 0.5); }
+  .main-panel label {
+    font-weight: bold;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.25rem; }
+
+/* Home */
+#home .main-panel div label, #home .main-panel div .text-center a {
+  margin-top: 3.75rem; }
+
+/* Schedule */
+#schedule .labels {
+  margin: -2.5rem 0 0.625rem 0;
+  padding: 0 2.5rem; }
+
+#schedule .results {
+  width: 100%; }
+  #schedule .results .result-panel {
+    height: 10.625rem;
+    background: rgba(38, 39, 43, 0.5);
+    margin: 0;
+    padding: 0 2.5rem 0 2.5rem;
+    margin-bottom: 1.875rem; }
+    #schedule .results .result-panel p {
+      font-size: 1.5rem;
+      margin: 0; }
+    #schedule .results .result-panel .connection, #schedule .results .result-panel .timetable, #schedule .results .result-panel .duration, #schedule .results .result-panel .change, #schedule .results .result-panel .occupancy, #schedule .results .result-panel .ticket {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center; }
+    #schedule .results .result-panel .connection p {
+      font-size: 1.75rem; }
+    #schedule .results .result-panel .connection p.via {
+      font-size: 1.25rem;
+      margin-top: -0.625rem; }
+    #schedule .results .result-panel .connection div p:first-child, #schedule .results .result-panel .timetable p:first-child {
+      margin-bottom: 0.625rem; }
+  #schedule .results .ticket a {
+    margin: 0 0 0 auto;
+    text-align: center; }
+
+#schedule .specify {
+  width: 100%; }
+  #schedule .specify div {
+    display: -ms-flexbox;
+    display: flex; }
+  #schedule .specify div:first-child {
+    padding-left: 2.5rem; }
+  #schedule .specify div:nth-child(2) a {
+    margin: 0 auto; }
+  #schedule .specify div:nth-child(3) a {
+    margin: 0 2.5rem 0 auto; }
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  transition: all 1.0s; }
+
+#home, #schedule {
+  transition: all 1.0s; }
+
+[ui-view].ng-enter {
+  opacity: 0; }
+  [ui-view].ng-enter #home {
+    transform: translate(-1000px); }
+  [ui-view].ng-enter #schedule {
+    transform: translate(1000px); }
+
+[ui-view].ng-enter-active {
+  opacity: 1; }
+  [ui-view].ng-enter-active #home {
+    transform: translate(0px); }
+  [ui-view].ng-enter-active #schedule {
+    transform: translate(0); }
+
+[ui-view].ng-leave {
+  opacity: 1; }
+  [ui-view].ng-leave #home {
+    transform: translate(0px); }
+  [ui-view].ng-leave #schedule {
+    transform: translate(0px); }
+
+[ui-view].ng-leave-active {
+  opacity: 0; }
+  [ui-view].ng-leave-active #home {
+    transform: translate(-1000px); }
+  [ui-view].ng-leave-active #schedule {
+    transform: translate(1000px); }
+
 /* Buttons */
 /* Large Buttons */
 .sbb-button-red {
@@ -6120,116 +6247,3 @@ blockquote p {
     right: 0;
     margin: 0;
     box-shadow: none; }
-
-/* Header */
-header {
-  position: absolute;
-  width: 1294px;
-  padding: 2.375rem; }
-  header p {
-    font-weight: bold;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); }
-  header img {
-    width: 15.5rem; }
-  header p.time {
-    font-size: 1.5rem;
-    position: absolute;
-    top: 2.25rem;
-    left: 0;
-    right: 0;
-    text-align: center; }
-  header p.date {
-    font-size: 1.25rem;
-    position: absolute;
-    top: 2.25rem;
-    right: 0; }
-
-/* Footer */
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%; }
-  footer div.footer-buttons {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 2.375rem;
-    background-color: rgba(38, 39, 43, 0.8); }
-    footer div.footer-buttons a {
-      margin-right: 1.875rem;
-      margin-bottom: 0; }
-
-/* Panel */
-.main-panel {
-  background: rgba(38, 39, 43, 0.5); }
-  .main-panel label {
-    font-weight: bold;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-    font-size: 1.25rem; }
-
-/* Home */
-#home .main-panel div label, #home .main-panel div .text-center a {
-  margin-top: 3.75rem; }
-
-/* Schedule */
-#schedule .labels {
-  margin: -2.5rem 0 0.625rem 0;
-  padding: 0 2.5rem; }
-
-#schedule .results {
-  width: 100%; }
-  #schedule .results .result-panel {
-    height: 10.625rem;
-    background: rgba(38, 39, 43, 0.5);
-    margin: 0;
-    padding: 1.875rem 2.5rem 1.5625rem 2.5rem;
-    margin-bottom: 1.875rem; }
-    #schedule .results .result-panel .connection p {
-      font-size: 1.75rem; }
-    #schedule .results .result-panel .connection p.via {
-      font-size: 1.25rem; }
-    #schedule .results .result-panel p {
-      font-size: 1.5rem;
-      margin: 0; }
-    #schedule .results .result-panel p.destination {
-      position: absolute; }
-  #schedule .results .ticket {
-    position: absolute;
-    right: 0.9375rem; }
-
-#schedule .specify {
-  display: -ms-flexbox;
-  display: flex; }
-
-[ui-view].ng-enter, [ui-view].ng-leave {
-  transition: all 1.0s; }
-
-#home, #schedule {
-  transition: all 1.0s; }
-
-[ui-view].ng-enter {
-  opacity: 0; }
-  [ui-view].ng-enter #home {
-    transform: translate(-1000px); }
-  [ui-view].ng-enter #schedule {
-    transform: translate(1000px); }
-
-[ui-view].ng-enter-active {
-  opacity: 1; }
-  [ui-view].ng-enter-active #home {
-    transform: translate(0px); }
-  [ui-view].ng-enter-active #schedule {
-    transform: translate(0); }
-
-[ui-view].ng-leave {
-  opacity: 1; }
-  [ui-view].ng-leave #home {
-    transform: translate(0px); }
-  [ui-view].ng-leave #schedule {
-    transform: translate(0px); }
-
-[ui-view].ng-leave-active {
-  opacity: 0; }
-  [ui-view].ng-leave-active #home {
-    transform: translate(-1000px); }
-  [ui-view].ng-leave-active #schedule {
-    transform: translate(1000px); }

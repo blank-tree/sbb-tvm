@@ -1,0 +1,195 @@
+/* Buttons */
+/* Large Buttons */
+// extend the standard foundation button with general settings for all standard sbb tvm buttons
+@mixin sbb-button {
+  @extend %button;
+
+  height: rem-calc(80);
+  width: rem-calc(360);
+
+  margin-bottom: rem-calc(30);
+
+  // center the text vertically in the fixed size
+  padding-top: rem-calc(27);
+
+  font-size: rem-calc(28);
+}
+
+// red button
+.sbb-button-red {
+  @include sbb-button;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-red
+  );
+  background: $gradient-red;
+  background: -moz-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  background: -webkit-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  background: -ms-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  box-shadow: $box-shadow;
+}
+
+// blue button
+.sbb-button-blue {
+  @include sbb-button;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-blue
+  );
+  background: $gradient-blue;
+  background: -moz-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 106));
+  background: -webkit-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
+  background: -ms-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
+  box-shadow: $box-shadow;
+}
+
+// grey button
+.sbb-button-grey {
+  @include sbb-button;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-grey
+  );
+  background: $gradient-grey;
+  background: -moz-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  background: -webkit-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  background: -ms-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  box-shadow: $box-shadow;
+}
+
+/* Medium Buttons */
+// extend the standard foundation button with general settings for all standard sbb tvm buttons small
+@mixin sbb-button-small {
+  @extend %button;
+
+  height: rem-calc(80);
+  width: rem-calc(140);
+
+  margin-bottom: rem-calc(30);
+
+  // center the text vertically in the fixed size
+  padding-top: rem-calc(27);
+
+  font-size: rem-calc(28);
+}
+
+.sbb-button-red-medium {
+  @include sbb-button-small;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-red
+  );
+  background: $gradient-red;
+  background: -moz-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  background: -webkit-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  background: -ms-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  box-shadow: $box-shadow;
+
+}
+
+.sbb-button-blue-medium {
+  @include sbb-button-small;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-blue
+  );
+  background: $gradient-blue;
+  background: -moz-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 106));
+  background: -webkit-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
+  background: -ms-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
+  box-shadow: $box-shadow;
+}
+
+.sbb-button-grey-medium {
+  @include sbb-button-small;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-grey
+  );
+  background: $gradient-grey;
+  background: -moz-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  background: -webkit-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  background: -ms-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  box-shadow: $box-shadow;
+}
+
+/* Small Buttons */
+// extend the standard foundation button with general settings for all standard sbb tvm buttons small
+@mixin sbb-button-small {
+  @extend %button;
+
+  height: rem-calc(80);
+  width: rem-calc(80);
+
+  // center the text vertically in the fixed size
+  padding-top: rem-calc(27);
+
+  font-size: rem-calc(28);
+}
+
+.sbb-button-red-small {
+  @include sbb-button-small;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-red
+  );
+  background: $gradient-red;
+  background: -moz-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  background: -webkit-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  background: -ms-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  box-shadow: $box-shadow;
+
+  // If an images or icon is inside the button
+  padding: rem-calc(22) rem-calc(23) rem-calc(23) rem-calc(25);
+}
+
+.sbb-button-blue-small {
+  @include sbb-button-small;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-blue
+  );
+  background: $gradient-blue;
+  background: -moz-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 106));
+  background: -webkit-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
+  background: -ms-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
+  box-shadow: $box-shadow;
+}
+
+.sbb-button-grey-small {
+  @include sbb-button-small;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-grey
+  );
+  background: $gradient-grey;
+  background: -moz-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  background: -webkit-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  background: -ms-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  box-shadow: $box-shadow;
+}
+
+/* Input field */
+.input-field {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: rem-calc(80);
+  background-color: #fff;
+  box-shadow: $box-shadow;
+  span {
+	display: inline-block;
+	color: $dark-body-font-color;
+	font-size: rem-calc(28);
+	padding: rem-calc(27) rem-calc(27+80) rem-calc(27) rem-calc(27);
+	overflow: hidden;
+	white-space: nowrap;
+	max-width: 82.5%;
+  }
+  a {
+	position: absolute;
+	right: 0;
+	margin: 0;
+	box-shadow: none;
+  }
+}
