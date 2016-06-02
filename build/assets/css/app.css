@@ -5883,6 +5883,7 @@ blockquote p {
  * Custom SCSS File for SBB-TVM
  * @author: Fernando Obieta
  * @date: 160531
+ * @version 0.2
  */
 /* Fix */
 .grid-block {
@@ -5902,7 +5903,7 @@ blockquote p {
   padding-right: 2.375rem; }
 
 .main {
-  margin-top: 10rem; }
+  margin-top: 7.5rem; }
   .main label {
     font-weight: bold;
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
@@ -5959,8 +5960,7 @@ footer {
 
 /* Schedule */
 #schedule .labels {
-  margin: -2.5rem 0 0.625rem 0;
-  padding: 0 2.5rem; }
+  margin: 0 0 0.625rem 0; }
 
 #schedule .results {
   width: 100%; }
@@ -5985,6 +5985,12 @@ footer {
       margin-top: -0.625rem; }
     #schedule .results .result-panel .connection div p:first-child, #schedule .results .result-panel .timetable p:first-child {
       margin-bottom: 0.625rem; }
+  #schedule .results .occupancy div p img {
+    margin-top: -0.25rem;
+    margin-left: 0.3125rem;
+    opacity: 0.2; }
+    #schedule .results .occupancy div p img.on {
+      opacity: 0.8; }
   #schedule .results .ticket a {
     margin: 0 0 0 auto;
     text-align: center; }
@@ -5994,12 +6000,48 @@ footer {
   #schedule .specify div {
     display: -ms-flexbox;
     display: flex; }
-  #schedule .specify div:first-child {
-    padding-left: 2.5rem; }
   #schedule .specify div:nth-child(2) a {
     margin: 0 auto; }
   #schedule .specify div:nth-child(3) a {
-    margin: 0 2.5rem 0 auto; }
+    margin: 0 0 0 auto; }
+
+/* Tickettype */
+#ticket-type h4, #ticket-type h5, #ticket-class h4, #ticket-class h5, #ticket-amount h4, #ticket-amount h5 {
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-weight: bold; }
+
+#ticket-type h4, #ticket-class h4, #ticket-amount h4 {
+  font-size: 1.75rem;
+  margin-bottom: 0; }
+
+#ticket-type h5, #ticket-class h5, #ticket-amount h5 {
+  font-size: 1.5rem; }
+
+#ticket-type .ticket-panel, #ticket-class .ticket-panel, #ticket-amount .ticket-panel {
+  padding-top: 1.25rem;
+  height: 46.75rem;
+  background: rgba(38, 39, 43, 0.5); }
+  #ticket-type .ticket-panel label, #ticket-type .ticket-panel .text-center a, #ticket-class .ticket-panel label, #ticket-class .ticket-panel .text-center a, #ticket-amount .ticket-panel label, #ticket-amount .ticket-panel .text-center a {
+    margin-top: 1.25rem; }
+  #ticket-type .ticket-panel .input-field-type, #ticket-type .ticket-panel .input-field-class, #ticket-class .ticket-panel .input-field-type, #ticket-class .ticket-panel .input-field-class, #ticket-amount .ticket-panel .input-field-type, #ticket-amount .ticket-panel .input-field-class {
+    margin-top: 1.875rem; }
+    #ticket-type .ticket-panel .input-field-type img, #ticket-type .ticket-panel .input-field-class img, #ticket-class .ticket-panel .input-field-type img, #ticket-class .ticket-panel .input-field-class img, #ticket-amount .ticket-panel .input-field-type img, #ticket-amount .ticket-panel .input-field-class img {
+      margin-right: 1.875rem;
+      margin-top: -0.3125rem; }
+
+#ticket-type .type-progress div, #ticket-type .class-progress div, #ticket-class .type-progress div, #ticket-class .class-progress div, #ticket-amount .type-progress div, #ticket-amount .class-progress div {
+  text-align: center; }
+
+#ticket-type .type-progress .type-panel, #ticket-type .type-progress .class-panel, #ticket-type .class-progress .type-panel, #ticket-type .class-progress .class-panel, #ticket-class .type-progress .type-panel, #ticket-class .type-progress .class-panel, #ticket-class .class-progress .type-panel, #ticket-class .class-progress .class-panel, #ticket-amount .type-progress .type-panel, #ticket-amount .type-progress .class-panel, #ticket-amount .class-progress .type-panel, #ticket-amount .class-progress .class-panel {
+  padding: 2.5rem 0 1.25rem 0;
+  background: rgba(38, 39, 43, 0.5); }
+  #ticket-type .type-progress .type-panel a img, #ticket-type .type-progress .class-panel a img, #ticket-type .class-progress .type-panel a img, #ticket-type .class-progress .class-panel a img, #ticket-class .type-progress .type-panel a img, #ticket-class .type-progress .class-panel a img, #ticket-class .class-progress .type-panel a img, #ticket-class .class-progress .class-panel a img, #ticket-amount .type-progress .type-panel a img, #ticket-amount .type-progress .class-panel a img, #ticket-amount .class-progress .type-panel a img, #ticket-amount .class-progress .class-panel a img {
+    margin-right: 1.875rem;
+    margin-top: -0.3125rem; }
+
+#ticket-type .type-progress .type-panel-optional, #ticket-type .class-progress .type-panel-optional, #ticket-class .type-progress .type-panel-optional, #ticket-class .class-progress .type-panel-optional, #ticket-amount .type-progress .type-panel-optional, #ticket-amount .class-progress .type-panel-optional {
+  margin-top: 2.5rem; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   transition: all 1.0s; }
@@ -6010,9 +6052,9 @@ footer {
 [ui-view].ng-enter {
   opacity: 0; }
   [ui-view].ng-enter #home {
-    transform: translate(-1000px); }
+    transform: translate(-1366px); }
   [ui-view].ng-enter #schedule {
-    transform: translate(1000px); }
+    transform: translate(1366px); }
 
 [ui-view].ng-enter-active {
   opacity: 1; }
@@ -6031,9 +6073,9 @@ footer {
 [ui-view].ng-leave-active {
   opacity: 0; }
   [ui-view].ng-leave-active #home {
-    transform: translate(-1000px); }
+    transform: translate(-1366px); }
   [ui-view].ng-leave-active #schedule {
-    transform: translate(1000px); }
+    transform: translate(1366px); }
 
 /* Buttons */
 /* Large Buttons */
@@ -6041,6 +6083,7 @@ footer {
   height: 5rem;
   width: 22.5rem;
   margin-bottom: 1.875rem;
+  margin-right: 0;
   padding-top: 1.6875rem;
   font-size: 1.75rem;
   background: #EB0000;
@@ -6062,6 +6105,7 @@ footer {
   height: 5rem;
   width: 22.5rem;
   margin-bottom: 1.875rem;
+  margin-right: 0;
   padding-top: 1.6875rem;
   font-size: 1.75rem;
   background: #EB0000;
@@ -6083,6 +6127,7 @@ footer {
   height: 5rem;
   width: 22.5rem;
   margin-bottom: 1.875rem;
+  margin-right: 0;
   padding-top: 1.6875rem;
   font-size: 1.75rem;
   background: #EB0000;
@@ -6105,6 +6150,7 @@ footer {
   height: 5rem;
   width: 8.75rem;
   margin-bottom: 1.875rem;
+  margin-right: 0;
   padding-top: 1.6875rem;
   font-size: 1.75rem;
   background: #EB0000;
@@ -6126,6 +6172,7 @@ footer {
   height: 5rem;
   width: 8.75rem;
   margin-bottom: 1.875rem;
+  margin-right: 0;
   padding-top: 1.6875rem;
   font-size: 1.75rem;
   background: #EB0000;
@@ -6147,6 +6194,7 @@ footer {
   height: 5rem;
   width: 8.75rem;
   margin-bottom: 1.875rem;
+  margin-right: 0;
   padding-top: 1.6875rem;
   font-size: 1.75rem;
   background: #EB0000;
@@ -6169,6 +6217,7 @@ footer {
   height: 5rem;
   width: 5rem;
   padding-top: 1.6875rem;
+  margin-right: 0;
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
@@ -6190,6 +6239,7 @@ footer {
   height: 5rem;
   width: 5rem;
   padding-top: 1.6875rem;
+  margin-right: 0;
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
@@ -6210,6 +6260,7 @@ footer {
   height: 5rem;
   width: 5rem;
   padding-top: 1.6875rem;
+  margin-right: 0;
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
