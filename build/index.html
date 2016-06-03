@@ -13,7 +13,8 @@
 <body>
 <div class="grid-frame vertical">
 	<header ng-include="'templates/parts/header.html'"></header>
-	<div ui-view class="grid-content">
+	<div ng-controller="viewCtrl">
+		<div ui-view class="grid-content" ng-class="{back: back}"></div>
 	</div>
 	<footer ng-include="'templates/parts/footer.html'"></footer>
 </div>

@@ -5883,7 +5883,7 @@ blockquote p {
  * Custom SCSS File for SBB-TVM
  * @author: Fernando Obieta
  * @date: 160531
- * @version 0.2
+ * @version 0.3
  */
 /* Fix */
 .grid-block {
@@ -6006,42 +6006,68 @@ footer {
     margin: 0 0 0 auto; }
 
 /* Tickettype */
-#ticket-type h4, #ticket-type h5, #ticket-class h4, #ticket-class h5, #ticket-amount h4, #ticket-amount h5 {
+#ticket-type h4, #ticket-type h5, #ticket-class h4, #ticket-class h5, #ticket-amount h4, #ticket-amount h5, #ticket-pay h4, #ticket-pay h5 {
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   color: #fff;
   font-weight: bold; }
 
-#ticket-type h4, #ticket-class h4, #ticket-amount h4 {
+#ticket-type h4, #ticket-class h4, #ticket-amount h4, #ticket-pay h4 {
   font-size: 1.75rem;
   margin-bottom: 0; }
 
-#ticket-type h5, #ticket-class h5, #ticket-amount h5 {
+#ticket-type h5, #ticket-class h5, #ticket-amount h5, #ticket-pay h5 {
   font-size: 1.5rem; }
 
-#ticket-type .ticket-panel, #ticket-class .ticket-panel, #ticket-amount .ticket-panel {
+#ticket-type .ticket-panel, #ticket-class .ticket-panel, #ticket-amount .ticket-panel, #ticket-pay .ticket-panel {
   padding-top: 1.25rem;
   height: 46.75rem;
   background: rgba(38, 39, 43, 0.5); }
-  #ticket-type .ticket-panel label, #ticket-type .ticket-panel .text-center a, #ticket-class .ticket-panel label, #ticket-class .ticket-panel .text-center a, #ticket-amount .ticket-panel label, #ticket-amount .ticket-panel .text-center a {
+  #ticket-type .ticket-panel label, #ticket-type .ticket-panel .text-center a, #ticket-class .ticket-panel label, #ticket-class .ticket-panel .text-center a, #ticket-amount .ticket-panel label, #ticket-amount .ticket-panel .text-center a, #ticket-pay .ticket-panel label, #ticket-pay .ticket-panel .text-center a {
     margin-top: 1.25rem; }
-  #ticket-type .ticket-panel .input-field-type, #ticket-type .ticket-panel .input-field-class, #ticket-class .ticket-panel .input-field-type, #ticket-class .ticket-panel .input-field-class, #ticket-amount .ticket-panel .input-field-type, #ticket-amount .ticket-panel .input-field-class {
+  #ticket-type .ticket-panel .input-field-type, #ticket-type .ticket-panel .input-field-class, #ticket-type .ticket-panel .input-field-amount, #ticket-class .ticket-panel .input-field-type, #ticket-class .ticket-panel .input-field-class, #ticket-class .ticket-panel .input-field-amount, #ticket-amount .ticket-panel .input-field-type, #ticket-amount .ticket-panel .input-field-class, #ticket-amount .ticket-panel .input-field-amount, #ticket-pay .ticket-panel .input-field-type, #ticket-pay .ticket-panel .input-field-class, #ticket-pay .ticket-panel .input-field-amount {
     margin-top: 1.875rem; }
-    #ticket-type .ticket-panel .input-field-type img, #ticket-type .ticket-panel .input-field-class img, #ticket-class .ticket-panel .input-field-type img, #ticket-class .ticket-panel .input-field-class img, #ticket-amount .ticket-panel .input-field-type img, #ticket-amount .ticket-panel .input-field-class img {
+    #ticket-type .ticket-panel .input-field-type img, #ticket-type .ticket-panel .input-field-class img, #ticket-type .ticket-panel .input-field-amount img, #ticket-class .ticket-panel .input-field-type img, #ticket-class .ticket-panel .input-field-class img, #ticket-class .ticket-panel .input-field-amount img, #ticket-amount .ticket-panel .input-field-type img, #ticket-amount .ticket-panel .input-field-class img, #ticket-amount .ticket-panel .input-field-amount img, #ticket-pay .ticket-panel .input-field-type img, #ticket-pay .ticket-panel .input-field-class img, #ticket-pay .ticket-panel .input-field-amount img {
       margin-right: 1.875rem;
       margin-top: -0.3125rem; }
 
-#ticket-type .type-progress div, #ticket-type .class-progress div, #ticket-class .type-progress div, #ticket-class .class-progress div, #ticket-amount .type-progress div, #ticket-amount .class-progress div {
+#ticket-type .type-progress div, #ticket-type .class-progress div, #ticket-type .amount-progress div, #ticket-type .pay-progress div, #ticket-class .type-progress div, #ticket-class .class-progress div, #ticket-class .amount-progress div, #ticket-class .pay-progress div, #ticket-amount .type-progress div, #ticket-amount .class-progress div, #ticket-amount .amount-progress div, #ticket-amount .pay-progress div, #ticket-pay .type-progress div, #ticket-pay .class-progress div, #ticket-pay .amount-progress div, #ticket-pay .pay-progress div {
   text-align: center; }
 
-#ticket-type .type-progress .type-panel, #ticket-type .type-progress .class-panel, #ticket-type .class-progress .type-panel, #ticket-type .class-progress .class-panel, #ticket-class .type-progress .type-panel, #ticket-class .type-progress .class-panel, #ticket-class .class-progress .type-panel, #ticket-class .class-progress .class-panel, #ticket-amount .type-progress .type-panel, #ticket-amount .type-progress .class-panel, #ticket-amount .class-progress .type-panel, #ticket-amount .class-progress .class-panel {
+#ticket-type .type-progress .type-panel, #ticket-type .type-progress .class-panel, #ticket-type .type-progress .amount-panel, #ticket-type .class-progress .type-panel, #ticket-type .class-progress .class-panel, #ticket-type .class-progress .amount-panel, #ticket-type .amount-progress .type-panel, #ticket-type .amount-progress .class-panel, #ticket-type .amount-progress .amount-panel, #ticket-type .pay-progress .type-panel, #ticket-type .pay-progress .class-panel, #ticket-type .pay-progress .amount-panel, #ticket-class .type-progress .type-panel, #ticket-class .type-progress .class-panel, #ticket-class .type-progress .amount-panel, #ticket-class .class-progress .type-panel, #ticket-class .class-progress .class-panel, #ticket-class .class-progress .amount-panel, #ticket-class .amount-progress .type-panel, #ticket-class .amount-progress .class-panel, #ticket-class .amount-progress .amount-panel, #ticket-class .pay-progress .type-panel, #ticket-class .pay-progress .class-panel, #ticket-class .pay-progress .amount-panel, #ticket-amount .type-progress .type-panel, #ticket-amount .type-progress .class-panel, #ticket-amount .type-progress .amount-panel, #ticket-amount .class-progress .type-panel, #ticket-amount .class-progress .class-panel, #ticket-amount .class-progress .amount-panel, #ticket-amount .amount-progress .type-panel, #ticket-amount .amount-progress .class-panel, #ticket-amount .amount-progress .amount-panel, #ticket-amount .pay-progress .type-panel, #ticket-amount .pay-progress .class-panel, #ticket-amount .pay-progress .amount-panel, #ticket-pay .type-progress .type-panel, #ticket-pay .type-progress .class-panel, #ticket-pay .type-progress .amount-panel, #ticket-pay .class-progress .type-panel, #ticket-pay .class-progress .class-panel, #ticket-pay .class-progress .amount-panel, #ticket-pay .amount-progress .type-panel, #ticket-pay .amount-progress .class-panel, #ticket-pay .amount-progress .amount-panel, #ticket-pay .pay-progress .type-panel, #ticket-pay .pay-progress .class-panel, #ticket-pay .pay-progress .amount-panel {
   padding: 2.5rem 0 1.25rem 0;
   background: rgba(38, 39, 43, 0.5); }
-  #ticket-type .type-progress .type-panel a img, #ticket-type .type-progress .class-panel a img, #ticket-type .class-progress .type-panel a img, #ticket-type .class-progress .class-panel a img, #ticket-class .type-progress .type-panel a img, #ticket-class .type-progress .class-panel a img, #ticket-class .class-progress .type-panel a img, #ticket-class .class-progress .class-panel a img, #ticket-amount .type-progress .type-panel a img, #ticket-amount .type-progress .class-panel a img, #ticket-amount .class-progress .type-panel a img, #ticket-amount .class-progress .class-panel a img {
+  #ticket-type .type-progress .type-panel a img, #ticket-type .type-progress .class-panel a img, #ticket-type .type-progress .amount-panel a img, #ticket-type .class-progress .type-panel a img, #ticket-type .class-progress .class-panel a img, #ticket-type .class-progress .amount-panel a img, #ticket-type .amount-progress .type-panel a img, #ticket-type .amount-progress .class-panel a img, #ticket-type .amount-progress .amount-panel a img, #ticket-type .pay-progress .type-panel a img, #ticket-type .pay-progress .class-panel a img, #ticket-type .pay-progress .amount-panel a img, #ticket-class .type-progress .type-panel a img, #ticket-class .type-progress .class-panel a img, #ticket-class .type-progress .amount-panel a img, #ticket-class .class-progress .type-panel a img, #ticket-class .class-progress .class-panel a img, #ticket-class .class-progress .amount-panel a img, #ticket-class .amount-progress .type-panel a img, #ticket-class .amount-progress .class-panel a img, #ticket-class .amount-progress .amount-panel a img, #ticket-class .pay-progress .type-panel a img, #ticket-class .pay-progress .class-panel a img, #ticket-class .pay-progress .amount-panel a img, #ticket-amount .type-progress .type-panel a img, #ticket-amount .type-progress .class-panel a img, #ticket-amount .type-progress .amount-panel a img, #ticket-amount .class-progress .type-panel a img, #ticket-amount .class-progress .class-panel a img, #ticket-amount .class-progress .amount-panel a img, #ticket-amount .amount-progress .type-panel a img, #ticket-amount .amount-progress .class-panel a img, #ticket-amount .amount-progress .amount-panel a img, #ticket-amount .pay-progress .type-panel a img, #ticket-amount .pay-progress .class-panel a img, #ticket-amount .pay-progress .amount-panel a img, #ticket-pay .type-progress .type-panel a img, #ticket-pay .type-progress .class-panel a img, #ticket-pay .type-progress .amount-panel a img, #ticket-pay .class-progress .type-panel a img, #ticket-pay .class-progress .class-panel a img, #ticket-pay .class-progress .amount-panel a img, #ticket-pay .amount-progress .type-panel a img, #ticket-pay .amount-progress .class-panel a img, #ticket-pay .amount-progress .amount-panel a img, #ticket-pay .pay-progress .type-panel a img, #ticket-pay .pay-progress .class-panel a img, #ticket-pay .pay-progress .amount-panel a img {
     margin-right: 1.875rem;
     margin-top: -0.3125rem; }
 
-#ticket-type .type-progress .type-panel-optional, #ticket-type .class-progress .type-panel-optional, #ticket-class .type-progress .type-panel-optional, #ticket-class .class-progress .type-panel-optional, #ticket-amount .type-progress .type-panel-optional, #ticket-amount .class-progress .type-panel-optional {
+#ticket-type .type-progress .type-panel-optional, #ticket-type .class-progress .type-panel-optional, #ticket-type .amount-progress .type-panel-optional, #ticket-type .pay-progress .type-panel-optional, #ticket-class .type-progress .type-panel-optional, #ticket-class .class-progress .type-panel-optional, #ticket-class .amount-progress .type-panel-optional, #ticket-class .pay-progress .type-panel-optional, #ticket-amount .type-progress .type-panel-optional, #ticket-amount .class-progress .type-panel-optional, #ticket-amount .amount-progress .type-panel-optional, #ticket-amount .pay-progress .type-panel-optional, #ticket-pay .type-progress .type-panel-optional, #ticket-pay .class-progress .type-panel-optional, #ticket-pay .amount-progress .type-panel-optional, #ticket-pay .pay-progress .type-panel-optional {
   margin-top: 2.5rem; }
+
+#ticket-type .amount-progress label:first-child, #ticket-class .amount-progress label:first-child, #ticket-amount .amount-progress label:first-child, #ticket-pay .amount-progress label:first-child {
+  margin-top: 0; }
+
+#ticket-type .amount-progress label, #ticket-class .amount-progress label, #ticket-amount .amount-progress label, #ticket-pay .amount-progress label {
+  padding-left: 5.5rem;
+  text-align: left;
+  margin-top: 1.25rem; }
+
+#ticket-type .amount-progress a.sbb-button-red, #ticket-class .amount-progress a.sbb-button-red, #ticket-amount .amount-progress a.sbb-button-red, #ticket-pay .amount-progress a.sbb-button-red {
+  margin-top: 3.125rem; }
+
+#ticket-pay .ticket-panel .input-field-type, #ticket-pay .ticket-panel .input-field-class {
+  width: 47%;
+  display: inline-block;
+  margin-top: 0; }
+
+#ticket-pay .ticket-panel .input-field-class {
+  float: right; }
+
+#ticket-pay .ticket-panel .double-labels label {
+  display: inline-block; }
+
+#ticket-pay .ticket-panel .double-labels :nth-child(2) {
+  float: right;
+  margin-right: 11.6875rem; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   transition: all 1.0s; }
@@ -6077,7 +6103,12 @@ footer {
   [ui-view].ng-leave-active #schedule {
     transform: translate(1366px); }
 
-/* Buttons */
+/**
+ * Custom Buttons for SBB-TVM
+ * @author: Fernando Obieta
+ * @date: 160602
+ * @version 0.2
+ */
 /* Large Buttons */
 .sbb-button-red {
   height: 5rem;
@@ -6298,3 +6329,32 @@ footer {
     right: 0;
     margin: 0;
     box-shadow: none; }
+
+/* Number Input Field */
+.number-input-field {
+  position: relative;
+  display: block;
+  width: 22.5rem;
+  margin: auto;
+  height: 5rem;
+  background-color: #fff;
+  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4);
+  text-align: center; }
+  .number-input-field span {
+    display: inline-block;
+    color: #26272B;
+    font-size: 1.75rem;
+    padding: 1.6875rem 0;
+    width: 9.4375rem; }
+  .number-input-field a.subtract {
+    position: absolute;
+    left: 0;
+    margin: 0;
+    box-shadow: none; }
+  .number-input-field a.add {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    box-shadow: none; }
+  .number-input-field a img {
+    padding: 8px 0 0 1px; }

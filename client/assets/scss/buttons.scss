@@ -1,4 +1,10 @@
-/* Buttons */
+/**
+ * Custom Buttons for SBB-TVM
+ * @author: Fernando Obieta
+ * @date: 160602
+ * @version 0.2
+ */
+
 /* Large Buttons */
 // extend the standard foundation button with general settings for all standard sbb tvm buttons
 @mixin sbb-button {
@@ -195,4 +201,42 @@
 	margin: 0;
 	box-shadow: none;
   }
+}
+
+/* Number Input Field */
+.number-input-field {
+  position: relative;
+  display: block;
+  width: rem-calc(360);
+  margin: auto;
+  height: rem-calc(80);
+  background-color: #fff;
+  box-shadow: $box-shadow;
+  text-align: center;
+  span {
+	display: inline-block;
+	color: $dark-body-font-color;
+	font-size: rem-calc(28);
+	padding: rem-calc(27) 0;
+	//overflow: hidden;
+	//white-space: nowrap;
+	//max-width: 82.5%;
+	width: rem-calc(151);
+  }
+  a.subtract {
+	position: absolute;
+	left: 0;
+	margin: 0;
+	box-shadow: none;
+  }
+  a.add {
+	position: absolute;
+	right: 0;
+	margin: 0;
+	box-shadow: none;
+  }
+  a img {
+	padding: 8px 0 0 1px;
+  }
+
 }

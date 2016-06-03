@@ -1,34 +1,63 @@
-(function() {
-  'use strict';
+(function () {
+	'use strict';
 
-  angular.module('application', [
-    'ui.router',
-    'ngAnimate',
+	// Routing
+	var app = angular.module('custom', ['ngAnimate']);
 
-    //foundation
-    'foundation',
-    'foundation.dynamicRouting',
-    'foundation.dynamicRouting.animations'
-  ])
-    .config(config)
-    .run(run)
-  ;
+	app.controller('viewCtrl', function ($scope) {
 
-  config.$inject = ['$urlRouterProvider', '$locationProvider'];
+			var lastScreen = '/';
 
-  function config($urlProvider, $locationProvider) {
-    $urlProvider.otherwise('/');
+			// $scope.$on('$stateChangeSuccess', function (event, toState) {
+			//
+			// 	$scope.back = toState.name === 'state1';
+			// });
 
-    $locationProvider.html5Mode({
-      enabled:false,
-      requireBase: false
-    });
+			$scope.$on('$stateChangeStart', function (evt, to, _, from) {
+				// Testing purpose
+				//console.log(from, to);
 
-    $locationProvider.hashPrefix('!');
-  }
+				$scope.back = to.url === lastScreen;
+				lastScreen = from.url;
+			});
 
-  function run() {
-    FastClick.attach(document.body);
-  }
+
+		});
+
+	// Foundation Framework default
+	angular.module('application', [
+		'ui.router',
+		'ngAnimate',
+
+		//foundation
+		'foundation',
+		'foundation.dynamicRouting',
+		'foundation.dynamicRouting.animations',
+
+		//custom js
+		'custom'
+	])
+		.config(config)
+		.run(run)
+	;
+
+	config.$inject = ['$urlRouterProvider', '$locationProvider'];
+
+	function config($urlProvider, $locationProvider) {
+		$urlProvider.otherwise('/');
+
+		$locationProvider.html5Mode({
+			enabled: false,
+			requireBase: false
+		});
+
+		$locationProvider.hashPrefix('!');
+	}
+
+	function run() {
+		FastClick.attach(document.body);
+	}
+
+
 
 })();
