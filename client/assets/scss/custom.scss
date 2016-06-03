@@ -200,22 +200,30 @@ footer {
 
 /* Tickettype */
 #ticket-type, #ticket-class, #ticket-amount, #ticket-pay {
+
+  // Styling for the headers of the ticket
   h4, h5 {
 	text-shadow: $text-shadow;
 	color: #fff;
 	font-weight: bold;
+	margin: 0;
   }
   h4 {
 	font-size: rem-calc(28);
 	margin-bottom: 0;
   }
   h5 {
-	font-size: rem-calc(24);
+	font-size: rem-calc(20);
+
   }
+
+  // Styling for the left ticket panel
   .ticket-panel {
 	padding-top: rem-calc(20);
 	height: rem-calc(748);
 	background: $panel-bg;
+
+	// Give the labels the margin to seperate the input-fields
 	label, .text-center a {
 	  margin-top: rem-calc(20);
 	}
@@ -226,11 +234,26 @@ footer {
 		margin-top: rem-calc(-5);
 	  }
 	}
+
+	// put type & class on the same line
+	.input-field-type, .input-field-class {
+	  width: 47%;
+	  display: inline-block;
+	  //margin-top: 0;
+	}
+
+	.input-field-class {
+	  float: right;
+	}
   }
+
+  // Right progress panel on varying screens
   .type-progress, .class-progress, .amount-progress, .pay-progress {
 	div {
 	  text-align: center;
 	}
+
+	// positioning
 	.type-panel, .class-panel, .amount-panel {
 	  padding: rem-calc(40) 0 rem-calc(20) 0;
 	  background: $panel-bg;
@@ -239,21 +262,21 @@ footer {
 		margin-top: rem-calc(-5);
 	  }
 	}
+
+	// optional ticket types positioned below the progress panel
 	.type-panel-optional {
 	  margin-top: rem-calc(40);
 	}
   }
 
+	// seperate styling for the amount progress panel buttons
   .amount-progress {
-
 	label:first-child {
 	  margin-top: 0;
 	}
-
 	label {
 	  padding-left: rem-calc(88);
 	  text-align: left;
-	  //padding-left: rem-calc(40);
 	  margin-top: rem-calc(20);
 	}
 
@@ -262,39 +285,12 @@ footer {
 	}
 
   }
-}
 
-#ticket-pay {
+  // seperate styling for the pay progress panel
   .ticket-panel {
-
-
-	.input-field-type, .input-field-class {
-	  width: 47%;
-	  display: inline-block;
-	  margin-top: 0;
-	}
-
-	.input-field-class {
-	  float: right;
-	}
-
-	.double-labels {
-
-
-	  label {
-		display: inline-block;
-	  }
-
-	  :nth-child(2) {
-		float: right;
-		margin-right: rem-calc(187);
-	  }
-	}
-
-
-
 	.input-field-amount {
-	  
+
 	}
   }
 }
+

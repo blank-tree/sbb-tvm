@@ -6009,14 +6009,15 @@ footer {
 #ticket-type h4, #ticket-type h5, #ticket-class h4, #ticket-class h5, #ticket-amount h4, #ticket-amount h5, #ticket-pay h4, #ticket-pay h5 {
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   color: #fff;
-  font-weight: bold; }
+  font-weight: bold;
+  margin: 0; }
 
 #ticket-type h4, #ticket-class h4, #ticket-amount h4, #ticket-pay h4 {
   font-size: 1.75rem;
   margin-bottom: 0; }
 
 #ticket-type h5, #ticket-class h5, #ticket-amount h5, #ticket-pay h5 {
-  font-size: 1.5rem; }
+  font-size: 1.25rem; }
 
 #ticket-type .ticket-panel, #ticket-class .ticket-panel, #ticket-amount .ticket-panel, #ticket-pay .ticket-panel {
   padding-top: 1.25rem;
@@ -6029,6 +6030,11 @@ footer {
     #ticket-type .ticket-panel .input-field-type img, #ticket-type .ticket-panel .input-field-class img, #ticket-type .ticket-panel .input-field-amount img, #ticket-class .ticket-panel .input-field-type img, #ticket-class .ticket-panel .input-field-class img, #ticket-class .ticket-panel .input-field-amount img, #ticket-amount .ticket-panel .input-field-type img, #ticket-amount .ticket-panel .input-field-class img, #ticket-amount .ticket-panel .input-field-amount img, #ticket-pay .ticket-panel .input-field-type img, #ticket-pay .ticket-panel .input-field-class img, #ticket-pay .ticket-panel .input-field-amount img {
       margin-right: 1.875rem;
       margin-top: -0.3125rem; }
+  #ticket-type .ticket-panel .input-field-type, #ticket-type .ticket-panel .input-field-class, #ticket-class .ticket-panel .input-field-type, #ticket-class .ticket-panel .input-field-class, #ticket-amount .ticket-panel .input-field-type, #ticket-amount .ticket-panel .input-field-class, #ticket-pay .ticket-panel .input-field-type, #ticket-pay .ticket-panel .input-field-class {
+    width: 47%;
+    display: inline-block; }
+  #ticket-type .ticket-panel .input-field-class, #ticket-class .ticket-panel .input-field-class, #ticket-amount .ticket-panel .input-field-class, #ticket-pay .ticket-panel .input-field-class {
+    float: right; }
 
 #ticket-type .type-progress div, #ticket-type .class-progress div, #ticket-type .amount-progress div, #ticket-type .pay-progress div, #ticket-class .type-progress div, #ticket-class .class-progress div, #ticket-class .amount-progress div, #ticket-class .pay-progress div, #ticket-amount .type-progress div, #ticket-amount .class-progress div, #ticket-amount .amount-progress div, #ticket-amount .pay-progress div, #ticket-pay .type-progress div, #ticket-pay .class-progress div, #ticket-pay .amount-progress div, #ticket-pay .pay-progress div {
   text-align: center; }
@@ -6053,21 +6059,6 @@ footer {
 
 #ticket-type .amount-progress a.sbb-button-red, #ticket-class .amount-progress a.sbb-button-red, #ticket-amount .amount-progress a.sbb-button-red, #ticket-pay .amount-progress a.sbb-button-red {
   margin-top: 3.125rem; }
-
-#ticket-pay .ticket-panel .input-field-type, #ticket-pay .ticket-panel .input-field-class {
-  width: 47%;
-  display: inline-block;
-  margin-top: 0; }
-
-#ticket-pay .ticket-panel .input-field-class {
-  float: right; }
-
-#ticket-pay .ticket-panel .double-labels label {
-  display: inline-block; }
-
-#ticket-pay .ticket-panel .double-labels :nth-child(2) {
-  float: right;
-  margin-right: 11.6875rem; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   transition: all 1.0s; }
