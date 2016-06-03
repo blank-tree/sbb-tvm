@@ -1,7 +1,9 @@
 (function () {
 	'use strict';
 
-	// Routing
+	// Custom module for back animations
+	// Puts the class "back" on the ui-view with the class "grid-content"
+	// for animations with css.
 	var app = angular.module('custom', ['ngAnimate']);
 
 	app.controller('viewCtrl', function ($scope) {

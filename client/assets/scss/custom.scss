@@ -116,10 +116,11 @@ footer {
 }
 
 /* Schedule */
-#schedule {
+#schedule, #final {
   .labels {
 	// same height as the other pages; the labels are above the panels
 	margin: 0 0 rem-calc(10) 0;
+	padding: 0 rem-calc(40) 0 rem-calc(40);
   }
   .results {
 	// full width of the parent
@@ -140,7 +141,7 @@ footer {
 	  }
 
 	  // convert all elements in the result panel to flexblox to vertically align them
-	  .connection, .timetable, .duration, .change, .occupancy, .ticket {
+	  .connection, .timetable, .duration, .change, .occupancy, .ticket, .plattform {
 		display: flex;
 		align-items: center;
 	  }
@@ -194,6 +195,18 @@ footer {
 	div:nth-child(3) a {
 	  //margin: 0 rem-calc(40) 0 auto;
 	  margin: 0 0 0 auto;
+	}
+  }
+
+  .final-message {
+	margin: 0 auto rem-calc(15) auto;
+	text-align: center;
+	h1 {
+	  display: block;
+	  margin: 0;
+	  color: #fff;
+	  font-weight: bold;
+	  text-shadow: $text-shadow;
 	}
   }
 }

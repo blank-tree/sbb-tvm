@@ -5959,51 +5959,62 @@ footer {
   margin-top: 3.75rem; }
 
 /* Schedule */
-#schedule .labels {
-  margin: 0 0 0.625rem 0; }
+#schedule .labels, #final .labels {
+  margin: 0 0 0.625rem 0;
+  padding: 0 2.5rem 0 2.5rem; }
 
-#schedule .results {
+#schedule .results, #final .results {
   width: 100%; }
-  #schedule .results .result-panel {
+  #schedule .results .result-panel, #final .results .result-panel {
     height: 10.625rem;
     background: rgba(38, 39, 43, 0.5);
     margin: 0;
     padding: 0 2.5rem 0 2.5rem;
     margin-bottom: 1.875rem; }
-    #schedule .results .result-panel p {
+    #schedule .results .result-panel p, #final .results .result-panel p {
       font-size: 1.5rem;
       margin: 0; }
-    #schedule .results .result-panel .connection, #schedule .results .result-panel .timetable, #schedule .results .result-panel .duration, #schedule .results .result-panel .change, #schedule .results .result-panel .occupancy, #schedule .results .result-panel .ticket {
+    #schedule .results .result-panel .connection, #schedule .results .result-panel .timetable, #schedule .results .result-panel .duration, #schedule .results .result-panel .change, #schedule .results .result-panel .occupancy, #schedule .results .result-panel .ticket, #schedule .results .result-panel .plattform, #final .results .result-panel .connection, #final .results .result-panel .timetable, #final .results .result-panel .duration, #final .results .result-panel .change, #final .results .result-panel .occupancy, #final .results .result-panel .ticket, #final .results .result-panel .plattform {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-align: center;
           align-items: center; }
-    #schedule .results .result-panel .connection p {
+    #schedule .results .result-panel .connection p, #final .results .result-panel .connection p {
       font-size: 1.75rem; }
-    #schedule .results .result-panel .connection p.via {
+    #schedule .results .result-panel .connection p.via, #final .results .result-panel .connection p.via {
       font-size: 1.25rem;
       margin-top: -0.625rem; }
-    #schedule .results .result-panel .connection div p:first-child, #schedule .results .result-panel .timetable p:first-child {
+    #schedule .results .result-panel .connection div p:first-child, #schedule .results .result-panel .timetable p:first-child, #final .results .result-panel .connection div p:first-child, #final .results .result-panel .timetable p:first-child {
       margin-bottom: 0.625rem; }
-  #schedule .results .occupancy div p img {
+  #schedule .results .occupancy div p img, #final .results .occupancy div p img {
     margin-top: -0.25rem;
     margin-left: 0.3125rem;
     opacity: 0.2; }
-    #schedule .results .occupancy div p img.on {
+    #schedule .results .occupancy div p img.on, #final .results .occupancy div p img.on {
       opacity: 0.8; }
-  #schedule .results .ticket a {
+  #schedule .results .ticket a, #final .results .ticket a {
     margin: 0 0 0 auto;
     text-align: center; }
 
-#schedule .specify {
+#schedule .specify, #final .specify {
   width: 100%; }
-  #schedule .specify div {
+  #schedule .specify div, #final .specify div {
     display: -ms-flexbox;
     display: flex; }
-  #schedule .specify div:nth-child(2) a {
+  #schedule .specify div:nth-child(2) a, #final .specify div:nth-child(2) a {
     margin: 0 auto; }
-  #schedule .specify div:nth-child(3) a {
+  #schedule .specify div:nth-child(3) a, #final .specify div:nth-child(3) a {
     margin: 0 0 0 auto; }
+
+#schedule .final-message, #final .final-message {
+  margin: 0 auto 0.9375rem auto;
+  text-align: center; }
+  #schedule .final-message h1, #final .final-message h1 {
+    display: block;
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); }
 
 /* Tickettype */
 #ticket-type h4, #ticket-type h5, #ticket-class h4, #ticket-class h5, #ticket-amount h4, #ticket-amount h5, #ticket-pay h4, #ticket-pay h5 {
