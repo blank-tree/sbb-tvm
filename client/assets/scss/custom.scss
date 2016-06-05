@@ -107,10 +107,27 @@ footer {
 }
 
 /* Home */
-#home {
+#home, #search-to, #search-from {
   .main-panel div {
 	label, .text-center a {
 	  margin-top: rem-calc(60);
+	}
+  }
+}
+
+
+/* Search-From & Search-To */
+#search-from, #search-to {
+  .main-panel {
+	height: rem-calc(529);
+  }
+
+  .suggestion {
+	a {
+	  margin-top: rem-calc(1);
+	  margin-bottom: 0;
+	  width: 100%;
+	  text-align: left;
 	}
   }
 }

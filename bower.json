@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "foundation-apps": "~1.2.0",
-    "animate.css": "^3.5.1"
+    "animate.css": "^3.5.1",
+    "jquery": "^2.2.4"
   }
 }

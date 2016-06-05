@@ -1,0 +1,49 @@
+/**
+ * Custom Buttons for SBB-TVM
+ * @author: Fernando Obieta
+ * @date: 160605
+ * @version 0.1
+ */
+
+keyboard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: rem-calc(375);
+  background-color: $keyboard-bg;
+  z-index: 100;
+
+  div.first-row, div.second-row, div.third-row {
+	margin-bottom: rem-calc(30);
+	a {
+	  margin-right: rem-calc(30);
+	  margin-bottom: 0;
+	  font-weight: bold;
+	  color: black;
+	}
+  }
+
+  div.first-row {
+	margin-top: rem-calc(37);
+	margin-left: rem-calc(95);
+  }
+
+  div.second-row {
+	margin-left: rem-calc(120);
+  }
+
+  div.third-row {
+	margin-left: rem-calc(40);
+	.keyboard-confirm {
+	  width: rem-calc(180);
+	}
+	a.keyboard-back, a.keyboard-confirm {
+	  font-weight: normal;
+	  color: white;
+	}
+  }
+
+
+}
+

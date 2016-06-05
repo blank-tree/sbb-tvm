@@ -66,13 +66,13 @@
 
 /* Medium Buttons */
 // extend the standard foundation button with general settings for all standard sbb tvm buttons small
-@mixin sbb-button-small {
+@mixin sbb-button-medium {
   @extend %button;
 
   height: rem-calc(80);
   width: rem-calc(140);
 
-  margin-bottom: rem-calc(30);
+  //margin-bottom: rem-calc(30);
   margin-right: 0;
 
   // center the text vertically in the fixed size
@@ -81,8 +81,21 @@
   font-size: rem-calc(28);
 }
 
+.sbb-button-ant-medium {
+  @include sbb-button-medium;
+  @include button-style(
+		  $color: $body-font-color,
+		  $background-hover: $gradient-ant
+  );
+  background: $gradient-ant;
+  background: -moz-linear-gradient(180deg, #656565, #414141);
+  background: -webkit-linear-gradient(180deg, #656565, #414141);
+  background: -ms-linear-gradient(180deg, #656565, #414141);
+  box-shadow: $box-shadow;
+}
+
 .sbb-button-red-medium {
-  @include sbb-button-small;
+  @include sbb-button-medium;
   @include button-style(
 		  $color: $body-font-color,
 		  $background-hover: $gradient-red
@@ -96,7 +109,7 @@
 }
 
 .sbb-button-blue-medium {
-  @include sbb-button-small;
+  @include sbb-button-medium;
   @include button-style(
 		  $color: $body-font-color,
 		  $background-hover: $gradient-blue
@@ -109,7 +122,7 @@
 }
 
 .sbb-button-grey-medium {
-  @include sbb-button-small;
+  @include sbb-button-medium;
   @include button-style(
 		  $color: $body-font-color,
 		  $background-hover: $gradient-grey

@@ -921,7 +921,7 @@ a, [ui-sref], [zf-open], [zf-close], [zf-toggle] {
         margin-left: 0.8rem;
         float: none; }
 
-.button, .button-group > li > a, .button-group > li > label, .button-group > li > button, .sbb-button-red, .sbb-button-blue, .sbb-button-grey, .sbb-button-red-medium, .sbb-button-blue-medium, .sbb-button-grey-medium, .sbb-button-red-small, .sbb-button-blue-small, .sbb-button-grey-small {
+.button, .button-group > li > a, .button-group > li > label, .button-group > li > button, .sbb-button-red, .sbb-button-blue, .sbb-button-grey, .sbb-button-ant-medium, .sbb-button-red-medium, .sbb-button-blue-medium, .sbb-button-grey-medium, .sbb-button-red-small, .sbb-button-blue-small, .sbb-button-grey-small {
   display: inline-block;
   border: 0;
   text-align: center;
@@ -5955,8 +5955,18 @@ footer {
     font-size: 1.25rem; }
 
 /* Home */
-#home .main-panel div label, #home .main-panel div .text-center a {
+#home .main-panel div label, #home .main-panel div .text-center a, #search-to .main-panel div label, #search-to .main-panel div .text-center a, #search-from .main-panel div label, #search-from .main-panel div .text-center a {
   margin-top: 3.75rem; }
+
+/* Search-From & Search-To */
+#search-from .main-panel, #search-to .main-panel {
+  height: 33.0625rem; }
+
+#search-from .suggestion a, #search-to .suggestion a {
+  margin-top: 0.0625rem;
+  margin-bottom: 0;
+  width: 100%;
+  text-align: left; }
 
 /* Schedule */
 #schedule .labels, #final .labels {
@@ -6179,10 +6189,30 @@ footer {
       stroke: #fff; }
 
 /* Medium Buttons */
+.sbb-button-ant-medium {
+  height: 5rem;
+  width: 8.75rem;
+  margin-right: 0;
+  padding-top: 1.6875rem;
+  font-size: 1.75rem;
+  background: #EB0000;
+  color: #fff;
+  background: linear-gradient(180deg, #656565, #414141);
+  background: -ms-linear-gradient(180deg, #656565, #414141);
+  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  .sbb-button-ant-medium:hover, .sbb-button-ant-medium:focus {
+    background: linear-gradient(180deg, #656565, #414141);
+    color: #fff; }
+  .sbb-button-ant-medium .iconic * {
+    fill: #fff;
+    stroke: #fff; }
+    .sbb-button-ant-medium .iconic *.iconic-property-accent {
+      fill: #fff;
+      stroke: #fff; }
+
 .sbb-button-red-medium {
   height: 5rem;
   width: 8.75rem;
-  margin-bottom: 1.875rem;
   margin-right: 0;
   padding-top: 1.6875rem;
   font-size: 1.75rem;
@@ -6204,7 +6234,6 @@ footer {
 .sbb-button-blue-medium {
   height: 5rem;
   width: 8.75rem;
-  margin-bottom: 1.875rem;
   margin-right: 0;
   padding-top: 1.6875rem;
   font-size: 1.75rem;
@@ -6226,7 +6255,6 @@ footer {
 .sbb-button-grey-medium {
   height: 5rem;
   width: 8.75rem;
-  margin-bottom: 1.875rem;
   margin-right: 0;
   padding-top: 1.6875rem;
   font-size: 1.75rem;
@@ -6360,3 +6388,37 @@ footer {
     box-shadow: none; }
   .number-input-field a img {
     padding: 8px 0 0 1px; }
+
+/**
+ * Custom Buttons for SBB-TVM
+ * @author: Fernando Obieta
+ * @date: 160605
+ * @version 0.1
+ */
+keyboard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 23.4375rem;
+  background-color: #26272b;
+  z-index: 100; }
+  keyboard div.first-row, keyboard div.second-row, keyboard div.third-row {
+    margin-bottom: 1.875rem; }
+    keyboard div.first-row a, keyboard div.second-row a, keyboard div.third-row a {
+      margin-right: 1.875rem;
+      margin-bottom: 0;
+      font-weight: bold;
+      color: black; }
+  keyboard div.first-row {
+    margin-top: 2.3125rem;
+    margin-left: 5.9375rem; }
+  keyboard div.second-row {
+    margin-left: 7.5rem; }
+  keyboard div.third-row {
+    margin-left: 2.5rem; }
+    keyboard div.third-row .keyboard-confirm {
+      width: 11.25rem; }
+    keyboard div.third-row a.keyboard-back, keyboard div.third-row a.keyboard-confirm {
+      font-weight: normal;
+      color: white; }

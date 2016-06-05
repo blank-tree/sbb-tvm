@@ -5,12 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>SBB TVM</title>
 	<link href="./assets/css/app.css" rel="stylesheet" type="text/css">
+	<script src="./assets/js/jquery.js"></script>
 	<script src="./assets/js/foundation.js"></script>
 	<script src="./assets/js/templates.js"></script>
 	<script src="./assets/js/routes.js"></script>
 	<script src="./assets/js/app.js"></script>
 </head>
-<body>
+<body ng-controller="logicCtrl as logic">
 <div class="grid-frame vertical">
 	<header ng-include="'templates/parts/header.html'"></header>
 	<div ng-controller="viewCtrl">

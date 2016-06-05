@@ -1,0 +1,23 @@
+<svg id="v02" xmlns="http://www.w3.org/2000/svg" width="42" height="25" viewBox="0 0 84 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M2409,357h62v46h-62l-18-23Z" transform="translate(-2389 -355)"/>
+  <path class="cls-2" d="M2445.9,389.9a2,2,0,0,1-2.83,0l-16.97-16.97a2,2,0,0,1,2.83-2.829l16.97,16.971A2,2,0,0,1,2445.9,389.9Zm-19.8,0a2,2,0,0,1,0-2.828l16.97-16.971a2,2,0,0,1,2.83,2.829l-16.97,16.97A2,2,0,0,1,2426.1,389.9Z" transform="translate(-2389 -355)"/>
+</svg>

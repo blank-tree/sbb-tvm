@@ -111,6 +111,7 @@ $body-font-family: "SBB" ,"Helvetica Neue", Arial, sans-serif;
 // Application Colors
 $primary-color: #EB0000;
 $secondary-color: #2D327D;
+$ant-color: #4C4C4C;
 // $alert-color: #F04124;
 // $info-color: #A0D3E8;
 // $success-color: #43AC6A;
@@ -122,7 +123,9 @@ $secondary-color: #2D327D;
 $gradient-red: linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
 $gradient-blue: linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 106));
 $gradient-grey: linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+$gradient-ant: linear-gradient(180deg, #656565, #414141);
 $footer-bg: rgba(38,39,43,0.8);
+$keyboard-bg: rgb(38,39,43);
 $panel-bg: rgba(38,39,43,0.5);
 $text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 $box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4);

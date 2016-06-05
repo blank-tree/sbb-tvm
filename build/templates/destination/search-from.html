@@ -1,6 +1,21 @@
 
-<div class="grid-container">
-	<h1>Search-from</h1>
-	<p class="lead">This is version <strong>1.2 Eiger</strong>.</p>
-	<p><a ui-sref="home">Home</a></p>
+<div id="search-from" class="grid-block main">
+	<div class="grid-content medium-7 main-panel">
+		<div class="medium-10 medium-offset-1">
+
+			<label>von</label>
+			<div class="from input-field">
+				<span class="input-from"></span>
+				<a href="#" class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
+			</div>
+
+
+		</div>
+	</div>
+
+	<div class="grid-content medium-3 medium-offset-1">
+		<a class="sbb-button-blue" ng-repeat="place in logic.frequent">{{place}}</a>
+	</div>
 </div>
+
+<keyboard></keyboard>
