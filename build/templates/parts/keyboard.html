@@ -27,6 +27,7 @@
 <div class="third-row">
 	<a ui-sref="home" class="sbb-button-ant-medium keyboard-back">zurück</a>
 	<a class="sbb-button-grey-small">Y</a>
+	<!--<a class="sbb-button-grey-small" ng-click="onKey('X')">X</a>-->
 	<a class="sbb-button-grey-small">X</a>
 	<a class="sbb-button-grey-small">C</a>
 	<a class="sbb-button-grey-small">V</a>
@@ -34,5 +35,5 @@
 	<a class="sbb-button-grey-small">N</a>
 	<a class="sbb-button-grey-small">M</a>
 	<a class="sbb-button-grey-small keyboard-space"><img src="assets/img/space.svg"></a>
-	<a ui-sref="home" class="sbb-button-ant-medium keyboard-confirm" ng-click="keyboard.fillInput()">bestätigen</a>
+	<a class="sbb-button-ant-medium keyboard-confirm" ng-click="enterPressed()">bestätigen</a>
 </div>
