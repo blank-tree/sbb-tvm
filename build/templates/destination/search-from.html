@@ -5,17 +5,22 @@
 
 			<label>von</label>
 			<div class="from input-field">
-				<span class="input-from"></span>
+				<span class="input-from">{{logic.mainFrom}}</span>
 				<a href="#" class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
 			</div>
-
+			<div class="suggestion">
+				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'from')">Haselistan</a>
+				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'from')">Haselistan</a>
+				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'from')">Haselistan</a>
+				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'from')">Haselistan</a>
+			</div>
 
 		</div>
 	</div>
 
 	<div class="grid-content medium-3 medium-offset-1">
-		<a class="sbb-button-blue" ng-repeat="place in frequent">{{place}}</a>
+		<a class="sbb-button-blue" ng-repeat="place in logic.frequent" ng-click="locationShortcut(place, 'from')">{{place}}</a>
 	</div>
 </div>
 
-<keyboard></keyboard>
+<keyboard output-target="logic.mainFrom" on-submit="onKeyboardSubmit"></keyboard>

@@ -8,7 +8,7 @@ url: /
 		<div class="medium-10 medium-offset-1">
 			<label>von</label>
 			<div class="from input-field" ui-sref="search-from">
-				<span class="input-to">Zürich HB</span>
+				<span class="input-from">{{logic.mainFrom}}</span>
 				<a href="#" class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
@@ -16,13 +16,13 @@ url: /
 
 			<label>nach</label>
 			<div class="to input-field" ui-sref="search-to">
-				<span class="input-from">{{logic.mainTo}}</span>
+				<span class="input-to">{{logic.mainTo}}</span>
 				<a href="#" class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
 
 			<div class="text-center">
-				<a ui-sref="schedule" class="sbb-button-red">Verbindungen anzeigen</a>
+				<a ng-click="logic.showSchedule()" class="sbb-button-red" ng-class="{disabled: !logic.mainTo || !logic.mainFrom}">Verbindungen anzeigen</a>
 			</div>
 
 		</div>

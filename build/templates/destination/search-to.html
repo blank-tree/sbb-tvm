@@ -9,17 +9,17 @@
 				<a href="#" class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
 			</div>
 			<div class="suggestion">
-				<a class="sbb-button-red">Haselistan</a>
-				<a class="sbb-button-red">Haselistan</a>
-				<a class="sbb-button-red">Haselistan</a>
-				<a class="sbb-button-red">Haselistan</a>
+				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'to')">Haselistan</a>
+				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'to')">Haselistan</a>
+				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'to')">Haselistan</a>
+				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'to')">Haselistan</a>
 			</div>
 
 		</div>
 	</div>
 
 	<div class="grid-content medium-3 medium-offset-1">
-		<a class="sbb-button-blue" ng-repeat="place in frequent">{{place}}</a>
+		<a class="sbb-button-blue" ng-repeat="place in logic.frequent" ng-click="locationShortcut(place, 'to')">{{place}}</a>
 	</div>
 </div>
 

@@ -25,39 +25,54 @@
 
 
 	});
-
+	
+	// All Variables and logic inside the app
 	var app = angular.module('logic', ['ngAnimate']);
 
 	app.controller('logicCtrl', function ($scope, $state) {
 
-		$scope.location = 'Zürich HB';
-		$scope.frequent = ['Bern', 'Basel SBB', 'St. Gallen', 'Genf'];
+		this.location = 'Zürich HB';
+		this.frequent = ['Bern', 'Basel SBB', 'St. Gallen', 'Genf'];
 
 
-		$scope.language = 0; // 0 = german; 1 = english; 2 = french; 3 = italian
+		this.language = 0; // 0 = german; 1 = english; 2 = french; 3 = italian
 
-		$scope.mainFrom = '';
-		$scope.mainTo = '';
-		$scope.mainTime = '';
-		$scope.mainRoute = '';
-		$scope.mainType = '';
-		$scope.mainClass = false; // false = 2. Klasse; true = 1. Klasse
-		$scope.mainAmount = {
+		this.mainFrom = 'Zürich HB';
+		this.mainTo = '';
+		this.mainTime = '';
+		this.mainVia = '';
+		this.mainType = '';
+		this.mainClass = false; // false = 2. Klasse; true = 1. Klasse
+		this.mainAmount = {
 			'full': 0,
 			'half': 0,
 			'dog': 0,
 			'bike': 0
 		};
 
+		// Bind the parent element for use in the following functions. Damn scope...
+		var logic = this;
+
 		$scope.keyboardOutput = '';
 
 		$scope.onKeyboardSubmit = function () {
-			console.log('$scope.mainTo', $scope.mainTo);
-			console.log(arguments);
 			$state.go('home');
 		};
 
-
+		$scope.locationShortcut = function (location, direction) {
+			if (direction === 'to') {
+				logic.mainTo = location;
+			} else {
+				logic.mainFrom = location;
+			}
+			$state.go('home');
+		};
+		
+		this.showSchedule = function () {
+			if (logic.mainTo && logic.mainFrom) {
+				$state.go('schedule');
+			}
+		}
 	});
 
 	var keyboard = angular.module('keyboard', ['ngAnimate', 'viewController']);
@@ -68,20 +83,25 @@
 			restrict: 'E',
 			templateUrl: 'templates/parts/keyboard.html',
 			scope: {
-				// onEnter: '=',
 				outputTarget: '=',
 				onSubmit: '='
 			},
-			controller: function ($scope) {
+			controller: function ($scope, $state) {
 
-				$scope.outputTarget = $scope.outputTarget || '';
+				var previousInput = $scope.outputTarget;
+				$scope.outputTarget = '';
 
-
+				// $scope.outputTarget = $scope.outputTarget || '';
 
 				$scope.enterPressed = function () {
 					if (typeof $scope.onSubmit === 'function') {
 						$scope.onSubmit($scope.outputTarget);
 					}
+				};
+				
+				$scope.backPressed = function () {
+					$scope.outputTarget = previousInput;
+					$state.go('home');
 				};
 
 				$scope.type = function (key) {
