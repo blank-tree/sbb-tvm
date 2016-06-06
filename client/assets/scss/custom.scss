@@ -83,6 +83,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  z-index: 0;
   div.footer-buttons {
 	margin-left: rem-calc(0);
 	margin-right: rem-calc(0);
