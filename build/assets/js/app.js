@@ -28,7 +28,7 @@
 
 	var app = angular.module('logic', ['ngAnimate']);
 
-	app.controller('logicCtrl', function ($scope) {
+	app.controller('logicCtrl', function ($scope, $state) {
 
 		$scope.location = 'Zürich HB';
 		$scope.frequent = ['Bern', 'Basel SBB', 'St. Gallen', 'Genf'];
@@ -48,47 +48,14 @@
 			'dog': 0,
 			'bike': 0
 		};
-		
+
 		$scope.keyboardOutput = '';
 
-		$scope.onKeyboardEnter = function (target) {
-
-			$scope.keyboardOutput = target;
-			
-			var $targetInput = target === 'to' ? $('div.to.input-field span.input-to') : $('div.from.input-field span.input-from');
-			var $keys = $('keyboard div a.sbb-button-grey-small:not(.keyboard-space)');
-			
-			// console.log('hello', arguments);
-
-			$keys.unbind('click.keyPress').bind('click.keyPress', function () {
-				$targetInput.append($(this).text());
-			});
-
-			$('keyboard div a.keyboard-space').unbind('click.keyPress').bind('click.keyPress', function () {
-				$targetInput.append(' ');
-			});
-
-			// $('keyboard div a.keyboard-space').click(function() {
-			// 	angular.$apply(function () {
-			// 		$targetInput.append(' ');
-			// 	});
-			// });
-
-			$('keyboard div a.keyboard-delete').unbind('click.keyPress').bind('click.keyPress', function () {
-				$targetInput.text($targetInput.text().slice(0, -1));
-			});
-
-			$scope.fill = function() {
-				console.log($scope.mainTo);
-				console.log($scope.keyboardOutput);
-				if ($scope.keyboardOutput === 'to') {
-					$scope.mainTo = $('div.to.input-field span.input-to').text();
-				} else {
-					$scope.mainFrom = $('div.from.input-field span.input-from').text();
-				}
-			}
+		$scope.onKeyboardSubmit = function () {
+			console.log('$scope.mainTo', $scope.mainTo);
+			console.log(arguments);
+			$state.go('home');
 		};
-
 
 
 	});
@@ -101,61 +68,33 @@
 			restrict: 'E',
 			templateUrl: 'templates/parts/keyboard.html',
 			scope: {
-				onEnter: '=',
+				// onEnter: '=',
 				outputTarget: '=',
 				onSubmit: '='
 			},
 			controller: function ($scope) {
 
+				$scope.outputTarget = $scope.outputTarget || '';
+
+
+
 				$scope.enterPressed = function () {
-					$scope.onSubmit($scope.keyboardInput);	
+					if (typeof $scope.onSubmit === 'function') {
+						$scope.onSubmit($scope.outputTarget);
+					}
 				};
 
-				// $scope.onEnter = function () {
-				// 	$scope.doEnter($scope.)
-				// };
+				$scope.type = function (key) {
+					if (key.length) {
+						$scope.outputTarget += key;
+					}
+				};
 
-				// $scope.text = "";
-				//
-				// $scope.doEnter = function () {
-				// 	$scope.onEnter($scope.text);
-				// };
-				//
-				// console.log($scope);
-				//
-				// var keyboardOutput = $scope['current'];
-				// var $keys = $('keyboard div a.sbb-button-grey-small:not(.keyboard-space)');
-				// var $targetInput = keyboardOutput == 'search-to' ? $('div.to.input-field span.input-to') : $('div.from.input-field span.input-from');
-				//
-				// $keys.click(function () {
-				// 	$targetInput.append($(this).text());
-				// });
-				//
-				// $('keyboard div a.keyboard-space').click(function () {
-				// 	$targetInput.append(' ');
-				// });
-				//
-				// // $('keyboard div a.keyboard-space').click(function() {
-				// // 	angular.$apply(function () {
-				// // 		$targetInput.append(' ');
-				// // 	});
-				// // });
-				//
-				// $('keyboard div a.keyboard-delete').click(function () {
-				// 	$targetInput.text($targetInput.text().slice(0, -1));
-				// });
-				//
-				// this.fillInput = function () {
-				//
-				// 	if ($scope['current'] == 'search-to') {
-				// 		logic.mainTo = $targetInput.text();
-				// 		// console.log(logic.MainTo);
-				// 	} else {
-				// 		logic.mainFrom = $targetInput.text();
-				// 		// console.log(logic.MainFrom);
-				// 	}
-				//
-				// };
+				$scope.backspace = function () {
+					if ($scope.outputTarget) {
+						$scope.outputTarget = $scope.outputTarget.slice(0, -1);
+					}
+				};
 
 			},
 			controllerAs: 'keyboard'
@@ -179,9 +118,9 @@
 		'viewController',
 		'logic',
 		'keyboard'
-	])
-		.config(config)
-		.run(run)
+		])
+	.config(config)
+	.run(run)
 	;
 
 	config.$inject = ['$urlRouterProvider', '$locationProvider'];

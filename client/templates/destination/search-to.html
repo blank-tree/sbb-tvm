@@ -9,7 +9,7 @@ url: /search-to
 
 			<label>nach</label>
 			<div class="to input-field">
-				<span class="input-to"></span>
+				<span class="input-to">{{logic.mainTo}}</span>
 				<a href="#" class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
 			</div>
 			<div class="suggestion">
@@ -27,4 +27,4 @@ url: /search-to
 	</div>
 </div>
 
-<keyboard on-enter="onKeyboardEnter('to')" output-target="" on-submit="onKeyboardSubmit"></keyboard>
+<keyboard output-target="logic.mainTo" on-submit="onKeyboardSubmit"></keyboard>

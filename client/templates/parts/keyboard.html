@@ -1,39 +1,39 @@
 <div class="first-row">
-	<a class="sbb-button-grey-small">Q</a>
-	<a class="sbb-button-grey-small">W</a>
-	<a class="sbb-button-grey-small">E</a>
-	<a class="sbb-button-grey-small">R</a>
-	<a class="sbb-button-grey-small">T</a>
-	<a class="sbb-button-grey-small">Z</a>
-	<a class="sbb-button-grey-small">U</a>
-	<a class="sbb-button-grey-small">I</a>
-	<a class="sbb-button-grey-small">O</a>
-	<a class="sbb-button-grey-small">P</a>
+	<a class="sbb-button-grey-small" ng-click="type('Q')">Q</a>
+	<a class="sbb-button-grey-small" ng-click="type('W')">W</a>
+	<a class="sbb-button-grey-small" ng-click="type('E')">E</a>
+	<a class="sbb-button-grey-small" ng-click="type('R')">R</a>
+	<a class="sbb-button-grey-small" ng-click="type('T')">T</a>
+	<a class="sbb-button-grey-small" ng-click="type('Z')">Z</a>
+	<a class="sbb-button-grey-small" ng-click="type('U')">U</a>
+	<a class="sbb-button-grey-small" ng-click="type('I')">I</a>
+	<a class="sbb-button-grey-small" ng-click="type('O')">O</a>
+	<a class="sbb-button-grey-small" ng-click="type('P')">P</a>
 </div>
 
 <div class="second-row">
-	<a class="sbb-button-grey-small">A</a>
-	<a class="sbb-button-grey-small">S</a>
-	<a class="sbb-button-grey-small">D</a>
-	<a class="sbb-button-grey-small">F</a>
-	<a class="sbb-button-grey-small">G</a>
-	<a class="sbb-button-grey-small">H</a>
-	<a class="sbb-button-grey-small">J</a>
-	<a class="sbb-button-grey-small">K</a>
-	<a class="sbb-button-grey-small">L</a>
-	<a class="sbb-button-ant-medium keyboard-delete"><img src="assets/img/del.svg"></a>
+	<a class="sbb-button-grey-small" ng-click="type('A')">A</a>
+	<a class="sbb-button-grey-small" ng-click="type('S')">S</a>
+	<a class="sbb-button-grey-small" ng-click="type('D')">D</a>
+	<a class="sbb-button-grey-small" ng-click="type('F')">F</a>
+	<a class="sbb-button-grey-small" ng-click="type('G')">G</a>
+	<a class="sbb-button-grey-small" ng-click="type('H')">H</a>
+	<a class="sbb-button-grey-small" ng-click="type('J')">J</a>
+	<a class="sbb-button-grey-small" ng-click="type('K')">K</a>
+	<a class="sbb-button-grey-small" ng-click="type('L')">L</a>
+	<a class="sbb-button-ant-medium keyboard-delete" ng-click="backspace()"><img src="assets/img/del.svg"></a>
 </div>
 
 <div class="third-row">
 	<a ui-sref="home" class="sbb-button-ant-medium keyboard-back">zurück</a>
-	<a class="sbb-button-grey-small">Y</a>
+	<a class="sbb-button-grey-small" ng-click="type('Y')">Y</a>
 	<!--<a class="sbb-button-grey-small" ng-click="onKey('X')">X</a>-->
-	<a class="sbb-button-grey-small">X</a>
-	<a class="sbb-button-grey-small">C</a>
-	<a class="sbb-button-grey-small">V</a>
-	<a class="sbb-button-grey-small">B</a>
-	<a class="sbb-button-grey-small">N</a>
-	<a class="sbb-button-grey-small">M</a>
-	<a class="sbb-button-grey-small keyboard-space"><img src="assets/img/space.svg"></a>
+	<a class="sbb-button-grey-small" ng-click="type('X')">X</a>
+	<a class="sbb-button-grey-small" ng-click="type('C')">C</a>
+	<a class="sbb-button-grey-small" ng-click="type('V')">V</a>
+	<a class="sbb-button-grey-small" ng-click="type('B')">B</a>
+	<a class="sbb-button-grey-small" ng-click="type('N')">N</a>
+	<a class="sbb-button-grey-small" ng-click="type('M')">M</a>
+	<a class="sbb-button-grey-small keyboard-space" ng-click="type(' ')"><img src="assets/img/space.svg"></a>
 	<a class="sbb-button-ant-medium keyboard-confirm" ng-click="enterPressed()">bestätigen</a>
 </div>
