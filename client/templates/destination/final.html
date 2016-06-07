@@ -8,7 +8,7 @@ url: /final
 		<h1>Bitte entnehmen Sie Ihr Ticket.</h1>
 	</div>
 	<div class="labels grid-block">
-		<label class="medium-6">Nächste Verbindungen vom Donnerstag, 18. Dezember 2016</label>
+		<label class="medium-6">Nächste Verbindungen vom {{logic.mainTime | date: 'EEEE, d. MMMM y'}}</label>
 		<label class="medium-1">Zeit</label>
 		<label class="medium-1">Dauer</label>
 		<label class="medium-1">Umst.</label>
@@ -16,25 +16,25 @@ url: /final
 		<label class="medium-1 medium-offset-1">Gleis</label>
 	</div>
 	<div class="results">
-		<div class="result-panel grid-block">
+		<div class="result-panel grid-block" ng-repeat="connection in logic.connections">
 			<div class="connection medium-6">
 				<div>
-					<p>Zürich HB</p>
-					<p class="via">via Olten - Aarau</p>
-					<p>Bern</p>
+					<p>{{connection.from.station.name}}</p>
+					<p class="via" ng-show="connection.transfers != 0">via {{connection.viaString}} </span></p>
+					<p>{{connection.to.station.name}}</p>
 				</div>
 			</div>
 			<div class="timetable medium-1">
 				<div>
-					<p>16:32</p>
-					<p>17:09</p>
+					<p>{{connection.from.departureTimestamp * 1000 | date:'HH:mm'}}</p>
+					<p>{{connection.to.arrivalTimestamp * 1000 | date:'HH:mm'}}</p>
 				</div>
 			</div>
 			<div class="duration medium-1">
-				<p>0:37</p>
+				<p>{{connection.duration}}</p>
 			</div>
-			<div class="change  medium-1">
-				<p>3</p>
+			<div class="change medium-1">
+				<p>{{connection.transfers}}</p>
 			</div>
 			<div class="occupancy medium-1">
 				<div>
@@ -42,66 +42,8 @@ url: /final
 					<p>2. <img class="on" src="assets/img/dude.svg"><img src="assets/img/dude.svg"><img src="assets/img/dude.svg"></p>
 				</div>
 			</div>
-			<div class="plattform medium-1 medium-offset-1">
-				<p>4</p>
-			</div>
-		</div>
-		<div class="result-panel grid-block">
-			<div class="connection medium-6">
-				<div>
-					<p>Zürich HB</p>
-					<p>Bern</p>
-				</div>
-			</div>
-			<div class="timetable medium-1">
-				<div>
-					<p>16:32</p>
-					<p>17:09</p>
-				</div>
-			</div>
-			<div class="duration medium-1">
-				<p>0:37</p>
-			</div>
-			<div class="change  medium-1">
-				<p>3</p>
-			</div>
-			<div class="occupancy medium-1">
-				<div>
-					<p>1. <img class="on" src="assets/img/dude.svg"><img src="assets/img/dude.svg"><img src="assets/img/dude.svg"></p>
-					<p>2. <img class="on" src="assets/img/dude.svg"><img src="assets/img/dude.svg"><img src="assets/img/dude.svg"></p>
-				</div>
-			</div>
-			<div class="plattform medium-1 medium-offset-1">
-				<p>12 AB</p>
-			</div>
-		</div>
-		<div class="result-panel grid-block">
-			<div class="connection medium-6">
-				<div>
-					<p>Zürich HB</p>
-					<p>Bern</p>
-				</div>
-			</div>
-			<div class="timetable medium-1">
-				<div>
-					<p>16:32</p>
-					<p>17:09</p>
-				</div>
-			</div>
-			<div class="duration medium-1">
-				<p>0:37</p>
-			</div>
-			<div class="change  medium-1">
-				<p>3</p>
-			</div>
-			<div class="occupancy medium-1">
-				<div>
-					<p>1. <img class="on" src="assets/img/dude.svg"><img src="assets/img/dude.svg"><img src="assets/img/dude.svg"></p>
-					<p>2. <img class="on" src="assets/img/dude.svg"><img src="assets/img/dude.svg"><img src="assets/img/dude.svg"></p>
-				</div>
-			</div>
-			<div class="plattform medium-1 medium-offset-1">
-				<p>12 AB</p>
+			<div class="ticket medium-1 medium-offset-1	">
+				<p>{{connection.from.platform}}</p>
 			</div>
 		</div>
 	</div>

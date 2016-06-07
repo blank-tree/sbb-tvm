@@ -65,6 +65,7 @@
 
 			if (statusMainVia) {
 				if (next === 'home') {
+					logic.connections = '';
 					logic.getConnections();
 					next = 'schedule';
 				} else {
@@ -95,7 +96,6 @@
 		$scope.keyboardOutput = '';
 
 		$scope.onKeyboardSubmit = function () {
-			// $state.go('home');
 			logic.mainStateHandler('home');
 		};
 
@@ -105,7 +105,6 @@
 			} else {
 				logic.mainFrom = location;
 			}
-			// $state.go('home');
 			logic.mainStateHandler('home');
 		};
 
@@ -118,6 +117,7 @@
 		this.showSchedule = function () {
 			if (logic.mainTo && logic.mainFrom) {
 				logic.mainTime = logic.time;
+				logic.connections = '';
 				logic.getConnections();
 				$state.go('schedule');
 			}
@@ -163,21 +163,16 @@
 		// Ticket options
 		this.chooseTicketType = function (ticketType) {
 			logic.mainType = ticketType;
-			// $state.go('ticket-class');
 			logic.mainStateHandler('ticket-class')
 		};
 
 		this.chooseTicketClass = function (ticketClass) {
 			logic.mainClass = ticketClass;
-			// $state.go('ticket-amount');
 			logic.mainStateHandler('ticket-amount');
 		};
 
 		this.chooseVia = function (ticketVia) {
 			logic.mainVia = ticketVia;
-			setTimeout(function () {
-				logic.connections = ''
-			}, 1000);
 			logic.mainStateHandler('ticket-type');
 		};
 		
@@ -195,7 +190,6 @@
 		};
 
 		this.amountDecrease = function (target) {
-			// logic.mainAmount[target] = logic.mainAmount[target] > 0 ? logic.mainAmount[target] - 1 : 0;
 			logic.mainAmount[target] = Math.max(logic.mainAmount[target] -1, 0)
 		};
 
