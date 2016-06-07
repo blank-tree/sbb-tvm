@@ -1,3 +1,4 @@
 <img src="assets/img/SBB_NEG_2F_RGB_100.png">
-<p class="time">16:25</p>
-<p class="date">Donnerstag, 18. Dezember 2016</p>
+<p class="time">{{getTime() | date: 'HH:mm:ss'}}</p>
+<!--<p class="date">Donnerstag, 18. Dezember 2016</p>-->
+<p class="date">{{logic.date | date: 'EEEE, d. MMMM y'}}</p>

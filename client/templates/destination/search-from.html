@@ -13,10 +13,7 @@ url: /search-from
 				<a href="#" class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
 			</div>
 			<div class="suggestion">
-				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'from')">Haselistan</a>
-				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'from')">Haselistan</a>
-				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'from')">Haselistan</a>
-				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'from')">Haselistan</a>
+				<a class="sbb-button-red" ng-repeat="station in logic.suggestions | limitTo: 4" ng-click="locationShortcut(station.name, 'from')">{{station.name}}</a>
 			</div>
 
 		</div>
@@ -25,6 +22,7 @@ url: /search-from
 	<div class="grid-content medium-3 medium-offset-1">
 		<a class="sbb-button-blue" ng-repeat="place in logic.frequent" ng-click="locationShortcut(place, 'from')">{{place}}</a>
 	</div>
+
 </div>
 
-<keyboard output-target="logic.mainFrom" on-submit="onKeyboardSubmit"></keyboard>
+<keyboard output-target="logic.mainFrom" on-submit="onKeyboardSubmit" on-refresh="onKeypressRefresh" destination="from"></keyboard>

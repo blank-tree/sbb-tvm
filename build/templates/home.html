@@ -3,7 +3,7 @@
 	<div class="grid-content medium-7 main-panel">
 		<div class="medium-10 medium-offset-1">
 			<label>von</label>
-			<div class="from input-field" ui-sref="search-from">
+			<div class="from input-field" ui-sref="search-from" ng-click="logic.emptySuggestions()">
 				<span class="input-from">{{logic.mainFrom}}</span>
 				<a href="#" class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
 			</div>
@@ -11,7 +11,7 @@
 
 
 			<label>nach</label>
-			<div class="to input-field" ui-sref="search-to">
+			<div class="to input-field" ui-sref="search-to" ng-click="logic.emptySuggestions()">
 				<span class="input-to">{{logic.mainTo}}</span>
 				<a href="#" class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
 			</div>

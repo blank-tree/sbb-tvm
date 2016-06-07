@@ -113,6 +113,16 @@ gulp.task('copy:jquery', function(cb) {
 	cb();
 });
 
+// Gulp Task to copy angular-i18n to the assets js folder in build
+gulp.task('copy:i18n', function(cb) {
+	gulp.src('bower_components/angular-i18n/angular-locale_de-ch.js')
+	// .pipe($.uglify())
+		.pipe(gulp.dest('./build/assets/js'))
+	;
+
+	cb();
+});
+
 // Compiles Sass
 gulp.task('sass', function () {
 	var minifyCss = $.if(isProduction, $.minifyCss());
@@ -175,7 +185,7 @@ gulp.task('server', ['build'], function () {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function (cb) {
-	sequence('clean', ['copy', 'copy:foundation', 'copy:jquery', 'sass', 'uglify'], 'copy:templates', cb);
+	sequence('clean', ['copy', 'copy:foundation', 'copy:jquery', 'copy:i18n', 'sass', 'uglify'], 'copy:templates', cb);
 });
 
 // Default task: builds your app, starts a server, and recompiles assets when they change

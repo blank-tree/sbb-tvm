@@ -9,10 +9,7 @@
 				<a href="#" class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
 			</div>
 			<div class="suggestion">
-				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'to')">Haselistan</a>
-				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'to')">Haselistan</a>
-				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'to')">Haselistan</a>
-				<a class="sbb-button-red" ng-click="locationShortcut('Haselistan', 'to')">Haselistan</a>
+				<a class="sbb-button-red" ng-repeat="station in logic.suggestions | limitTo: 4" ng-click="locationShortcut(station.name, 'to')">{{station.name}}</a>
 			</div>
 
 		</div>
@@ -23,4 +20,4 @@
 	</div>
 </div>
 
-<keyboard output-target="logic.mainTo" on-submit="onKeyboardSubmit"></keyboard>
+<keyboard output-target="logic.mainTo" on-submit="onKeyboardSubmit" on-refresh="onKeypressRefresh" destination="to"></keyboard>
