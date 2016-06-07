@@ -6,7 +6,53 @@
 		<h1>language</h1>
 	</div>
 	<div ng-show="popupState == 'date'">
-		<h1>date</h1>
+		<div class="datepicker">
+			<h1>Juni</h1>
+			<div class="dateRow">
+				<a class="sbb-button-grey-small disabled">30</a>
+				<a class="sbb-button-grey-small disabled">31</a>
+				<a ng-click="chooseDate('1')" class="sbb-button-grey-small">1</a>
+				<a ng-click="chooseDate('2')" class="sbb-button-grey-small">2</a>
+				<a ng-click="chooseDate('3')" class="sbb-button-grey-small">3</a>
+				<a ng-click="chooseDate('4')" class="sbb-button-grey-small">4</a>
+				<a ng-click="chooseDate('5')" class="sbb-button-grey-small">5</a>
+			</div>
+			<div class="dateRow">
+				<a ng-click="chooseDate('6')" class="sbb-button-grey-small">6</a>
+				<a ng-click="chooseDate('7')" class="sbb-button-grey-small">7</a>
+				<a ng-click="chooseDate('8')" class="sbb-button-grey-small">8</a>
+				<a ng-click="chooseDate('9')" class="sbb-button-grey-small">9</a>
+				<a ng-click="chooseDate('10')" class="sbb-button-grey-small">10</a>
+				<a ng-click="chooseDate('11')" class="sbb-button-grey-small">11</a>
+				<a ng-click="chooseDate('12')" class="sbb-button-grey-small">12</a>
+			</div>
+			<div class="dateRow">
+				<a ng-click="chooseDate('13')" class="sbb-button-grey-small">13</a>
+				<a ng-click="chooseDate('14')" class="sbb-button-grey-small">14</a>
+				<a ng-click="chooseDate('15')" class="sbb-button-grey-small">15</a>
+				<a ng-click="chooseDate('16')" class="sbb-button-grey-small">16</a>
+				<a ng-click="chooseDate('17')" class="sbb-button-grey-small">17</a>
+				<a ng-click="chooseDate('18')" class="sbb-button-grey-small">18</a>
+				<a ng-click="chooseDate('19')" class="sbb-button-grey-small">19</a>
+			</div>
+			<div class="dateRow">
+				<a ng-click="chooseDate('20')" class="sbb-button-grey-small">20</a>
+				<a ng-click="chooseDate('21')" class="sbb-button-grey-small">21</a>
+				<a ng-click="chooseDate('22')" class="sbb-button-grey-small">22</a>
+				<a ng-click="chooseDate('23')" class="sbb-button-grey-small">23</a>
+				<a ng-click="chooseDate('24')" class="sbb-button-grey-small">24</a>
+				<a ng-click="chooseDate('25')" class="sbb-button-grey-small">25</a>
+				<a ng-click="chooseDate('26')" class="sbb-button-grey-small">26</a>
+			</div>
+			<div class="dateRow">
+				<a ng-click="chooseDate('27')" class="sbb-button-grey-small">27</a>
+				<a ng-click="chooseDate('28')" class="sbb-button-grey-small">28</a>
+				<a ng-click="chooseDate('29')" class="sbb-button-grey-small">29</a>
+				<a ng-click="chooseDate('30')" class="sbb-button-grey-small">30</a>
+				<a class="sbb-button-grey-small disabled">1</a>
+				<a class="sbb-button-grey-small disabled">2</a>
+				<a class="sbb-button-grey-small disabled">3</a>
+			</div>
+		</div>
 	</div>
-	<pre>{{popupState}}</pre>
 </div>

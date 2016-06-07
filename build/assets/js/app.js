@@ -56,12 +56,19 @@
 		this.popup = false;
 		this.popupState = '';
 
+
 		this.connections = '';
 
 		this.suggestions = '';
 
 		// Bind the parent element for use in the following functions. Damn scope...
 		var logic = this;
+
+		$scope.setNewTime = function (newTimeToSet) {
+			logic.mainTime = newTimeToSet;
+			logic.popup = false;
+			logic.getConnections();
+		};
 
 		this.popupToggle = function (newPopupState) {
 			// logic.popup = true;
@@ -70,6 +77,10 @@
 		};
 
 		this.popupHide = function () {
+			logic.popup = false;
+		};
+
+		$scope.popupHide = function () {
 			logic.popup = false;
 		};
 
@@ -300,15 +311,22 @@
 			restrict: 'E',
 			templateUrl: 'templates/parts/popup.html',
 			scope: {
-				popupState: '='
+				popupState: '=',
+				setNewTime: '='
 				// onSubmit: '=',
 				// onRefresh: '=',
 				// destination: '@'
 			},
 			controller: function ($scope, $state) {
 
+				$scope.chooseDate = function (newDayToSet) {
 
-
+					var currentDate = new Date();
+					
+					var newTimeToSet = moment([2016, 5, newDayToSet, currentDate.getHours(), currentDate.getMinutes(), 0, 0]).unix() * 1000;
+					// var newTimeToSet = moment([2016, 5, newDayToSet, 19, 0, 0, 0]).unix() * 1000;
+					$scope.setNewTime(newTimeToSet);
+				};
 			},
 			controllerAs: 'popup'
 		};

@@ -10,6 +10,7 @@
 	<script src="./assets/js/templates.js"></script>
 	<script src="./assets/js/routes.js"></script>
 	<script src="./assets/js/angular-locale_de-ch.js"></script>
+	<script src="./assets/js/moment.js"></script>
 	<script src="./assets/js/app.js"></script>
 </head>
 <body ng-controller="logicCtrl as logic">
@@ -19,7 +20,7 @@
 		<div ui-view class="grid-content" ng-class="{back: back}"></div>
 	</div>
 	<footer ng-include="'templates/parts/footer.html'"></footer>
-	<popup ng-show="logic.popup" popup-state="logic.popupState"></popup>
+	<popup ng-show="logic.popup" popup-state="logic.popupState" new-time-to-set="newTimeToSet" set-new-time="setNewTime"></popup>
 </div>
 </body>
 </html>

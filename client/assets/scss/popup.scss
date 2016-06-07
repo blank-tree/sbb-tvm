@@ -14,5 +14,14 @@ popup {
 	height: rem-calc(660);
 	background-color: white;
 	z-index: 1000;
+	.datepicker, .time-row {
+	  margin: rem-calc(60) auto 0 auto;
+	  text-align: center;
+	  a {
+		margin-right: rem-calc(30);
+		margin-bottom: rem-calc(30);
+	  }
+	}
+
   }
 }

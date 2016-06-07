@@ -6457,3 +6457,9 @@ popup {
     height: 41.25rem;
     background-color: white;
     z-index: 1000; }
+    popup .popup-content .datepicker, popup .popup-content .time-row {
+      margin: 3.75rem auto 0 auto;
+      text-align: center; }
+      popup .popup-content .datepicker a, popup .popup-content .time-row a {
+        margin-right: 1.875rem;
+        margin-bottom: 1.875rem; }
