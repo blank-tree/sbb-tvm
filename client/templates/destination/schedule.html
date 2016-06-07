@@ -5,7 +5,7 @@ url: /schedule
 
 <div id="schedule" class="grid-block main">
 	<div class="labels grid-block">
-		<label class="medium-6">Verbindung vom Donnerstag, 18. Dezember 2016</label>
+		<label class="medium-6">Verbindung vom {{logic.mainTime | date: 'EEEE, d. MMMM y'}}</label>
 		<label class="medium-1">Zeit</label>
 		<label class="medium-1">Dauer</label>
 		<label class="medium-1">Umst.</label>
@@ -17,7 +17,6 @@ url: /schedule
 			<div class="connection medium-6">
 				<div>
 					<p>{{connection.from.station.name}}</p>
-					<!--<p class="via" ng-show="connection.transfers != 0">via <span ng-repeat="section in connection.sections">{{section.departure.station.name}} </span></p>-->
 					<p class="via" ng-show="connection.transfers != 0">via {{connection.viaString}} </span></p>
 					<p>{{connection.to.station.name}}</p>
 				</div>

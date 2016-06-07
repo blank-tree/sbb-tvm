@@ -29,12 +29,12 @@
 	// All Variables and logic inside the app
 	var app = angular.module('logic', ['ngAnimate', 'ngLocale']);
 
-	app.controller('logicCtrl', function ($scope, $state, $http) {
+	app.controller('logicCtrl', function ($scope, $state, $http, $interval, $filter) {
 
 		this.location = 'Zürich HB';
 		this.frequent = ['Bern', 'Basel SBB', 'St. Gallen', 'Genf'];
 
-		this.date = new Date().getTime();
+		this.time = new Date().getTime();
 
 		this.language = 0; // 0 = german; 1 = english; 2 = french; 3 = italian
 
@@ -52,7 +52,6 @@
 		};
 
 		this.connections = '';
-		this.connectionsVia = '';
 
 		this.suggestions = '';
 
@@ -74,19 +73,21 @@
 			$state.go('home');
 		};
 
-		$scope.$watch.getTime = function() {
-			return (new Date).getTime();
+		this.updateTime = function () {
+			logic.time = new Date().getTime();
 		};
+
+		$interval(logic.updateTime, 1000);
 
 		this.showSchedule = function () {
 			if (logic.mainTo && logic.mainFrom) {
+				logic.mainTime = logic.time;
 				logic.getConnections();
-				console.log(logic.connections);
 				$state.go('schedule');
 			}
 		};
 
-		$scope.onKeypressRefresh = function(destination) {
+		$scope.onKeypressRefresh = function (destination) {
 			logic.getSuggestions(destination === 'to' ? logic.mainTo : logic.mainFrom);
 		};
 
@@ -95,34 +96,56 @@
 				method: 'GET',
 				url: 'http://transport.opendata.ch/v1/locations?query=' + partial + '&type=station'
 			}).then(function successCallback(response) {
-				logic.suggestions = response.data.stations.slice(0,4);
+				logic.suggestions = response.data.stations.slice(0, 4);
 			}, function errorCallback(response) {
 				//results = null;
 			});
 		};
-		
+
 		this.emptySuggestions = function () {
 			logic.suggestions = '';
 		};
 
-		this.getConnections = function() {
+		this.getConnections = function () {
 			$http({
 				method: 'GET',
-				url: 'http://transport.opendata.ch/v1/connections?from=' + logic.mainFrom + '&to=' + logic.mainTo
+				url: 'http://transport.opendata.ch/v1/connections?from=' + logic.mainFrom + '&to=' + logic.mainTo + '&date=' + $filter('date')(logic.mainTime, 'yyyy-MM-dd') + '&time=' + $filter('date')(logic.mainTime, 'HH:mm')
 			}).then(function successCallback(response) {
-				// console.log(response);
 				for (var i = 0; i < response.data.connections.length; i++) {
-					response.data.connections[i].duration = response.data.connections[i].duration.slice(3,8);
+					response.data.connections[i].duration = response.data.connections[i].duration.slice(3, 8);
 					response.data.connections[i].sections = response.data.connections[i].sections.slice(1);
-					response.data.connections[i].viaString = response.data.connections[i].sections.map(function(section) {
+					response.data.connections[i].viaString = response.data.connections[i].sections.map(function (section) {
 						return section.departure.station.name;
 					}).join(' - ');
-					console.log(response.data.connections[i].viaString);
 				}
-				logic.connections = response.data.connections.slice(0,3);
+				logic.connections = response.data.connections.slice(0, 3);
 			}, function errorCallback(response) {
 				//results = null;
 			});
+		};
+
+		this.emptyMainVar = function() {
+			logic.mainFrom = 'Zürich HB';
+			logic.mainTo = '';
+			logic.mainTime = '';
+			logic.mainVia = '';
+			logic.mainType = '';
+			logic.mainClass = false; // false = 2. Klasse; true = 1. Klasse
+			logic.mainAmount = {
+				'full': 0,
+				'half': 0,
+				'dog': 0,
+				'bike': 0
+			};
+
+			logic.connections = '';
+
+			logic.suggestions = '';
+		};
+
+		this.abort = function() {
+			logic.emptyMainVar();
+			$state.go('home');
 		}
 
 	});
