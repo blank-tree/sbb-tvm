@@ -5946,6 +5946,10 @@ footer {
     footer div.footer-buttons a {
       margin-right: 1.875rem;
       margin-bottom: 0; }
+    footer div.footer-buttons a.sbb-button-red-small {
+      padding: 1.4375rem; }
+    footer div.footer-buttons a.sbb-button-grey-small {
+      padding: 1.25rem; }
 
 /* Panel */
 .main-panel {
@@ -6055,6 +6059,9 @@ footer {
   #ticket-type .ticket-panel .input-field-type, #ticket-type .ticket-panel .input-field-class, #ticket-class .ticket-panel .input-field-type, #ticket-class .ticket-panel .input-field-class, #ticket-amount .ticket-panel .input-field-type, #ticket-amount .ticket-panel .input-field-class, #ticket-pay .ticket-panel .input-field-type, #ticket-pay .ticket-panel .input-field-class {
     width: 47%;
     display: inline-block; }
+  #ticket-type .ticket-panel .input-field-type span, #ticket-class .ticket-panel .input-field-type span, #ticket-amount .ticket-panel .input-field-type span, #ticket-pay .ticket-panel .input-field-type span {
+    padding-left: 3.875rem;
+    padding-right: 5rem; }
   #ticket-type .ticket-panel .input-field-class, #ticket-class .ticket-panel .input-field-class, #ticket-amount .ticket-panel .input-field-class, #ticket-pay .ticket-panel .input-field-class {
     float: right; }
 
@@ -6081,6 +6088,12 @@ footer {
 
 #ticket-type .amount-progress a.sbb-button-red, #ticket-class .amount-progress a.sbb-button-red, #ticket-amount .amount-progress a.sbb-button-red, #ticket-pay .amount-progress a.sbb-button-red {
   margin-top: 3.125rem; }
+
+#ticket-type .ticket-panel .input-field-amount span, #ticket-class .ticket-panel .input-field-amount span, #ticket-amount .ticket-panel .input-field-amount span, #ticket-pay .ticket-panel .input-field-amount span {
+  padding-top: 1.375rem; }
+
+#ticket-type .ticket-panel .input-field-amount span passenger, #ticket-class .ticket-panel .input-field-amount span passenger, #ticket-amount .ticket-panel .input-field-amount span passenger, #ticket-pay .ticket-panel .input-field-amount span passenger {
+  display: inline; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   transition: all 1.0s; }
@@ -6285,8 +6298,7 @@ footer {
   color: #fff;
   background: linear-gradient(180deg, #ec2424, #c80000);
   background: -ms-linear-gradient(180deg, #ec2424, #c80000);
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4);
-  padding: 1.375rem 1.4375rem 1.4375rem 1.5625rem; }
+  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
   .sbb-button-red-small:hover, .sbb-button-red-small:focus {
     background: linear-gradient(180deg, #ec2424, #c80000);
     color: #fff; }
@@ -6296,6 +6308,9 @@ footer {
     .sbb-button-red-small .iconic *.iconic-property-accent {
       fill: #fff;
       stroke: #fff; }
+
+.input-field .sbb-button-red-small {
+  padding: 1.375rem 1.4375rem 1.4375rem 1.5625rem; }
 
 .sbb-button-blue-small {
   height: 5rem;

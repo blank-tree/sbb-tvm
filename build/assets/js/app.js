@@ -186,7 +186,7 @@
 		};
 
 		this.amountIncrease = function (target) {
-			logic.mainAmount[target] = logic.mainAmount[target] + 1;
+			logic.mainAmount[target] = logic.mainAmount[target] < 6 ? logic.mainAmount[target] + 1 : logic.mainAmount[target];
 		};
 
 		this.amountDecrease = function (target) {

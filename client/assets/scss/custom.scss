@@ -93,6 +93,12 @@ footer {
 	  margin-right: rem-calc(30);
 	  margin-bottom: 0;
 	}
+	a.sbb-button-red-small {
+	  padding: rem-calc(23);
+	}
+	a.sbb-button-grey-small {
+	  padding: rem-calc(20);
+	}
   }
 }
 
@@ -277,6 +283,11 @@ footer {
 	  //margin-top: 0;
 	}
 
+	.input-field-type span {
+	  padding-left: rem-calc(62);
+	  padding-right: rem-calc(80);
+	}
+
 	.input-field-class {
 	  float: right;
 	}
@@ -324,7 +335,12 @@ footer {
   // seperate styling for the pay progress panel
   .ticket-panel {
 	.input-field-amount {
-
+	  	span {
+		  padding-top: rem-calc(22);
+		}
+		span passenger {
+		  display: inline;
+		}
 	}
   }
 }
