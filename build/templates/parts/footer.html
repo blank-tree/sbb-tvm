@@ -1,5 +1,6 @@
 <div class="footer-buttons">
-	<a ng-click="logic.abort()" class="sbb-button-red-small">x</a>
+	<a ng-click="logic.abort()" class="sbb-button-red-small" ng-class="{disabled: uiRouterState.current.name == 'home'}">x</a>
 	<a href="#" class="sbb-button-grey-small">i</a>
 	<a href="#" class="sbb-button-grey-small">a</a>
+	<a ng-click="logic.back()" class="sbb-button-grey-medium" ng-show="uiRouterState.current.name != 'home'" >zurück</a>
 </div>

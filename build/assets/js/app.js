@@ -31,6 +31,8 @@
 
 	app.controller('logicCtrl', function ($scope, $state, $http, $interval, $filter) {
 
+		$scope.uiRouterState = $state;
+
 		this.location = 'Zürich HB';
 		this.frequent = ['Bern', 'Basel SBB', 'St. Gallen', 'Genf'];
 
@@ -222,6 +224,10 @@
 		this.abort = function () {
 			logic.emptyMainVar();
 			$state.go('home');
+		};
+		
+		this.back = function() {
+			window.history.back();
 		}
 
 	});
@@ -254,7 +260,7 @@
 
 				$scope.backPressed = function () {
 					$scope.outputTarget = previousInput;
-					$state.go('home');
+					window.history.back();
 				};
 
 				$scope.type = function (key) {
