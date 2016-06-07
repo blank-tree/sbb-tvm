@@ -6096,37 +6096,55 @@ footer {
   display: inline; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
-  transition: all 1.0s; }
+  transition: all 0.5s; }
 
-#home, #schedule {
-  transition: all 1.0s; }
+#home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  transition: all 0.5s; }
 
 [ui-view].ng-enter {
   opacity: 0; }
-  [ui-view].ng-enter #home {
-    transform: translate(-1366px); }
-  [ui-view].ng-enter #schedule {
+  [ui-view].ng-enter #home, [ui-view].ng-enter #schedule, [ui-view].ng-enter #ticket-type, [ui-view].ng-enter #ticket-class, [ui-view].ng-enter #ticket-amount, [ui-view].ng-enter #pay, [ui-view].ng-enter #final {
     transform: translate(1366px); }
 
 [ui-view].ng-enter-active {
   opacity: 1; }
-  [ui-view].ng-enter-active #home {
-    transform: translate(0px); }
-  [ui-view].ng-enter-active #schedule {
+  [ui-view].ng-enter-active #home, [ui-view].ng-enter-active #schedule, [ui-view].ng-enter-active #ticket-type, [ui-view].ng-enter-active #ticket-class, [ui-view].ng-enter-active #ticket-amount, [ui-view].ng-enter-active #pay, [ui-view].ng-enter-active #final {
     transform: translate(0); }
 
 [ui-view].ng-leave {
   opacity: 1; }
-  [ui-view].ng-leave #home {
-    transform: translate(0px); }
-  [ui-view].ng-leave #schedule {
+  [ui-view].ng-leave #home, [ui-view].ng-leave #schedule, [ui-view].ng-leave #ticket-type, [ui-view].ng-leave #ticket-class, [ui-view].ng-leave #ticket-amount, [ui-view].ng-leave #pay, [ui-view].ng-leave #final {
     transform: translate(0px); }
 
 [ui-view].ng-leave-active {
   opacity: 0; }
-  [ui-view].ng-leave-active #home {
+  [ui-view].ng-leave-active #home, [ui-view].ng-leave-active #schedule, [ui-view].ng-leave-active #ticket-type, [ui-view].ng-leave-active #ticket-class, [ui-view].ng-leave-active #ticket-amount, [ui-view].ng-leave-active #pay, [ui-view].ng-leave-active #final {
     transform: translate(-1366px); }
-  [ui-view].ng-leave-active #schedule {
+
+[ui-view].ng-enter.back, [ui-view].ng-leave.back {
+  transition: all 0.5s; }
+
+#home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  transition: all 0.5s; }
+
+[ui-view].ng-enter.back {
+  opacity: 0; }
+  [ui-view].ng-enter.back #home, [ui-view].ng-enter.back #schedule, [ui-view].ng-enter.back #ticket-type, [ui-view].ng-enter.back #ticket-class, [ui-view].ng-enter.back #ticket-amount, [ui-view].ng-enter.back #pay, [ui-view].ng-enter.back #final {
+    transform: translate(-1366px); }
+
+[ui-view].ng-enter-active.back {
+  opacity: 1; }
+  [ui-view].ng-enter-active.back #home, [ui-view].ng-enter-active.back #schedule, [ui-view].ng-enter-active.back #ticket-type, [ui-view].ng-enter-active.back #ticket-class, [ui-view].ng-enter-active.back #ticket-amount, [ui-view].ng-enter-active.back #pay, [ui-view].ng-enter-active.back #final {
+    transform: translate(0); }
+
+[ui-view].ng-leave.back {
+  opacity: 1; }
+  [ui-view].ng-leave.back #home, [ui-view].ng-leave.back #schedule, [ui-view].ng-leave.back #ticket-type, [ui-view].ng-leave.back #ticket-class, [ui-view].ng-leave.back #ticket-amount, [ui-view].ng-leave.back #pay, [ui-view].ng-leave.back #final {
+    transform: translate(0px); }
+
+[ui-view].ng-leave-active.back {
+  opacity: 0; }
+  [ui-view].ng-leave-active.back #home, [ui-view].ng-leave-active.back #schedule, [ui-view].ng-leave-active.back #ticket-type, [ui-view].ng-leave-active.back #ticket-class, [ui-view].ng-leave-active.back #ticket-amount, [ui-view].ng-leave-active.back #pay, [ui-view].ng-leave-active.back #final {
     transform: translate(1366px); }
 
 /**

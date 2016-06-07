@@ -245,6 +245,7 @@
 		};
 
 		this.back = function () {
+			$scope.back = true;
 			window.history.back();
 		};
 

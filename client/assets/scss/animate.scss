@@ -18,58 +18,126 @@
   //padding-left: rem-calc(36);
   //padding-right: rem-calc(36);
 
-  transition: all 1.0s;
+  transition: all 0.5s;
 }
 
-#home, #schedule {
-  transition: all 1.0s;
+#home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  transition: all 0.5s;
 }
 
 [ui-view].ng-enter { // start animation
   opacity: 0;
 
-  #home {
-	transform: translate(-1366px);
-  }
-
-  #schedule {
+  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
 	transform: translate(1366px);
   }
+
+  //#schedule {
+	//transform: translate(-1366px);
+  //}
+
 }
 
 [ui-view].ng-enter-active { // ende animation
   opacity: 1;
 
-  #home {
-	transform: translate(0px);
-  }
-
-  #schedule {
+  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
 	transform: translate(0);
   }
+
+  //#schedule {
+	//transform: translate(0);
+  //}
 
 }
 
 [ui-view].ng-leave { // start animation
   opacity: 1;
 
-  #home {
+  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
 	transform: translate(0px);
   }
 
-  #schedule {
-	transform: translate(0px);
-  }
+  //#schedule {
+	//transform: translate(0px);
+  //}
 }
 
 [ui-view].ng-leave-active { // ende animation
   opacity: 0;
 
-  #home {
+  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
 	transform: translate(-1366px);
   }
 
-  #schedule {
+  //#schedule {
+	//transform: translate(1366px);
+  //}
+}
+
+
+// BACK
+
+[ui-view].ng-enter.back, [ui-view].ng-leave.back {
+  //position: absolute;
+  //left: 0;
+  //right: 0;
+  //padding-left: rem-calc(36);
+  //padding-right: rem-calc(36);
+
+  transition: all 0.5s;
+}
+
+#home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  transition: all 0.5s;
+}
+
+[ui-view].ng-enter.back { // start animation
+  opacity: 0;
+
+  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+	transform: translate(-1366px);
+  }
+
+  //#schedule {
+  //transform: translate(-1366px);
+  //}
+
+}
+
+[ui-view].ng-enter-active.back { // ende animation
+  opacity: 1;
+
+  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+	transform: translate(0);
+  }
+
+  //#schedule {
+  //transform: translate(0);
+  //}
+
+}
+
+[ui-view].ng-leave.back { // start animation
+  opacity: 1;
+
+  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+	transform: translate(0px);
+  }
+
+  //#schedule {
+  //transform: translate(0px);
+  //}
+}
+
+[ui-view].ng-leave-active.back { // ende animation
+  opacity: 0;
+
+  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
 	transform: translate(1366px);
   }
+
+  //#schedule {
+  //transform: translate(1366px);
+  //}
 }
