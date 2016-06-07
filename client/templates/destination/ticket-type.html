@@ -1,3 +1,7 @@
+---
+name: ticket-type
+url: /ticket-type
+---
 
 <div id="ticket-type" class="grid-block main">
 	<div class="medium-6 ticket-panel">
@@ -5,21 +9,21 @@
 			<h4>Einzelbillett</h4>
 			<h5>{{logic.mainTime | date: 'EEEE, d. MMMM y, HH:mm'}}</h5>
 			<label>von</label>
-			<div class="from input-field">
+			<div ui-sref="search-from" class="from input-field">
 				<span class="input-from">{{logic.mainFrom}}</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
 			<label>nach</label>
-			<div class="to input-field">
+			<div ui-sref="search-to" class="to input-field">
 				<span class="input-to">{{logic.mainTo}}</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
 			<label>via</label>
-			<div class="via input-field">
-				<span class="input-from">{{ 'direkt' }}</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+			<div ng-click="logic.showSchedule()" class="via input-field">
+				<span class="input-from">{{ logic.mainVia }}</span>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 		</div>
 	</div>

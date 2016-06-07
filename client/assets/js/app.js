@@ -43,7 +43,7 @@
 		this.mainTime = '';
 		this.mainVia = '';
 		this.mainType = '';
-		this.mainClass = false; // false = 2. Klasse; true = 1. Klasse
+		this.mainClass = '';
 		this.mainAmount = {
 			'full': 0,
 			'half': 0,
@@ -58,10 +58,43 @@
 		// Bind the parent element for use in the following functions. Damn scope...
 		var logic = this;
 
+		this.mainStateHandler = function (next) {
+			var statusMainVia = logic.mainVia != '';
+
+			if (statusMainVia) {
+				if (next === 'home') {
+					logic.getConnections();
+					next = 'schedule';
+				} else {
+					var statusMainType = logic.mainType != '';
+					var statusMainClass = logic.mainClass != '';
+					var statusMainAmount = logic.mainAmount.full != 0
+						|| logic.mainAmount.half != 0
+						|| logic.mainAmount.dog != 0
+						|| logic.mainAmount.bike != 0;
+
+					if (statusMainType
+						&& statusMainClass
+						&& statusMainAmount) {
+						next = 'ticket-pay';
+					} else if (statusMainType
+						&& statusMainClass) {
+						next = 'ticket-amount';
+					} else if (statusMainType) {
+						next = 'ticket-class';
+					} else {
+						next = 'ticket-type';
+					}
+				}
+			}
+			$state.go(next);
+		};
+
 		$scope.keyboardOutput = '';
 
 		$scope.onKeyboardSubmit = function () {
-			$state.go('home');
+			// $state.go('home');
+			logic.mainStateHandler('home');
 		};
 
 		$scope.locationShortcut = function (location, direction) {
@@ -70,7 +103,8 @@
 			} else {
 				logic.mainFrom = location;
 			}
-			$state.go('home');
+			// $state.go('home');
+			logic.mainStateHandler('home');
 		};
 
 		this.updateTime = function () {
@@ -124,26 +158,68 @@
 			});
 		};
 
-		this.emptyMainVar = function() {
-			logic.mainFrom = 'Zürich HB';
-			logic.mainTo = '';
-			logic.mainTime = '';
-			logic.mainVia = '';
-			logic.mainType = '';
-			logic.mainClass = false; // false = 2. Klasse; true = 1. Klasse
-			logic.mainAmount = {
-				'full': 0,
-				'half': 0,
-				'dog': 0,
-				'bike': 0
-			};
-
-			logic.connections = '';
-
-			logic.suggestions = '';
+		// Ticket options
+		this.chooseTicketType = function (ticketType) {
+			logic.mainType = ticketType;
+			// $state.go('ticket-class');
+			logic.mainStateHandler('ticket-class')
 		};
 
-		this.abort = function() {
+		this.chooseTicketClass = function (ticketClass) {
+			logic.mainClass = ticketClass;
+			// $state.go('ticket-amount');
+			logic.mainStateHandler('ticket-amount');
+		};
+
+		this.chooseVia = function (ticketVia) {
+			logic.mainVia = ticketVia;
+			setTimeout(function () {
+				logic.connections = ''
+			}, 1000);
+			logic.mainStateHandler('ticket-type');
+		};
+		
+		this.chooseAmount = function () {
+			if (logic.mainAmount.full != 0
+				|| logic.mainAmount.half != 0
+				|| logic.mainAmount.dog != 0
+				|| logic.mainAmount.bike != 0) {
+				$state.go('pay');
+			}			
+		};
+
+		this.amountIncrease = function (target) {
+			logic.mainAmount[target] = logic.mainAmount[target] + 1;
+		};
+
+		this.amountDecrease = function (target) {
+			// logic.mainAmount[target] = logic.mainAmount[target] > 0 ? logic.mainAmount[target] - 1 : 0;
+			logic.mainAmount[target] = Math.max(logic.mainAmount[target] -1, 0)
+		};
+
+		this.emptyMainVar = function () {
+			setTimeout(function () {
+				logic.mainFrom = 'Zürich HB';
+				logic.mainTo = '';
+				logic.mainTime = '';
+				logic.mainVia = '';
+				logic.mainType = '';
+				logic.mainClass = false; // false = 2. Klasse; true = 1. Klasse
+				logic.mainAmount = {
+					'full': 0,
+					'half': 0,
+					'dog': 0,
+					'bike': 0
+				};
+
+				logic.connections = '';
+
+				logic.suggestions = '';
+
+			}, 500);
+		};
+
+		this.abort = function () {
 			logic.emptyMainVar();
 			$state.go('home');
 		}

@@ -40,7 +40,7 @@ url: /schedule
 				</div>
 			</div>
 			<div class="ticket medium-2	">
-				<a ui-sref="ticket-type" class="sbb-button-red-medium">Ticket</a>
+				<a ng-click="logic.chooseVia(connection.transfers == 0 ? 'direkt' : connection.viaString)" class="sbb-button-red-medium">Ticket</a>
 			</div>
 		</div>
 

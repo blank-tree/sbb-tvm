@@ -6,36 +6,35 @@ url: /ticket-amount
 <div id="ticket-amount" class="grid-block main">
 	<div class="medium-6 ticket-panel">
 		<div class="medium-10 medium-offset-1">
-			<h4>Einzelbillett</h4>
-			<h5>Donnerstag, 22. Dezember 2016, 18:35</h5>
+			<h4>{{logic.mainType === 'einfach' || logic.mainType === 'retour' ? 'Einzelbillett' : logic.mainType}}</h4>
+			<h5>{{logic.mainTime | date: 'EEEE, d. MMMM y, HH:mm'}}</h5>
 			<label>von</label>
-			<div class="from input-field">
-				<span class="input-from">Zürich HB</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+			<div ui-sref="search-from" class="from input-field">
+				<span class="input-from">{{logic.mainFrom}}</span>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
 			<label>nach</label>
-			<div class="to input-field">
-				<span class="input-to">Frauenfeld</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+			<div ui-sref="search-to" class="to input-field">
+				<span class="input-to">{{logic.mainTo}}</span>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
 			<label>via</label>
-			<div class="via input-field">
-				<span class="input-from">Weinfelden</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+			<div ng-click="logic.showSchedule()" class="via input-field">
+				<span class="input-from">{{ logic.mainVia }}</span>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
-			<div class="input-field input-field-type">
-				<span><img src="assets/img/type_single_c.svg"></span>
-				<!--<span><img src="assets/img/type_double_c.svg">Retour</span>-->
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+			<div ui-sref="ticket-type" class="input-field input-field-type" ng-show="logic.mainType === 'einfach' || logic.mainType === 'retour'">
+				<span><img src="{{ logic.mainType === 'einfach' ? 'assets/img/type_single_c.svg' :  'assets/img/type_double_c.svg'}}"></span>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
-			<div class="input-field input-field-class">
+			<div ui-sref="ticket-class" class="input-field input-field-class">
 				<!--<span><b>1.</b>	Klasse</span>-->
-				<span><b>2.</b> Klasse</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+				<span><b>{{ logic.mainClass}}.</b> Klasse</span>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
 		</div>
@@ -44,34 +43,34 @@ url: /ticket-amount
 		<div class="medium-12 amount-panel">
 			<label>Erwachsene</label>
 			<div class="number-input-field">
-				<a href="#" class="sbb-button-red-small subtract"><img src="assets/img/sub.svg"></a>
-				<span>2</span>
-				<a href="#" class="sbb-button-red-small add"><img src="assets/img/add.svg"></a>
+				<a ng-click="logic.amountDecrease('full')" class="sbb-button-red-small subtract"><img src="assets/img/sub.svg"></a>
+				<span>{{logic.mainAmount.full}}</span>
+				<a ng-click="logic.amountIncrease('full')" class="sbb-button-red-small add"><img src="assets/img/add.svg"></a>
 			</div>
 
 			<label>Halbtax / Kinder</label>
 			<div class="number-input-field">
-				<a href="#" class="sbb-button-red-small subtract"><img src="assets/img/sub.svg"></a>
-				<span>2</span>
-				<a href="#" class="sbb-button-red-small add"><img src="assets/img/add.svg"></a>
+				<a ng-click="logic.amountDecrease('half')" class="sbb-button-red-small subtract"><img src="assets/img/sub.svg"></a>
+				<span>{{logic.mainAmount.half}}</span>
+				<a ng-click="logic.amountIncrease('half')" class="sbb-button-red-small add"><img src="assets/img/add.svg"></a>
 			</div>
 
 			<label>Velo</label>
 			<div class="number-input-field">
-				<a href="#" class="sbb-button-grey-small subtract"><img src="assets/img/sub.svg"></a>
-				<span>2</span>
-				<a href="#" class="sbb-button-grey-small add"><img src="assets/img/add.svg"></a>
+				<a ng-click="logic.amountDecrease('dog')" class="sbb-button-grey-small subtract"><img src="assets/img/sub.svg"></a>
+				<span>{{logic.mainAmount.dog}}</span>
+				<a ng-click="logic.amountIncrease('dog')" class="sbb-button-grey-small add"><img src="assets/img/add.svg"></a>
 			</div>
 
 			<label>Hund</label>
 			<div class="number-input-field">
-				<a href="#" class="sbb-button-grey-small subtract"><img src="assets/img/sub.svg"></a>
-				<span>2</span>
-				<a href="#" class="sbb-button-grey-small add"><img src="assets/img/add.svg"></a>
+				<a ng-click="logic.amountDecrease('bike')" class="sbb-button-grey-small subtract"><img src="assets/img/sub.svg"></a>
+				<span>{{logic.mainAmount.bike}}</span>
+				<a ng-click="logic.amountIncrease('bike')" class="sbb-button-grey-small add"><img src="assets/img/add.svg"></a>
 			</div>
 
 			<div class="pay-button">
-				<a ui-sref="pay" class="sbb-button-red">Bestätigen</a>
+				<a ng-click="logic.chooseAmount()" class="sbb-button-red" ng-class="{disabled: logic.mainAmount.full == 0 && logic.mainAmount.half == 0 && logic.mainAmount.dog == 0 && logic.mainAmount.bike == 0 }">Bestätigen</a>
 			</div>
 		</div>
 	</div>

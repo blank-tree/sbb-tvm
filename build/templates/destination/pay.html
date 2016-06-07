@@ -2,42 +2,40 @@
 <div id="ticket-pay" class="grid-block main">
 	<div class="medium-6 ticket-panel">
 		<div class="medium-10 medium-offset-1">
-			<h4>Einzelbillett</h4>
-			<h5>Donnerstag, 22. Dezember 2016, 18:35</h5>
+			<h4>{{logic.mainType === 'einfach' || logic.mainType === 'retour' ? 'Einzelbillett' : logic.mainType}}</h4>
+			<h5>{{logic.mainTime | date: 'EEEE, d. MMMM y, HH:mm'}}</h5>
 			<label>von</label>
-			<div class="from input-field">
-				<span class="input-from">Zürich HB</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+			<div ui-sref="search-from" class="from input-field">
+				<span class="input-from">{{logic.mainFrom}}</span>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
 			<label>nach</label>
-			<div class="to input-field">
-				<span class="input-to">Frauenfeld</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+			<div ui-sref="search-to" class="to input-field">
+				<span class="input-to">{{logic.mainTo}}</span>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
 			<label>via</label>
-			<div class="via input-field">
-				<span class="input-from">Weinfelden</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+			<div ng-click="logic.showSchedule()" class="via input-field">
+				<span class="input-from">{{ logic.mainVia }}</span>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
-			<div class="input-field input-field-type">
-				<span><img src="assets/img/type_single_c.svg"></span>
-				<!--<span><img src="assets/img/type_double_c.svg">Retour</span>-->
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+			<div ui-sref="ticket-type" class="input-field input-field-type" ng-show="logic.mainType === 'einfach' || logic.mainType === 'retour'">
+				<span><img src="{{ logic.mainType === 'einfach' ? 'assets/img/type_single_c.svg' :  'assets/img/type_double_c.svg'}}"></span>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
 
-			<div class="input-field input-field-class">
-				<!--<span><b>1.</b>	Klasse</span>-->
-				<span><b>2.</b> Klasse</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+			<div ui-sref="ticket-class" class="input-field input-field-class">
+				<span><b>{{ logic.mainClass}}.</b> Klasse</span>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
-			<div class="input-field input-field-amount">
+			<div ui-sref="ticket-amount" class="input-field input-field-amount">
 				<span><b>2x</b> Erwachsener</span>
-				<a href="#" class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
+				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
 		</div>
