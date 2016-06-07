@@ -28,8 +28,14 @@
 [ui-view].ng-enter { // start animation
   opacity: 0;
 
-  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  #home, #schedule, #final {
 	transform: translate(1366px);
+  }
+
+  #ticket-type, #ticket-class, #ticket-amount, #ticket-pay {
+	.type-progress, .class-progress, .amount-progress, .pay-progress {
+	  transform: translate(0, 512px);
+	}
   }
 
   //#schedule {
@@ -41,8 +47,14 @@
 [ui-view].ng-enter-active { // ende animation
   opacity: 1;
 
-  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  #home, #schedule, #final {
 	transform: translate(0);
+  }
+
+  #ticket-type, #ticket-class, #ticket-amount, #ticket-pay {
+	.type-progress, .class-progress, .amount-progress, .pay-progress {
+	  transform: translate(0, 0);
+	}
   }
 
   //#schedule {
@@ -54,8 +66,14 @@
 [ui-view].ng-leave { // start animation
   opacity: 1;
 
-  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  #home, #schedule, #final {
 	transform: translate(0px);
+  }
+
+  #ticket-type, #ticket-class, #ticket-amount, #ticket-pay {
+	.type-progress, .class-progress, .amount-progress, .pay-progress {
+	  transform: translate(0, 0);
+	}
   }
 
   //#schedule {
@@ -66,8 +84,14 @@
 [ui-view].ng-leave-active { // ende animation
   opacity: 0;
 
-  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  #home, #schedule, #final {
 	transform: translate(-1366px);
+  }
+
+  #ticket-type, #ticket-class, #ticket-amount, #ticket-pay {
+	.type-progress, .class-progress, .amount-progress, .pay-progress {
+	  transform: translate(0, -512px);
+	}
   }
 
   //#schedule {
@@ -88,15 +112,27 @@
   transition: all 0.5s;
 }
 
-#home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+#home, #schedule, #final {
   transition: all 0.5s;
+}
+
+#ticket-type, #ticket-class, #ticket-amount, #ticket-pay {
+  .type-progress, .class-progress, .amount-progress, .pay-progress {
+	transition: all 0.5s;
+  }
 }
 
 [ui-view].ng-enter.back { // start animation
   opacity: 0;
 
-  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  #home, #schedule, #final {
 	transform: translate(-1366px);
+  }
+
+  #ticket-type, #ticket-class, #ticket-amount, #ticket-pay {
+	.type-progress, .class-progress, .amount-progress, .pay-progress {
+	  transform: translate(0, -512px);
+	}
   }
 
   //#schedule {
@@ -108,8 +144,14 @@
 [ui-view].ng-enter-active.back { // ende animation
   opacity: 1;
 
-  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  #home, #schedule, #final {
 	transform: translate(0);
+  }
+
+  #ticket-type, #ticket-class, #ticket-amount, #ticket-pay {
+	.type-progress, .class-progress, .amount-progress, .pay-progress {
+	  transform: translate(0, 0);
+	}
   }
 
   //#schedule {
@@ -121,8 +163,14 @@
 [ui-view].ng-leave.back { // start animation
   opacity: 1;
 
-  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  #home, #schedule, #final {
 	transform: translate(0px);
+  }
+
+  #ticket-type, #ticket-class, #ticket-amount, #ticket-pay {
+	.type-progress, .class-progress, .amount-progress, .pay-progress {
+	  transform: translate(0, 0);
+	}
   }
 
   //#schedule {
@@ -133,8 +181,14 @@
 [ui-view].ng-leave-active.back { // ende animation
   opacity: 0;
 
-  #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+  #home, #schedule, #final {
 	transform: translate(1366px);
+  }
+
+  #ticket-type, #ticket-class, #ticket-amount, #ticket-pay {
+	.type-progress, .class-progress, .amount-progress, .pay-progress {
+	  transform: translate(0, 512px);
+	}
   }
 
   //#schedule {

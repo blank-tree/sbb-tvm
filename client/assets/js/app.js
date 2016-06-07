@@ -19,7 +19,10 @@
 			// Testing purpose
 			//console.log(from, to);
 
-			$scope.back = to.url === lastScreen;
+			// $scope.back = to.url === lastScreen;
+
+			$scope.back = false;
+
 			lastScreen = from.url;
 		});
 
@@ -103,7 +106,7 @@
 					if (statusMainType
 						&& statusMainClass
 						&& statusMainAmount) {
-						next = 'ticket-pay';
+						next = 'pay';
 					} else if (statusMainType
 						&& statusMainClass) {
 						next = 'ticket-amount';
@@ -245,7 +248,6 @@
 		};
 
 		this.back = function () {
-			$scope.back = true;
 			window.history.back();
 		};
 

@@ -6,7 +6,7 @@
 			<label>von</label>
 			<div class="from input-field">
 				<span class="input-from">{{logic.mainFrom}}</span>
-				<a href="#" class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
+				<a class="sbb-button-red-small"><img src="assets/img/edit.svg"></a>
 			</div>
 			<div class="suggestion">
 				<a class="sbb-button-red" ng-repeat="station in logic.suggestions | limitTo: 4" ng-click="locationShortcut(station.name, 'from')">{{station.name}}</a>

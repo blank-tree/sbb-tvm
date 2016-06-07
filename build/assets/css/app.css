@@ -6103,49 +6103,68 @@ footer {
 
 [ui-view].ng-enter {
   opacity: 0; }
-  [ui-view].ng-enter #home, [ui-view].ng-enter #schedule, [ui-view].ng-enter #ticket-type, [ui-view].ng-enter #ticket-class, [ui-view].ng-enter #ticket-amount, [ui-view].ng-enter #pay, [ui-view].ng-enter #final {
+  [ui-view].ng-enter #home, [ui-view].ng-enter #schedule, [ui-view].ng-enter #final {
     transform: translate(1366px); }
+  [ui-view].ng-enter #ticket-type .type-progress, [ui-view].ng-enter #ticket-type .class-progress, [ui-view].ng-enter #ticket-type .amount-progress, [ui-view].ng-enter #ticket-type .pay-progress, [ui-view].ng-enter #ticket-class .type-progress, [ui-view].ng-enter #ticket-class .class-progress, [ui-view].ng-enter #ticket-class .amount-progress, [ui-view].ng-enter #ticket-class .pay-progress, [ui-view].ng-enter #ticket-amount .type-progress, [ui-view].ng-enter #ticket-amount .class-progress, [ui-view].ng-enter #ticket-amount .amount-progress, [ui-view].ng-enter #ticket-amount .pay-progress, [ui-view].ng-enter #ticket-pay .type-progress, [ui-view].ng-enter #ticket-pay .class-progress, [ui-view].ng-enter #ticket-pay .amount-progress, [ui-view].ng-enter #ticket-pay .pay-progress {
+    transform: translate(0, 512px); }
 
 [ui-view].ng-enter-active {
   opacity: 1; }
-  [ui-view].ng-enter-active #home, [ui-view].ng-enter-active #schedule, [ui-view].ng-enter-active #ticket-type, [ui-view].ng-enter-active #ticket-class, [ui-view].ng-enter-active #ticket-amount, [ui-view].ng-enter-active #pay, [ui-view].ng-enter-active #final {
+  [ui-view].ng-enter-active #home, [ui-view].ng-enter-active #schedule, [ui-view].ng-enter-active #final {
     transform: translate(0); }
+  [ui-view].ng-enter-active #ticket-type .type-progress, [ui-view].ng-enter-active #ticket-type .class-progress, [ui-view].ng-enter-active #ticket-type .amount-progress, [ui-view].ng-enter-active #ticket-type .pay-progress, [ui-view].ng-enter-active #ticket-class .type-progress, [ui-view].ng-enter-active #ticket-class .class-progress, [ui-view].ng-enter-active #ticket-class .amount-progress, [ui-view].ng-enter-active #ticket-class .pay-progress, [ui-view].ng-enter-active #ticket-amount .type-progress, [ui-view].ng-enter-active #ticket-amount .class-progress, [ui-view].ng-enter-active #ticket-amount .amount-progress, [ui-view].ng-enter-active #ticket-amount .pay-progress, [ui-view].ng-enter-active #ticket-pay .type-progress, [ui-view].ng-enter-active #ticket-pay .class-progress, [ui-view].ng-enter-active #ticket-pay .amount-progress, [ui-view].ng-enter-active #ticket-pay .pay-progress {
+    transform: translate(0, 0); }
 
 [ui-view].ng-leave {
   opacity: 1; }
-  [ui-view].ng-leave #home, [ui-view].ng-leave #schedule, [ui-view].ng-leave #ticket-type, [ui-view].ng-leave #ticket-class, [ui-view].ng-leave #ticket-amount, [ui-view].ng-leave #pay, [ui-view].ng-leave #final {
+  [ui-view].ng-leave #home, [ui-view].ng-leave #schedule, [ui-view].ng-leave #final {
     transform: translate(0px); }
+  [ui-view].ng-leave #ticket-type .type-progress, [ui-view].ng-leave #ticket-type .class-progress, [ui-view].ng-leave #ticket-type .amount-progress, [ui-view].ng-leave #ticket-type .pay-progress, [ui-view].ng-leave #ticket-class .type-progress, [ui-view].ng-leave #ticket-class .class-progress, [ui-view].ng-leave #ticket-class .amount-progress, [ui-view].ng-leave #ticket-class .pay-progress, [ui-view].ng-leave #ticket-amount .type-progress, [ui-view].ng-leave #ticket-amount .class-progress, [ui-view].ng-leave #ticket-amount .amount-progress, [ui-view].ng-leave #ticket-amount .pay-progress, [ui-view].ng-leave #ticket-pay .type-progress, [ui-view].ng-leave #ticket-pay .class-progress, [ui-view].ng-leave #ticket-pay .amount-progress, [ui-view].ng-leave #ticket-pay .pay-progress {
+    transform: translate(0, 0); }
 
 [ui-view].ng-leave-active {
   opacity: 0; }
-  [ui-view].ng-leave-active #home, [ui-view].ng-leave-active #schedule, [ui-view].ng-leave-active #ticket-type, [ui-view].ng-leave-active #ticket-class, [ui-view].ng-leave-active #ticket-amount, [ui-view].ng-leave-active #pay, [ui-view].ng-leave-active #final {
+  [ui-view].ng-leave-active #home, [ui-view].ng-leave-active #schedule, [ui-view].ng-leave-active #final {
     transform: translate(-1366px); }
+  [ui-view].ng-leave-active #ticket-type .type-progress, [ui-view].ng-leave-active #ticket-type .class-progress, [ui-view].ng-leave-active #ticket-type .amount-progress, [ui-view].ng-leave-active #ticket-type .pay-progress, [ui-view].ng-leave-active #ticket-class .type-progress, [ui-view].ng-leave-active #ticket-class .class-progress, [ui-view].ng-leave-active #ticket-class .amount-progress, [ui-view].ng-leave-active #ticket-class .pay-progress, [ui-view].ng-leave-active #ticket-amount .type-progress, [ui-view].ng-leave-active #ticket-amount .class-progress, [ui-view].ng-leave-active #ticket-amount .amount-progress, [ui-view].ng-leave-active #ticket-amount .pay-progress, [ui-view].ng-leave-active #ticket-pay .type-progress, [ui-view].ng-leave-active #ticket-pay .class-progress, [ui-view].ng-leave-active #ticket-pay .amount-progress, [ui-view].ng-leave-active #ticket-pay .pay-progress {
+    transform: translate(0, -512px); }
 
 [ui-view].ng-enter.back, [ui-view].ng-leave.back {
   transition: all 0.5s; }
 
-#home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
+#home, #schedule, #final {
+  transition: all 0.5s; }
+
+#ticket-type .type-progress, #ticket-type .class-progress, #ticket-type .amount-progress, #ticket-type .pay-progress, #ticket-class .type-progress, #ticket-class .class-progress, #ticket-class .amount-progress, #ticket-class .pay-progress, #ticket-amount .type-progress, #ticket-amount .class-progress, #ticket-amount .amount-progress, #ticket-amount .pay-progress, #ticket-pay .type-progress, #ticket-pay .class-progress, #ticket-pay .amount-progress, #ticket-pay .pay-progress {
   transition: all 0.5s; }
 
 [ui-view].ng-enter.back {
   opacity: 0; }
-  [ui-view].ng-enter.back #home, [ui-view].ng-enter.back #schedule, [ui-view].ng-enter.back #ticket-type, [ui-view].ng-enter.back #ticket-class, [ui-view].ng-enter.back #ticket-amount, [ui-view].ng-enter.back #pay, [ui-view].ng-enter.back #final {
+  [ui-view].ng-enter.back #home, [ui-view].ng-enter.back #schedule, [ui-view].ng-enter.back #final {
     transform: translate(-1366px); }
+  [ui-view].ng-enter.back #ticket-type .type-progress, [ui-view].ng-enter.back #ticket-type .class-progress, [ui-view].ng-enter.back #ticket-type .amount-progress, [ui-view].ng-enter.back #ticket-type .pay-progress, [ui-view].ng-enter.back #ticket-class .type-progress, [ui-view].ng-enter.back #ticket-class .class-progress, [ui-view].ng-enter.back #ticket-class .amount-progress, [ui-view].ng-enter.back #ticket-class .pay-progress, [ui-view].ng-enter.back #ticket-amount .type-progress, [ui-view].ng-enter.back #ticket-amount .class-progress, [ui-view].ng-enter.back #ticket-amount .amount-progress, [ui-view].ng-enter.back #ticket-amount .pay-progress, [ui-view].ng-enter.back #ticket-pay .type-progress, [ui-view].ng-enter.back #ticket-pay .class-progress, [ui-view].ng-enter.back #ticket-pay .amount-progress, [ui-view].ng-enter.back #ticket-pay .pay-progress {
+    transform: translate(0, -512px); }
 
 [ui-view].ng-enter-active.back {
   opacity: 1; }
-  [ui-view].ng-enter-active.back #home, [ui-view].ng-enter-active.back #schedule, [ui-view].ng-enter-active.back #ticket-type, [ui-view].ng-enter-active.back #ticket-class, [ui-view].ng-enter-active.back #ticket-amount, [ui-view].ng-enter-active.back #pay, [ui-view].ng-enter-active.back #final {
+  [ui-view].ng-enter-active.back #home, [ui-view].ng-enter-active.back #schedule, [ui-view].ng-enter-active.back #final {
     transform: translate(0); }
+  [ui-view].ng-enter-active.back #ticket-type .type-progress, [ui-view].ng-enter-active.back #ticket-type .class-progress, [ui-view].ng-enter-active.back #ticket-type .amount-progress, [ui-view].ng-enter-active.back #ticket-type .pay-progress, [ui-view].ng-enter-active.back #ticket-class .type-progress, [ui-view].ng-enter-active.back #ticket-class .class-progress, [ui-view].ng-enter-active.back #ticket-class .amount-progress, [ui-view].ng-enter-active.back #ticket-class .pay-progress, [ui-view].ng-enter-active.back #ticket-amount .type-progress, [ui-view].ng-enter-active.back #ticket-amount .class-progress, [ui-view].ng-enter-active.back #ticket-amount .amount-progress, [ui-view].ng-enter-active.back #ticket-amount .pay-progress, [ui-view].ng-enter-active.back #ticket-pay .type-progress, [ui-view].ng-enter-active.back #ticket-pay .class-progress, [ui-view].ng-enter-active.back #ticket-pay .amount-progress, [ui-view].ng-enter-active.back #ticket-pay .pay-progress {
+    transform: translate(0, 0); }
 
 [ui-view].ng-leave.back {
   opacity: 1; }
-  [ui-view].ng-leave.back #home, [ui-view].ng-leave.back #schedule, [ui-view].ng-leave.back #ticket-type, [ui-view].ng-leave.back #ticket-class, [ui-view].ng-leave.back #ticket-amount, [ui-view].ng-leave.back #pay, [ui-view].ng-leave.back #final {
+  [ui-view].ng-leave.back #home, [ui-view].ng-leave.back #schedule, [ui-view].ng-leave.back #final {
     transform: translate(0px); }
+  [ui-view].ng-leave.back #ticket-type .type-progress, [ui-view].ng-leave.back #ticket-type .class-progress, [ui-view].ng-leave.back #ticket-type .amount-progress, [ui-view].ng-leave.back #ticket-type .pay-progress, [ui-view].ng-leave.back #ticket-class .type-progress, [ui-view].ng-leave.back #ticket-class .class-progress, [ui-view].ng-leave.back #ticket-class .amount-progress, [ui-view].ng-leave.back #ticket-class .pay-progress, [ui-view].ng-leave.back #ticket-amount .type-progress, [ui-view].ng-leave.back #ticket-amount .class-progress, [ui-view].ng-leave.back #ticket-amount .amount-progress, [ui-view].ng-leave.back #ticket-amount .pay-progress, [ui-view].ng-leave.back #ticket-pay .type-progress, [ui-view].ng-leave.back #ticket-pay .class-progress, [ui-view].ng-leave.back #ticket-pay .amount-progress, [ui-view].ng-leave.back #ticket-pay .pay-progress {
+    transform: translate(0, 0); }
 
 [ui-view].ng-leave-active.back {
   opacity: 0; }
-  [ui-view].ng-leave-active.back #home, [ui-view].ng-leave-active.back #schedule, [ui-view].ng-leave-active.back #ticket-type, [ui-view].ng-leave-active.back #ticket-class, [ui-view].ng-leave-active.back #ticket-amount, [ui-view].ng-leave-active.back #pay, [ui-view].ng-leave-active.back #final {
+  [ui-view].ng-leave-active.back #home, [ui-view].ng-leave-active.back #schedule, [ui-view].ng-leave-active.back #final {
     transform: translate(1366px); }
+  [ui-view].ng-leave-active.back #ticket-type .type-progress, [ui-view].ng-leave-active.back #ticket-type .class-progress, [ui-view].ng-leave-active.back #ticket-type .amount-progress, [ui-view].ng-leave-active.back #ticket-type .pay-progress, [ui-view].ng-leave-active.back #ticket-class .type-progress, [ui-view].ng-leave-active.back #ticket-class .class-progress, [ui-view].ng-leave-active.back #ticket-class .amount-progress, [ui-view].ng-leave-active.back #ticket-class .pay-progress, [ui-view].ng-leave-active.back #ticket-amount .type-progress, [ui-view].ng-leave-active.back #ticket-amount .class-progress, [ui-view].ng-leave-active.back #ticket-amount .amount-progress, [ui-view].ng-leave-active.back #ticket-amount .pay-progress, [ui-view].ng-leave-active.back #ticket-pay .type-progress, [ui-view].ng-leave-active.back #ticket-pay .class-progress, [ui-view].ng-leave-active.back #ticket-pay .amount-progress, [ui-view].ng-leave-active.back #ticket-pay .pay-progress {
+    transform: translate(0, 512px); }
 
 /**
  * Custom Buttons for SBB-TVM
