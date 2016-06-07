@@ -53,12 +53,25 @@
 			'bike': 0
 		};
 
+		this.popup = false;
+		this.popupState = '';
+
 		this.connections = '';
 
 		this.suggestions = '';
 
 		// Bind the parent element for use in the following functions. Damn scope...
 		var logic = this;
+
+		this.popupToggle = function (newPopupState) {
+			// logic.popup = true;
+			logic.popupState = newPopupState;
+			logic.popup = !logic.popup;
+		};
+
+		this.popupHide = function () {
+			logic.popup = false;
+		};
 
 		this.mainStateHandler = function (next) {
 			var statusMainVia = logic.mainVia != '';
@@ -175,14 +188,14 @@
 			logic.mainVia = ticketVia;
 			logic.mainStateHandler('ticket-type');
 		};
-		
+
 		this.chooseAmount = function () {
 			if (logic.mainAmount.full != 0
 				|| logic.mainAmount.half != 0
 				|| logic.mainAmount.dog != 0
 				|| logic.mainAmount.bike != 0) {
 				$state.go('pay');
-			}			
+			}
 		};
 
 		this.amountIncrease = function (target) {
@@ -190,7 +203,7 @@
 		};
 
 		this.amountDecrease = function (target) {
-			logic.mainAmount[target] = Math.max(logic.mainAmount[target] -1, 0)
+			logic.mainAmount[target] = Math.max(logic.mainAmount[target] - 1, 0)
 		};
 
 		this.emptyMainVar = function () {
@@ -219,10 +232,12 @@
 			logic.emptyMainVar();
 			$state.go('home');
 		};
-		
-		this.back = function() {
+
+		this.back = function () {
 			window.history.back();
-		}
+		};
+
+
 
 	});
 
@@ -277,6 +292,30 @@
 
 	});
 
+	var popup = angular.module('popup', ['ngAnimate', 'viewController', 'logic']);
+
+	popup.directive('popup', function () {
+
+		return {
+			restrict: 'E',
+			templateUrl: 'templates/parts/popup.html',
+			scope: {
+				popupState: '='
+				// onSubmit: '=',
+				// onRefresh: '=',
+				// destination: '@'
+			},
+			controller: function ($scope, $state) {
+
+
+
+			},
+			controllerAs: 'popup'
+		};
+
+
+	});
+
 
 	// Foundation Framework default
 	angular.module('application', [
@@ -292,7 +331,8 @@
 		'viewController',
 		'logic',
 		'keyboard',
-		'ngLocale'
+		'ngLocale',
+		'popup'
 	])
 		.config(config)
 		.run(run)

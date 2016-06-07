@@ -1,6 +1,7 @@
 <div class="footer-buttons" ng-hide="uiRouterState.current.name == 'search-from' || uiRouterState.current.name == 'search-to'">
 	<a ng-click="logic.abort()" class="sbb-button-red-small" ng-class="{disabled: uiRouterState.current.name == 'home'}"><img src="assets/img/footer_close.svg"></a>
-	<a class="sbb-button-grey-small"><img src="assets/img/footer_info.svg"></a>
-	<a class="sbb-button-grey-small"><img src="assets/img/footer_language.svg"></a>
-	<a ng-click="logic.back()" class="sbb-button-grey-medium" ng-show="uiRouterState.current.name != 'home' && uiRouterState.current.name != 'final'" >zurück</a>
+	<a ng-click="logic.popupToggle('info')" class="sbb-button-grey-small"><img src="assets/img/footer_info.svg"></a>
+	<a ng-click="logic.popupToggle('language')" class="sbb-button-grey-small"><img src="assets/img/footer_language.svg"></a>
+	<a ng-click="logic.back()" class="sbb-button-grey-medium" ng-show="uiRouterState.current.name != 'home' && uiRouterState.current.name != 'final' && !logic.popup" >zurück</a>
+	<a ng-click="logic.popupHide()" class="sbb-button-grey-medium" ng-show="logic.popup" >zurück</a>
 </div>

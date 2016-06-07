@@ -1,0 +1,18 @@
+popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: rem-calc(868);
+  background-color: $footer-bg;
+
+  .popup-content {
+	position: absolute;
+	top: rem-calc(152);
+	left: rem-calc(76);
+	width: rem-calc(1214);
+	height: rem-calc(660);
+	background-color: white;
+	z-index: 1000;
+  }
+}

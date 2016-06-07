@@ -19,6 +19,7 @@
 		<div ui-view class="grid-content" ng-class="{back: back}"></div>
 	</div>
 	<footer ng-include="'templates/parts/footer.html'"></footer>
+	<popup ng-show="logic.popup" popup-state="logic.popupState"></popup>
 </div>
 </body>
 </html>
