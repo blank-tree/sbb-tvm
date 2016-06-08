@@ -7,368 +7,367 @@
 
 /* Fix */
 .grid-block {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
 }
 
 /* General Setup */
 .grid-frame {
 
-  // Fake columns
-  //padding-left: rem-calc(36);
-  //padding-right: rem-calc(36);
+	// Fake columns
+	//padding-left: rem-calc(36);
+	//padding-right: rem-calc(36);
 
-  // Fix the size of the iPad Pro
-  width: 1366px;
-  height: 1024px !important;
+	// Fix the size of the iPad Pro
+	width: 1366px;
+	height: 1024px !important;
 
-  // center it in the middle of the screen for future use on a webpage
-  margin: auto;
+	// center it in the middle of the screen for future use on a webpage
+	margin: auto;
 
-  //Background image
-  background: url("../img/background.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	//Background image
+	background: url("../img/background.png") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 .grid-content {
-  padding-left: rem-calc(38);
-  padding-right: rem-calc(38);
+	padding-left: rem-calc(38);
+	padding-right: rem-calc(38);
 }
 
 .main {
 
-  // the header is positioned absolute; to make sure that the content always start after the header
-  margin-top: rem-calc(120);
+	// the header is positioned absolute; to make sure that the content always start after the header
+	margin-top: rem-calc(120);
 
-  label {
-	font-weight: bold;
-	text-shadow: $text-shadow;
-	font-size: rem-calc(20);
-  }
+	label {
+		font-weight: bold;
+		text-shadow: $text-shadow;
+		font-size: rem-calc(20);
+	}
 }
 
 /* Header */
 header {
-  position: absolute;
-  width: 1294px;
-  padding: rem-calc(38);
-  p {
-	font-weight: bold;
-	text-shadow: $text-shadow;
-  }
-  img {
-	width: rem-calc(248);
-  }
-  p.time {
-	font-size: rem-calc(24);
 	position: absolute;
-	top: rem-calc(36);
-	left: 0;
-	right: 0;
-	text-align: center;
-  }
-  p.date {
-	font-size: rem-calc(20);
-	position: absolute;
-	top: rem-calc(36);
-	right: 0;
-  }
+	width: 1294px;
+	padding: rem-calc(38);
+	p {
+		font-weight: bold;
+		text-shadow: $text-shadow;
+	}
+	img {
+		width: rem-calc(248);
+	}
+	p.time {
+		font-size: rem-calc(24);
+		position: absolute;
+		top: rem-calc(36);
+		left: 0;
+		right: 0;
+		text-align: center;
+	}
+	p.date {
+		font-size: rem-calc(20);
+		position: absolute;
+		top: rem-calc(36);
+		right: 0;
+	}
 }
 
 /* Footer */
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  z-index: 0;
-  div.footer-buttons {
-	margin-left: rem-calc(0);
-	margin-right: rem-calc(0);
-	padding: rem-calc(38);
-	background-color: $footer-bg;
-	a {
-	  margin-right: rem-calc(30);
-	  margin-bottom: 0;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: 0;
+	div.footer-buttons {
+		margin-left: rem-calc(0);
+		margin-right: rem-calc(0);
+		padding: rem-calc(38);
+		background-color: $footer-bg;
+		a {
+			margin-right: rem-calc(30);
+			margin-bottom: 0;
+		}
+		a.sbb-button-red-small {
+			padding: rem-calc(23);
+		}
+		a.sbb-button-grey-small {
+			padding: rem-calc(20);
+		}
 	}
-	a.sbb-button-red-small {
-	  padding: rem-calc(23);
-	}
-	a.sbb-button-grey-small {
-	  padding: rem-calc(20);
-	}
-  }
 }
 
 /* Panel */
 .main-panel {
-  //margin-left: rem-calc(36);
-  background: $panel-bg;
-  label {
-	font-weight: bold;
-	text-shadow: $text-shadow;
-	font-size: rem-calc(20);
-  }
+	//margin-left: rem-calc(36);
+	background: $panel-bg;
+	label {
+		font-weight: bold;
+		text-shadow: $text-shadow;
+		font-size: rem-calc(20);
+	}
 }
 
 /* Home */
 #home, #search-to, #search-from {
-  .main-panel div {
-	label, .text-center a {
-	  margin-top: rem-calc(60);
+	.main-panel div {
+		label, .text-center a {
+			margin-top: rem-calc(60);
+		}
 	}
-  }
 }
 
 
 /* Search-From & Search-To */
 #search-from, #search-to {
-  .main-panel {
-	height: rem-calc(529);
-  }
-
-  .suggestion {
-	a {
-	  margin-top: rem-calc(1);
-	  margin-bottom: 0;
-	  width: 100%;
-	  text-align: left;
+	.main-panel {
+		height: rem-calc(529);
 	}
-  }
-  //.suggestion:nth-child(5),.suggestion:nth-child(6),.suggestion:nth-child(7),.suggestion:nth-child(8), .suggestion:nth-child(9) {
+
+	.suggestion {
+		a {
+			margin-top: rem-calc(1);
+			margin-bottom: 0;
+			width: 100%;
+			text-align: left;
+		}
+	}
+	//.suggestion:nth-child(5),.suggestion:nth-child(6),.suggestion:nth-child(7),.suggestion:nth-child(8), .suggestion:nth-child(9) {
 	//display: none;
-  //}
+	//}
 }
 
 /* Schedule */
 #schedule, #final {
-  .labels {
-	// same height as the other pages; the labels are above the panels
-	margin: 0 0 rem-calc(10) 0;
-	padding: 0 rem-calc(40) 0 rem-calc(40);
-  }
-  .results {
-	// full width of the parent
-	width: 100%;
-
-	// fixed height for all result panels
-	.result-panel {
-	  height: rem-calc(170);
-	  background: $panel-bg;
-	  margin: 0;
-	  padding: 0 rem-calc(40) 0 rem-calc(40);
-	  margin-bottom: rem-calc(30);
-
-	  // remove all bottom margins from the paragraph tags
-	  p {
-		font-size: rem-calc(24);
-		margin: 0;
-	  }
-
-	  // convert all elements in the result panel to flexblox to vertically align them
-	  .connection, .timetable, .duration, .change, .occupancy, .ticket, .plattform {
-		display: flex;
-		align-items: center;
-	  }
-
-	  // Connection
-	  .connection p {
-		font-size: rem-calc(28);
-	  }
-
-	  // if there's a via result we remove the additional seperation from the two liner
-	  .connection p.via {
-		font-size: rem-calc(20);
-		margin-top: rem-calc(-10);
-	  }
-
-	  // seperate the two liner elements in the result panels
-	  .connection div p:first-child, .timetable p:first-child {
-		margin-bottom: rem-calc(10);
-	  }
+	.labels {
+		// same height as the other pages; the labels are above the panels
+		margin: 0 0 rem-calc(10) 0;
+		padding: 0 rem-calc(40) 0 rem-calc(40);
 	}
+	.results {
+		// full width of the parent
+		width: 100%;
 
-	.occupancy {
+		// fixed height for all result panels
+		.result-panel {
+			height: rem-calc(170);
+			background: $panel-bg;
+			margin: 0;
+			padding: 0 rem-calc(40) 0 rem-calc(40);
+			margin-bottom: rem-calc(30);
 
-	  div p img {
-		margin-top: rem-calc(-4);
-		margin-left: rem-calc(5);
-		opacity: 0.2;
-		&.on {
-		  opacity: 0.8;
+			// remove all bottom margins from the paragraph tags
+			p {
+				font-size: rem-calc(24);
+				margin: 0;
+			}
+
+			// convert all elements in the result panel to flexblox to vertically align them
+			.connection, .timetable, .duration, .change, .occupancy, .ticket, .plattform {
+				display: flex;
+				align-items: center;
+			}
+
+			// Connection
+			.connection p {
+				font-size: rem-calc(28);
+			}
+
+			// if there's a via result we remove the additional seperation from the two liner
+			.connection p.via {
+				font-size: rem-calc(20);
+				margin-top: rem-calc(-10);
+			}
+
+			// seperate the two liner elements in the result panels
+			.connection div p:first-child, .timetable p:first-child {
+				margin-bottom: rem-calc(10);
+			}
 		}
-	  }
+
+		.occupancy {
+
+			div p img {
+				margin-top: rem-calc(-4);
+				margin-left: rem-calc(5);
+				opacity: 0.2;
+				&.on {
+					opacity: 0.8;
+				}
+			}
+		}
+
+		.ticket {
+			a {
+				margin: 0 0 0 auto;
+				text-align: center;
+			}
+		}
+	}
+	.specify {
+		width: 100%;
+		div {
+			display: flex;
+		}
+		div:first-child {
+			//padding-left: rem-calc(40);
+		}
+		div:nth-child(2) a {
+			margin: 0 auto;
+		}
+		div:nth-child(3) a {
+			//margin: 0 rem-calc(40) 0 auto;
+			margin: 0 0 0 auto;
+		}
 	}
 
-	.ticket {
-	  a {
-		margin: 0 0 0 auto;
+	.final-message {
+		margin: 0 auto rem-calc(15) auto;
 		text-align: center;
-	  }
+		h1 {
+			display: block;
+			margin: 0;
+			color: #fff;
+			font-weight: bold;
+			text-shadow: $text-shadow;
+		}
 	}
-  }
-  .specify {
-	width: 100%;
-	div {
-	  display: flex;
-	}
-	div:first-child {
-	  //padding-left: rem-calc(40);
-	}
-	div:nth-child(2) a {
-	  margin: 0 auto;
-	}
-	div:nth-child(3) a {
-	  //margin: 0 rem-calc(40) 0 auto;
-	  margin: 0 0 0 auto;
-	}
-  }
-
-  .final-message {
-	margin: 0 auto rem-calc(15) auto;
-	text-align: center;
-	h1 {
-	  display: block;
-	  margin: 0;
-	  color: #fff;
-	  font-weight: bold;
-	  text-shadow: $text-shadow;
-	}
-  }
 }
 
 /* Tickettype */
 #ticket-type, #ticket-class, #ticket-amount, #ticket-pay {
 
-  // Styling for the headers of the ticket
-  h4, h5 {
-	text-shadow: $text-shadow;
-	color: #fff;
-	font-weight: bold;
-	margin: 0;
-  }
-  h4 {
-	font-size: rem-calc(28);
-	margin-bottom: 0;
-  }
-  h5 {
-	font-size: rem-calc(20);
-
-  }
-
-  // Styling for the left ticket panel
-  .ticket-panel {
-	padding-top: rem-calc(20);
-	height: rem-calc(748);
-	background: $panel-bg;
-
-	// Give the labels the margin to seperate the input-fields
-	label, .text-center a {
-	  margin-top: rem-calc(20);
+	// Styling for the headers of the ticket
+	h4, h5 {
+		text-shadow: $text-shadow;
+		color: #fff;
+		font-weight: bold;
+		margin: 0;
 	}
-	.input-field-type, .input-field-class, .input-field-amount {
-	  margin-top: rem-calc(30);
-	  img {
-		margin-right: rem-calc(30);
-		margin-top: rem-calc(-5);
-	  }
+	h4 {
+		font-size: rem-calc(28);
+		margin-bottom: 0;
+	}
+	h5 {
+		font-size: rem-calc(20);
+
 	}
 
-	// put type & class on the same line
-	.input-field-type, .input-field-class {
-	  width: 47%;
-	  display: inline-block;
-	  //margin-top: 0;
+	// Styling for the left ticket panel
+	.ticket-panel {
+		padding-top: rem-calc(20);
+		height: rem-calc(748);
+		background: $panel-bg;
+
+		// Give the labels the margin to seperate the input-fields
+		label, .text-center a {
+			margin-top: rem-calc(20);
+		}
+		.input-field-type, .input-field-class, .input-field-amount {
+			margin-top: rem-calc(30);
+			img {
+				margin-right: rem-calc(30);
+				margin-top: rem-calc(-5);
+			}
+		}
+
+		// put type & class on the same line
+		.input-field-type, .input-field-class {
+			width: 47%;
+			display: inline-block;
+			//margin-top: 0;
+		}
+
+		.input-field-type span {
+			padding-left: rem-calc(62);
+			padding-right: rem-calc(80);
+		}
+
+		.input-field-class {
+			float: right;
+		}
 	}
 
-	.input-field-type span {
-	  padding-left: rem-calc(62);
-	  padding-right: rem-calc(80);
-	}
+	// Right progress panel on varying screens
+	.type-progress, .class-progress, .amount-progress, .pay-progress {
+		div {
+			text-align: center;
+		}
 
-	.input-field-class {
-	  float: right;
-	}
-  }
+		// positioning
+		.type-panel, .class-panel, .amount-panel {
+			padding: rem-calc(40) 0 rem-calc(20) 0;
+			background: $panel-bg;
+			a img {
+				margin-right: rem-calc(30);
+				margin-top: rem-calc(-5);
+			}
+		}
 
-  // Right progress panel on varying screens
-  .type-progress, .class-progress, .amount-progress, .pay-progress {
-	div {
-	  text-align: center;
+		// optional ticket types positioned below the progress panel
+		.type-panel-optional {
+			margin-top: rem-calc(40);
+		}
 	}
-
-	// positioning
-	.type-panel, .class-panel, .amount-panel {
-	  padding: rem-calc(40) 0 rem-calc(20) 0;
-	  background: $panel-bg;
-	  a img {
-		margin-right: rem-calc(30);
-		margin-top: rem-calc(-5);
-	  }
-	}
-
-	// optional ticket types positioned below the progress panel
-	.type-panel-optional {
-	  margin-top: rem-calc(40);
-	}
-  }
 
 	// seperate styling for the amount progress panel buttons
-  .amount-progress {
-	label:first-child {
-	  margin-top: 0;
-	}
-	label {
-	  padding-left: rem-calc(88);
-	  text-align: left;
-	  margin-top: rem-calc(20);
-	}
-
-	a.sbb-button-red {
-	  margin-top: rem-calc(50);
-	}
-
-  }
-
-  // seperate styling for the pay progress panel
-  .ticket-panel {
-	.input-field-amount {
-	  	span {
-		  padding-top: rem-calc(22);
+	.amount-progress {
+		label:first-child {
+			margin-top: 0;
 		}
-		span passenger {
-		  display: inline;
+		label {
+			padding-left: rem-calc(88);
+			text-align: left;
+			margin-top: rem-calc(20);
+		}
+
+		a.sbb-button-red {
+			margin-top: rem-calc(50);
+		}
+
+	}
+
+	// seperate styling for the pay progress panel
+	.ticket-panel {
+		.input-field-amount {
+			span {
+				padding-top: rem-calc(22);
+			}
+			span passenger {
+				display: inline;
+			}
 		}
 	}
-  }
 
 
 
 	// Pay Screen
 	.pay-progress {
-      .medium-12 {
-        div.priceWrap {
-          background: $panel-bg;
-          padding:rem-calc(20) 0;
-          margin-bottom: rem-calc(6);
-          h3 {
-            font-weight: normal;
-            color: white;
-            font-size: rem-calc(25);
-            b {
-              font-size: rem-calc(30);
-            }
-          }
-        }
-        img {
-          padding:rem-calc(19);
-          background: $panel-bg;
-        }
-      }
-    }
+		.medium-12 {
+			div.priceWrap {
+				background: $panel-bg;
+				padding:rem-calc(20) 0;
+				margin-bottom: rem-calc(6);
+				h3 {
+					font-weight: normal;
+					color: white;
+					font-size: rem-calc(25);
+					b {
+						font-size: rem-calc(30);
+					}
+				}
+			}
+			img {
+				padding:rem-calc(19);
+				background: $panel-bg;
+			}
+		}
+	}
 
 
 }
-
