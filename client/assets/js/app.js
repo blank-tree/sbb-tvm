@@ -76,6 +76,7 @@
 			if (statusMainVia || (statusRoute && logic.mainFrom != logic.location)) {
 				if (next === 'home') {
 					logic.connections = '';
+					logic.mainTime = logic.time;
 					logic.getConnections();
 					next = 'schedule';
 				} else {
@@ -94,6 +95,7 @@
 					} else if (statusMainVia) {
 						next = 'ticket-type';
 					} else {
+						logic.getConnections();
 						next = 'schedule';
 					}
 				}
