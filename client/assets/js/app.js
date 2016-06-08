@@ -102,14 +102,16 @@
 		};
 
 		this.mainStateHandler = function (next) {
-			var statusMainVia = logic.mainVia != '';
 
-			if (statusMainVia) {
+			var statusRoute = logic.mainFrom != '' && logic.mainTo != '' && logic.mainFrom != logic.location;
+
+			if (statusRoute) {
 				if (next === 'home') {
 					logic.connections = '';
 					logic.getConnections();
 					next = 'schedule';
 				} else {
+					var statusMainVia = logic.mainVia != '';
 					var statusMainType = logic.mainType != '';
 					var statusMainClass = logic.mainClass != '';
 					var statusMainAmount = logic.mainAmount.full != 0
@@ -117,17 +119,22 @@
 						|| logic.mainAmount.dog != 0
 						|| logic.mainAmount.bike != 0;
 
-					if (statusMainType
+					if (statusMainVia
+						&& statusMainType
 						&& statusMainClass
 						&& statusMainAmount) {
 						next = 'pay';
-					} else if (statusMainType
+					} else if (statusMainVia
+						&& statusMainType
 						&& statusMainClass) {
 						next = 'ticket-amount';
-					} else if (statusMainType) {
+					} else if (statusMainVia
+						&& statusMainType) {
 						next = 'ticket-class';
-					} else {
+					} else if (statusMainVia) {
 						next = 'ticket-type';
+					} else {
+						next = 'schedule';
 					}
 				}
 			}
