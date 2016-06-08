@@ -6113,6 +6113,9 @@ footer {
 [ui-view].ng-enter, [ui-view].ng-leave {
   transition: all 0.5s; }
 
+[ui-view].ng-enter .ticket-panel, [ui-view].ng-leave .ticket-panel {
+  transition: none !important; }
+
 #home, #schedule, #ticket-type, #ticket-class, #ticket-amount, #pay, #final {
   transition: all 0.5s; }
 

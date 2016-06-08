@@ -19,9 +19,23 @@
 			// Testing purpose
 			//console.log(from, to);
 
-			// $scope.back = to.url === lastScreen;
+			// var buffer = false;
 
-			$scope.back = false;
+			$scope.back = to.url === lastScreen;
+
+			// if (to.url === lastScreen) {
+			// 	if(!buffer) {
+			// 		$scope.back = to.url === lastScreen;
+			// 		buffer = true;
+			// 	} else {
+			// 		buffer = false;
+			// 	}
+			// } else {
+			// 	$scope.back = to.url === lastScreen;
+			// 	buffer = false;
+			// }
+
+			// $scope.back = false;
 
 			lastScreen = from.url;
 		});

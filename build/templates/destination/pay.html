@@ -28,12 +28,12 @@
 			</div>
 
 
-			<div ui-sref="ticket-class" class="input-field input-field-class">
+			<div ui-sref="ticket-class" class="input-field input-field-class" ng-show="logic.mainClass != ''">
 				<span><b>{{ logic.mainClass}}.</b> Klasse</span>
 				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
 
-			<div ui-sref="ticket-amount" class="input-field input-field-amount">
+			<div ui-sref="ticket-amount" class="input-field input-field-amount" ng-show="logic.mainAmount.full != 0 || logic.mainAmount.half != 0 || logic.mainAmount.bike != 0 || logic.mainAmount.dog != 0">
 				<span>
 					<passenger ng-show="logic.mainAmount.full != 0"><b>{{logic.mainAmount.full}}x </b><img src="assets/img/dude_v2.svg"> </passenger>
 					<passenger ng-show="logic.mainAmount.half != 0"><b>{{logic.mainAmount.half}}x </b><img src="assets/img/child_v2.svg"> </passenger>
@@ -42,7 +42,6 @@
 				</span>
 				<a class="sbb-button-blue-small"><img src="assets/img/edit.svg"></a>
 			</div>
-
 		</div>
 	</div>
 	<div class="pay-progress medium-5 medium-offset-1">
