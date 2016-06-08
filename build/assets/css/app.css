@@ -5895,7 +5895,7 @@ blockquote p {
   width: 1366px;
   height: 1024px !important;
   margin: auto;
-  background: url("../img/background.png") no-repeat center center fixed;
+  background: url("../img/background_2.jpg") no-repeat center center;
   background-size: cover; }
 
 .grid-content {
@@ -5906,7 +5906,7 @@ blockquote p {
   margin-top: 7.5rem; }
   .main label {
     font-weight: bold;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
     font-size: 1.25rem; }
 
 /* Header */
@@ -5916,7 +5916,7 @@ header {
   padding: 2.375rem; }
   header p {
     font-weight: bold;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); }
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); }
   header img {
     width: 15.5rem; }
   header p.time {
@@ -5953,15 +5953,32 @@ footer {
 
 /* Panel */
 .main-panel {
-  background: rgba(38, 39, 43, 0.5); }
+  background: rgba(38, 39, 43, 0.6); }
   .main-panel label {
     font-weight: bold;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
     font-size: 1.25rem; }
 
+/*Scrollbar fix*/
+* {
+  overflow: hidden; }
+
+.dimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); }
+
 /* Home */
-#home .main-panel div label, #home .main-panel div .text-center a, #search-to .main-panel div label, #search-to .main-panel div .text-center a, #search-from .main-panel div label, #search-from .main-panel div .text-center a {
-  margin-top: 3.75rem; }
+#home .main-panel, #search-to .main-panel, #search-from .main-panel {
+  height: 34.375rem; }
+  #home .main-panel div label, #home .main-panel div .text-center a, #search-to .main-panel div label, #search-to .main-panel div .text-center a, #search-from .main-panel div label, #search-from .main-panel div .text-center a {
+    margin-top: 3.75rem; }
+
+#home .home-additional-options, #search-to .home-additional-options, #search-from .home-additional-options {
+  padding-top: 1.875rem; }
 
 /* Search-From & Search-To */
 #search-from .main-panel, #search-to .main-panel {
@@ -5982,7 +5999,7 @@ footer {
   width: 100%; }
   #schedule .results .result-panel, #final .results .result-panel {
     height: 10.625rem;
-    background: rgba(38, 39, 43, 0.5);
+    background: rgba(38, 39, 43, 0.6);
     margin: 0;
     padding: 0 2.5rem 0 2.5rem;
     margin-bottom: 1.875rem; }
@@ -6026,14 +6043,14 @@ footer {
   text-align: center; }
   #schedule .final-message h1, #final .final-message h1 {
     display: block;
-    margin: 0;
+    margin: 0.625rem 0;
     color: #fff;
     font-weight: bold;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); }
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); }
 
 /* Tickettype */
 #ticket-type h4, #ticket-type h5, #ticket-class h4, #ticket-class h5, #ticket-amount h4, #ticket-amount h5, #ticket-pay h4, #ticket-pay h5 {
-  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   color: #fff;
   font-weight: bold;
   margin: 0; }
@@ -6048,7 +6065,7 @@ footer {
 #ticket-type .ticket-panel, #ticket-class .ticket-panel, #ticket-amount .ticket-panel, #ticket-pay .ticket-panel {
   padding-top: 1.25rem;
   height: 46.75rem;
-  background: rgba(38, 39, 43, 0.5); }
+  background: rgba(38, 39, 43, 0.6); }
   #ticket-type .ticket-panel label, #ticket-type .ticket-panel .text-center a, #ticket-class .ticket-panel label, #ticket-class .ticket-panel .text-center a, #ticket-amount .ticket-panel label, #ticket-amount .ticket-panel .text-center a, #ticket-pay .ticket-panel label, #ticket-pay .ticket-panel .text-center a {
     margin-top: 1.25rem; }
   #ticket-type .ticket-panel .input-field-type, #ticket-type .ticket-panel .input-field-class, #ticket-type .ticket-panel .input-field-amount, #ticket-class .ticket-panel .input-field-type, #ticket-class .ticket-panel .input-field-class, #ticket-class .ticket-panel .input-field-amount, #ticket-amount .ticket-panel .input-field-type, #ticket-amount .ticket-panel .input-field-class, #ticket-amount .ticket-panel .input-field-amount, #ticket-pay .ticket-panel .input-field-type, #ticket-pay .ticket-panel .input-field-class, #ticket-pay .ticket-panel .input-field-amount {
@@ -6070,7 +6087,7 @@ footer {
 
 #ticket-type .type-progress .type-panel, #ticket-type .type-progress .class-panel, #ticket-type .type-progress .amount-panel, #ticket-type .class-progress .type-panel, #ticket-type .class-progress .class-panel, #ticket-type .class-progress .amount-panel, #ticket-type .amount-progress .type-panel, #ticket-type .amount-progress .class-panel, #ticket-type .amount-progress .amount-panel, #ticket-type .pay-progress .type-panel, #ticket-type .pay-progress .class-panel, #ticket-type .pay-progress .amount-panel, #ticket-class .type-progress .type-panel, #ticket-class .type-progress .class-panel, #ticket-class .type-progress .amount-panel, #ticket-class .class-progress .type-panel, #ticket-class .class-progress .class-panel, #ticket-class .class-progress .amount-panel, #ticket-class .amount-progress .type-panel, #ticket-class .amount-progress .class-panel, #ticket-class .amount-progress .amount-panel, #ticket-class .pay-progress .type-panel, #ticket-class .pay-progress .class-panel, #ticket-class .pay-progress .amount-panel, #ticket-amount .type-progress .type-panel, #ticket-amount .type-progress .class-panel, #ticket-amount .type-progress .amount-panel, #ticket-amount .class-progress .type-panel, #ticket-amount .class-progress .class-panel, #ticket-amount .class-progress .amount-panel, #ticket-amount .amount-progress .type-panel, #ticket-amount .amount-progress .class-panel, #ticket-amount .amount-progress .amount-panel, #ticket-amount .pay-progress .type-panel, #ticket-amount .pay-progress .class-panel, #ticket-amount .pay-progress .amount-panel, #ticket-pay .type-progress .type-panel, #ticket-pay .type-progress .class-panel, #ticket-pay .type-progress .amount-panel, #ticket-pay .class-progress .type-panel, #ticket-pay .class-progress .class-panel, #ticket-pay .class-progress .amount-panel, #ticket-pay .amount-progress .type-panel, #ticket-pay .amount-progress .class-panel, #ticket-pay .amount-progress .amount-panel, #ticket-pay .pay-progress .type-panel, #ticket-pay .pay-progress .class-panel, #ticket-pay .pay-progress .amount-panel {
   padding: 2.5rem 0 1.25rem 0;
-  background: rgba(38, 39, 43, 0.5); }
+  background: rgba(38, 39, 43, 0.6); }
   #ticket-type .type-progress .type-panel a img, #ticket-type .type-progress .class-panel a img, #ticket-type .type-progress .amount-panel a img, #ticket-type .class-progress .type-panel a img, #ticket-type .class-progress .class-panel a img, #ticket-type .class-progress .amount-panel a img, #ticket-type .amount-progress .type-panel a img, #ticket-type .amount-progress .class-panel a img, #ticket-type .amount-progress .amount-panel a img, #ticket-type .pay-progress .type-panel a img, #ticket-type .pay-progress .class-panel a img, #ticket-type .pay-progress .amount-panel a img, #ticket-class .type-progress .type-panel a img, #ticket-class .type-progress .class-panel a img, #ticket-class .type-progress .amount-panel a img, #ticket-class .class-progress .type-panel a img, #ticket-class .class-progress .class-panel a img, #ticket-class .class-progress .amount-panel a img, #ticket-class .amount-progress .type-panel a img, #ticket-class .amount-progress .class-panel a img, #ticket-class .amount-progress .amount-panel a img, #ticket-class .pay-progress .type-panel a img, #ticket-class .pay-progress .class-panel a img, #ticket-class .pay-progress .amount-panel a img, #ticket-amount .type-progress .type-panel a img, #ticket-amount .type-progress .class-panel a img, #ticket-amount .type-progress .amount-panel a img, #ticket-amount .class-progress .type-panel a img, #ticket-amount .class-progress .class-panel a img, #ticket-amount .class-progress .amount-panel a img, #ticket-amount .amount-progress .type-panel a img, #ticket-amount .amount-progress .class-panel a img, #ticket-amount .amount-progress .amount-panel a img, #ticket-amount .pay-progress .type-panel a img, #ticket-amount .pay-progress .class-panel a img, #ticket-amount .pay-progress .amount-panel a img, #ticket-pay .type-progress .type-panel a img, #ticket-pay .type-progress .class-panel a img, #ticket-pay .type-progress .amount-panel a img, #ticket-pay .class-progress .type-panel a img, #ticket-pay .class-progress .class-panel a img, #ticket-pay .class-progress .amount-panel a img, #ticket-pay .amount-progress .type-panel a img, #ticket-pay .amount-progress .class-panel a img, #ticket-pay .amount-progress .amount-panel a img, #ticket-pay .pay-progress .type-panel a img, #ticket-pay .pay-progress .class-panel a img, #ticket-pay .pay-progress .amount-panel a img {
     margin-right: 1.875rem;
     margin-top: -0.3125rem; }
@@ -6096,7 +6113,7 @@ footer {
   display: inline; }
 
 #ticket-type .pay-progress .medium-12 div.priceWrap, #ticket-class .pay-progress .medium-12 div.priceWrap, #ticket-amount .pay-progress .medium-12 div.priceWrap, #ticket-pay .pay-progress .medium-12 div.priceWrap {
-  background: rgba(38, 39, 43, 0.5);
+  background: rgba(38, 39, 43, 0.6);
   padding: 1.25rem 0;
   margin-bottom: 0.375rem; }
   #ticket-type .pay-progress .medium-12 div.priceWrap h3, #ticket-class .pay-progress .medium-12 div.priceWrap h3, #ticket-amount .pay-progress .medium-12 div.priceWrap h3, #ticket-pay .pay-progress .medium-12 div.priceWrap h3 {
@@ -6108,7 +6125,7 @@ footer {
 
 #ticket-type .pay-progress .medium-12 img, #ticket-class .pay-progress .medium-12 img, #ticket-amount .pay-progress .medium-12 img, #ticket-pay .pay-progress .medium-12 img {
   padding: 1.1875rem;
-  background: rgba(38, 39, 43, 0.5); }
+  background: rgba(38, 39, 43, 0.6); }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   transition: all 0.5s; }
@@ -6192,6 +6209,9 @@ footer {
  */
 /* Large Buttons */
 .sbb-button-red {
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
   height: 5rem;
   width: 22.5rem;
   margin-bottom: 1.875rem;
@@ -6200,11 +6220,11 @@ footer {
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
-  background: linear-gradient(180deg, #ec2424, #c80000);
-  background: -ms-linear-gradient(180deg, #ec2424, #c80000);
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  background: linear-gradient(180deg, #eb0000, #c80000);
+  background: -ms-linear-gradient(180deg, #eb0000, #c80000);
+  box-shadow: none; }
   .sbb-button-red:hover, .sbb-button-red:focus {
-    background: linear-gradient(180deg, #ec2424, #c80000);
+    background: linear-gradient(180deg, #eb0000, #c80000);
     color: #fff; }
   .sbb-button-red .iconic * {
     fill: #fff;
@@ -6214,6 +6234,9 @@ footer {
       stroke: #fff; }
 
 .sbb-button-blue {
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
   height: 5rem;
   width: 22.5rem;
   margin-bottom: 1.875rem;
@@ -6222,11 +6245,11 @@ footer {
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
-  background: linear-gradient(180deg, #4b4f8f, #262b6a);
-  background: -ms-linear-gradient(180deg, #4b4f8f, #262b0a);
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  background: linear-gradient(180deg, #414689, #282d70);
+  background: -ms-linear-gradient(180deg, #414689, #282d70);
+  box-shadow: none; }
   .sbb-button-blue:hover, .sbb-button-blue:focus {
-    background: linear-gradient(180deg, #4b4f8f, #262b6a);
+    background: linear-gradient(180deg, #414689, #282d70);
     color: #fff; }
   .sbb-button-blue .iconic * {
     fill: #fff;
@@ -6236,6 +6259,9 @@ footer {
       stroke: #fff; }
 
 .sbb-button-grey {
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
   height: 5rem;
   width: 22.5rem;
   margin-bottom: 1.875rem;
@@ -6244,11 +6270,11 @@ footer {
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
-  background: linear-gradient(180deg, #b1bdcf, #8c98ab);
-  background: -ms-linear-gradient(180deg, #b1bdcf, #8c98ab);
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  background: linear-gradient(180deg, #adbacd, #94a1b5);
+  background: -ms-linear-gradient(180deg, #adbacd, #94a1b5);
+  box-shadow: none; }
   .sbb-button-grey:hover, .sbb-button-grey:focus {
-    background: linear-gradient(180deg, #b1bdcf, #8c98ab);
+    background: linear-gradient(180deg, #adbacd, #94a1b5);
     color: #fff; }
   .sbb-button-grey .iconic * {
     fill: #fff;
@@ -6268,7 +6294,7 @@ footer {
   color: #fff;
   background: linear-gradient(180deg, #656565, #414141);
   background: -ms-linear-gradient(180deg, #656565, #414141);
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  box-shadow: none; }
   .sbb-button-ant-medium:hover, .sbb-button-ant-medium:focus {
     background: linear-gradient(180deg, #656565, #414141);
     color: #fff; }
@@ -6287,11 +6313,11 @@ footer {
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
-  background: linear-gradient(180deg, #ec2424, #c80000);
-  background: -ms-linear-gradient(180deg, #ec2424, #c80000);
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  background: linear-gradient(180deg, #eb0000, #c80000);
+  background: -ms-linear-gradient(180deg, #eb0000, #c80000);
+  box-shadow: none; }
   .sbb-button-red-medium:hover, .sbb-button-red-medium:focus {
-    background: linear-gradient(180deg, #ec2424, #c80000);
+    background: linear-gradient(180deg, #eb0000, #c80000);
     color: #fff; }
   .sbb-button-red-medium .iconic * {
     fill: #fff;
@@ -6308,11 +6334,11 @@ footer {
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
-  background: linear-gradient(180deg, #4b4f8f, #262b6a);
-  background: -ms-linear-gradient(180deg, #4b4f8f, #262b0a);
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  background: linear-gradient(180deg, #414689, #282d70);
+  background: -ms-linear-gradient(180deg, #adbacd, #94a1b5);
+  box-shadow: none; }
   .sbb-button-blue-medium:hover, .sbb-button-blue-medium:focus {
-    background: linear-gradient(180deg, #4b4f8f, #262b6a);
+    background: linear-gradient(180deg, #414689, #282d70);
     color: #fff; }
   .sbb-button-blue-medium .iconic * {
     fill: #fff;
@@ -6329,11 +6355,11 @@ footer {
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
-  background: linear-gradient(180deg, #b1bdcf, #8c98ab);
-  background: -ms-linear-gradient(180deg, #b1bdcf, #8c98ab);
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  background: linear-gradient(180deg, #adbacd, #94a1b5);
+  background: -ms-linear-gradient(180deg, #adbacd, #94a1b5);
+  box-shadow: none; }
   .sbb-button-grey-medium:hover, .sbb-button-grey-medium:focus {
-    background: linear-gradient(180deg, #b1bdcf, #8c98ab);
+    background: linear-gradient(180deg, #adbacd, #94a1b5);
     color: #fff; }
   .sbb-button-grey-medium .iconic * {
     fill: #fff;
@@ -6351,11 +6377,11 @@ footer {
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
-  background: linear-gradient(180deg, #ec2424, #c80000);
-  background: -ms-linear-gradient(180deg, #ec2424, #c80000);
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  background: linear-gradient(180deg, #eb0000, #c80000);
+  background: -ms-linear-gradient(180deg, #eb0000, #c80000);
+  box-shadow: none; }
   .sbb-button-red-small:hover, .sbb-button-red-small:focus {
-    background: linear-gradient(180deg, #ec2424, #c80000);
+    background: linear-gradient(180deg, #eb0000, #c80000);
     color: #fff; }
   .sbb-button-red-small .iconic * {
     fill: #fff;
@@ -6375,11 +6401,11 @@ footer {
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
-  background: linear-gradient(180deg, #4b4f8f, #262b6a);
-  background: -ms-linear-gradient(180deg, #4b4f8f, #262b0a);
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  background: linear-gradient(180deg, #414689, #282d70);
+  background: -ms-linear-gradient(180deg, #414689, #282d70);
+  box-shadow: none; }
   .sbb-button-blue-small:hover, .sbb-button-blue-small:focus {
-    background: linear-gradient(180deg, #4b4f8f, #262b6a);
+    background: linear-gradient(180deg, #414689, #282d70);
     color: #fff; }
   .sbb-button-blue-small .iconic * {
     fill: #fff;
@@ -6396,11 +6422,11 @@ footer {
   font-size: 1.75rem;
   background: #EB0000;
   color: #fff;
-  background: linear-gradient(180deg, #b1bdcf, #8c98ab);
-  background: -ms-linear-gradient(180deg, #b1bdcf, #8c98ab);
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  background: linear-gradient(180deg, #adbacd, #94a1b5);
+  background: -ms-linear-gradient(180deg, #adbacd, #94a1b5);
+  box-shadow: none; }
   .sbb-button-grey-small:hover, .sbb-button-grey-small:focus {
-    background: linear-gradient(180deg, #b1bdcf, #8c98ab);
+    background: linear-gradient(180deg, #adbacd, #94a1b5);
     color: #fff; }
   .sbb-button-grey-small .iconic * {
     fill: #fff;
@@ -6416,7 +6442,7 @@ footer {
   width: 100%;
   height: 5rem;
   background-color: #fff;
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4); }
+  box-shadow: none; }
   .input-field span {
     display: inline-block;
     color: #26272B;
@@ -6439,7 +6465,7 @@ footer {
   margin: auto;
   height: 5rem;
   background-color: #fff;
-  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: none;
   text-align: center; }
   .number-input-field span {
     display: inline-block;
@@ -6506,6 +6532,7 @@ popup {
   background-color: rgba(38, 39, 43, 0.8); }
   popup .popup-content {
     position: absolute;
+    padding: 3.75rem;
     top: 7.5rem;
     left: 7.875rem;
     width: 69.625rem;
@@ -6514,8 +6541,6 @@ popup {
     z-index: 1000;
     box-shadow: 0px 0.9375rem 3.125rem -1.25rem black; }
     popup .popup-content .datepicker, popup .popup-content .time-row {
-      margin: 2.8125rem auto 0 auto;
-      text-align: center;
       /*LIST FIX*/ }
       popup .popup-content .datepicker .calendar, popup .popup-content .time-row .calendar {
         margin-left: 0.9375rem;
@@ -6535,7 +6560,9 @@ popup {
         padding: 0 3.375rem 0 2.4375rem;
         color: #000;
         display: inline; }
-      popup .popup-content .datepicker h1, popup .popup-content .time-row h1 {
+    popup .popup-content .datepicker, popup .popup-content .popup-language, popup .popup-content .popup-info {
+      text-align: center; }
+      popup .popup-content .datepicker h1, popup .popup-content .popup-language h1, popup .popup-content .popup-info h1 {
         font-size: 1.875rem;
         font-weight: bold;
         margin-bottom: 1.25rem; }

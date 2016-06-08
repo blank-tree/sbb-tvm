@@ -10,6 +10,10 @@
 @mixin sbb-button {
   @extend %button;
 
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+
   height: rem-calc(80);
   width: rem-calc(360);
 
@@ -30,9 +34,9 @@
 		  $background-hover: $gradient-red
   );
   background: $gradient-red;
-  background: -moz-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
-  background: -webkit-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
-  background: -ms-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  background: -moz-linear-gradient(180deg, rgb(235, 0, 0), rgb(200, 0, 0));
+  background: -webkit-linear-gradient(180deg, rgb(235, 0, 0), rgb(200, 0, 0));
+  background: -ms-linear-gradient(180deg, rgb(235, 0, 0), rgb(200, 0, 0));
   box-shadow: $box-shadow;
 }
 
@@ -44,9 +48,9 @@
 		  $background-hover: $gradient-blue
   );
   background: $gradient-blue;
-  background: -moz-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 106));
-  background: -webkit-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
-  background: -ms-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
+  background: -moz-linear-gradient(180deg, rgb(65, 70, 137), rgb(40, 45, 112));
+  background: -webkit-linear-gradient(180deg, rgb(65, 70, 137), rgb(40, 45, 112));
+  background: -ms-linear-gradient(180deg, rgb(65, 70, 137), rgb(40, 45, 112));
   box-shadow: $box-shadow;
 }
 
@@ -58,9 +62,9 @@
 		  $background-hover: $gradient-grey
   );
   background: $gradient-grey;
-  background: -moz-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
-  background: -webkit-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
-  background: -ms-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  background: -moz-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
+  background: -webkit-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
+  background: -ms-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
   box-shadow: $box-shadow;
 }
 
@@ -101,9 +105,9 @@
 		  $background-hover: $gradient-red
   );
   background: $gradient-red;
-  background: -moz-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
-  background: -webkit-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
-  background: -ms-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  background: -moz-linear-gradient(180deg, rgb(235, 0, 0), rgb(200, 0, 0));
+  background: -webkit-linear-gradient(180deg, rgb(235, 0, 0), rgb(200, 0, 0));
+  background: -ms-linear-gradient(180deg, rgb(235, 0, 0), rgb(200, 0, 0));
   box-shadow: $box-shadow;
 
 }
@@ -115,9 +119,9 @@
 		  $background-hover: $gradient-blue
   );
   background: $gradient-blue;
-  background: -moz-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 106));
-  background: -webkit-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
-  background: -ms-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
+  background: -moz-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
+  background: -webkit-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
+  background: -ms-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
   box-shadow: $box-shadow;
 }
 
@@ -128,9 +132,9 @@
 		  $background-hover: $gradient-grey
   );
   background: $gradient-grey;
-  background: -moz-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
-  background: -webkit-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
-  background: -ms-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  background: -moz-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
+  background: -webkit-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
+  background: -ms-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
   box-shadow: $box-shadow;
 }
 
@@ -156,9 +160,9 @@
 		  $background-hover: $gradient-red
   );
   background: $gradient-red;
-  background: -moz-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
-  background: -webkit-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
-  background: -ms-linear-gradient(180deg, rgb(236, 36, 36), rgb(200, 0, 0));
+  background: -moz-linear-gradient(180deg, rgb(235, 0, 0), rgb(200, 0, 0));
+  background: -webkit-linear-gradient(180deg, rgb(235, 0, 0), rgb(200, 0, 0));
+  background: -ms-linear-gradient(180deg, rgb(235, 0, 0), rgb(200, 0, 0));
   box-shadow: $box-shadow;
 
 }
@@ -175,9 +179,9 @@
 		  $background-hover: $gradient-blue
   );
   background: $gradient-blue;
-  background: -moz-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 106));
-  background: -webkit-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
-  background: -ms-linear-gradient(180deg, rgb(75, 79, 143), rgb(38, 43, 10));
+  background: -moz-linear-gradient(180deg, rgb(65, 70, 137), rgb(40, 45, 112));
+  background: -webkit-linear-gradient(180deg, rgb(65, 70, 137), rgb(40, 45, 112));
+  background: -ms-linear-gradient(180deg, rgb(65, 70, 137), rgb(40, 45, 112));
   box-shadow: $box-shadow;
 }
 
@@ -188,9 +192,9 @@
 		  $background-hover: $gradient-grey
   );
   background: $gradient-grey;
-  background: -moz-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
-  background: -webkit-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
-  background: -ms-linear-gradient(180deg, rgb(177, 189, 207), rgb(140, 152, 171));
+  background: -moz-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
+  background: -webkit-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
+  background: -ms-linear-gradient(180deg, rgb(173, 186, 205), rgb(148, 161, 181));
   box-shadow: $box-shadow;
 }
 

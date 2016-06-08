@@ -1,4 +1,5 @@
 
+<div class="dimmer"></div>
 <div id="search-from" class="grid-block main">
 	<div class="grid-content medium-7 main-panel">
 		<div class="medium-10 medium-offset-1">
@@ -18,7 +19,6 @@
 	<div class="grid-content medium-3 medium-offset-1">
 		<a class="sbb-button-blue" ng-repeat="place in logic.frequent" ng-click="locationShortcut(place, 'from')">{{place}}</a>
 	</div>
-
 </div>
 
 <keyboard output-target="logic.mainFrom" on-submit="onKeyboardSubmit" on-refresh="onKeypressRefresh" destination="from"></keyboard>

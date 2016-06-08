@@ -8,6 +8,7 @@ background-color: $footer-bg;
 
 .popup-content {
 	position: absolute;
+	padding:rem-calc(60);
 	top: rem-calc(120);
 	left: rem-calc(126);
 	width: rem-calc(1114);
@@ -16,8 +17,6 @@ background-color: $footer-bg;
 	z-index: 1000;
 	box-shadow: 0px rem-calc(15) rem-calc(50) rem-calc(-20) black;
 	.datepicker, .time-row {
-		margin: rem-calc(45) auto 0 auto;
-		text-align: center;
 
 
 		.calendar {
@@ -43,7 +42,10 @@ background-color: $footer-bg;
 			color: #000;
 			display: inline;
 		}
+	}
 
+	.datepicker, .popup-language, .popup-info {
+		text-align: center;
 		h1 {
 			font-size: rem-calc(30);
 			font-weight: bold;
