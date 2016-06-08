@@ -1,48 +1,6 @@
 (function () {
 	'use strict';
 
-	// Custom module for back animations
-	// Puts the class "back" on the ui-view with the class "grid-content"
-	// for animations with css.
-	var viewApp = angular.module('viewController', ['ngAnimate']);
-
-	viewApp.controller('viewCtrl', function ($scope) {
-
-		var lastScreen = '/';
-
-		// $scope.$on('$stateChangeSuccess', function (event, toState) {
-		//
-		// 	$scope.back = toState.name === 'state1';
-		// });
-
-		$scope.$on('$stateChangeStart', function (evt, to, _, from) {
-			// Testing purpose
-			//console.log(from, to);
-
-			// var buffer = false;
-
-			$scope.back = to.url === lastScreen;
-
-			// if (to.url === lastScreen) {
-			// 	if(!buffer) {
-			// 		$scope.back = to.url === lastScreen;
-			// 		buffer = true;
-			// 	} else {
-			// 		buffer = false;
-			// 	}
-			// } else {
-			// 	$scope.back = to.url === lastScreen;
-			// 	buffer = false;
-			// }
-
-			// $scope.back = false;
-
-			lastScreen = from.url;
-		});
-
-
-	});
-
 	// All Variables and logic inside the app
 	var app = angular.module('logic', ['ngAnimate', 'ngLocale']);
 
@@ -72,6 +30,9 @@
 
 		this.popup = false;
 		this.popupState = '';
+
+
+		this.cache = {};
 
 
 		this.connections = '';
@@ -191,21 +152,29 @@
 		};
 
 		this.getConnections = function () {
-			$http({
+
+			if (logic.cache[logic.mainFrom + '.' + logic.mainTo] == undefined) {
+				$http({
 				method: 'GET',
 				url: 'http://transport.opendata.ch/v1/connections?from=' + logic.mainFrom + '&to=' + logic.mainTo + '&date=' + $filter('date')(logic.mainTime, 'yyyy-MM-dd') + '&time=' + $filter('date')(logic.mainTime, 'HH:mm')
-			}).then(function successCallback(response) {
-				for (var i = 0; i < response.data.connections.length; i++) {
-					response.data.connections[i].duration = response.data.connections[i].duration.slice(3, 8);
-					response.data.connections[i].sections = response.data.connections[i].sections.slice(1);
-					response.data.connections[i].viaString = response.data.connections[i].sections.map(function (section) {
-						return section.departure.station.name;
-					}).join(' - ');
-				}
-				logic.connections = response.data.connections.slice(0, 3);
-			}, function errorCallback(response) {
-				//results = null;
-			});
+				}).then(function successCallback(response) {
+					for (var i = 0; i < response.data.connections.length; i++) {
+						response.data.connections[i].duration = response.data.connections[i].duration.slice(3, 8);
+						response.data.connections[i].sections = response.data.connections[i].sections.slice(1);
+						response.data.connections[i].viaString = response.data.connections[i].sections.map(function (section) {
+							return section.departure.station.name;
+						}).join(' - ');
+					}
+					logic.connections = response.data.connections.slice(0, 3);
+					logic.cache[logic.mainFrom + '.' + logic.mainTo] = response.data.connections.slice(0, 3);
+				}, function errorCallback(response) {
+					//results = null;
+				});
+			} else {
+				logic.connections = logic.cache[logic.mainFrom + '.' + logic.mainTo];
+			}
+
+			
 		};
 
 		// Ticket options
@@ -276,7 +245,7 @@
 
 	});
 
-	var keyboard = angular.module('keyboard', ['ngAnimate', 'viewController']);
+	var keyboard = angular.module('keyboard', ['ngAnimate']);
 
 	keyboard.directive('keyboard', function () {
 
@@ -327,7 +296,7 @@
 
 	});
 
-	var popup = angular.module('popup', ['ngAnimate', 'viewController', 'logic']);
+	var popup = angular.module('popup', ['ngAnimate', 'logic']);
 
 	popup.directive('popup', function () {
 
@@ -370,7 +339,6 @@
 		'foundation.dynamicRouting.animations',
 
 		//custom js
-		'viewController',
 		'logic',
 		'keyboard',
 		'ngLocale',
