@@ -6095,6 +6095,21 @@ footer {
 #ticket-type .ticket-panel .input-field-amount span passenger, #ticket-class .ticket-panel .input-field-amount span passenger, #ticket-amount .ticket-panel .input-field-amount span passenger, #ticket-pay .ticket-panel .input-field-amount span passenger {
   display: inline; }
 
+#ticket-type .pay-progress .medium-12 div.priceWrap, #ticket-class .pay-progress .medium-12 div.priceWrap, #ticket-amount .pay-progress .medium-12 div.priceWrap, #ticket-pay .pay-progress .medium-12 div.priceWrap {
+  background: rgba(38, 39, 43, 0.5);
+  padding: 1.25rem 0;
+  margin-bottom: 0.375rem; }
+  #ticket-type .pay-progress .medium-12 div.priceWrap h3, #ticket-class .pay-progress .medium-12 div.priceWrap h3, #ticket-amount .pay-progress .medium-12 div.priceWrap h3, #ticket-pay .pay-progress .medium-12 div.priceWrap h3 {
+    font-weight: normal;
+    color: white;
+    font-size: 1.5625rem; }
+    #ticket-type .pay-progress .medium-12 div.priceWrap h3 b, #ticket-class .pay-progress .medium-12 div.priceWrap h3 b, #ticket-amount .pay-progress .medium-12 div.priceWrap h3 b, #ticket-pay .pay-progress .medium-12 div.priceWrap h3 b {
+      font-size: 1.875rem; }
+
+#ticket-type .pay-progress .medium-12 img, #ticket-class .pay-progress .medium-12 img, #ticket-amount .pay-progress .medium-12 img, #ticket-pay .pay-progress .medium-12 img {
+  padding: 1.1875rem;
+  background: rgba(38, 39, 43, 0.5); }
+
 [ui-view].ng-enter, [ui-view].ng-leave {
   transition: all 0.5s; }
 

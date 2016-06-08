@@ -343,5 +343,32 @@ footer {
 		}
 	}
   }
+
+
+
+	// Pay Screen
+	.pay-progress {
+      .medium-12 {
+        div.priceWrap {
+          background: $panel-bg;
+          padding:rem-calc(20) 0;
+          margin-bottom: rem-calc(6);
+          h3 {
+            font-weight: normal;
+            color: white;
+            font-size: rem-calc(25);
+            b {
+              font-size: rem-calc(30);
+            }
+          }
+        }
+        img {
+          padding:rem-calc(19);
+          background: $panel-bg;
+        }
+      }
+    }
+
+
 }
 
