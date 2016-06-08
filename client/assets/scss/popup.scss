@@ -1,27 +1,55 @@
 popup {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: rem-calc(868);
-  background-color: $footer-bg;
+left: 0;
+width: 100%;
+		  height: rem-calc(868);
+background-color: $footer-bg;
 
-  .popup-content {
+.popup-content {
 	position: absolute;
-	top: rem-calc(152);
-	left: rem-calc(76);
-	width: rem-calc(1214);
-	height: rem-calc(660);
+	top: rem-calc(120);
+	left: rem-calc(126);
+	width: rem-calc(1114);
+	height: rem-calc(720);
 	background-color: white;
 	z-index: 1000;
+	box-shadow: 0px rem-calc(15) rem-calc(50) rem-calc(-20) black;
 	.datepicker, .time-row {
-	  margin: rem-calc(60) auto 0 auto;
-	  text-align: center;
-	  a {
-		margin-right: rem-calc(30);
-		margin-bottom: rem-calc(30);
-	  }
+		margin: rem-calc(45) auto 0 auto;
+		text-align: center;
+
+
+		.calendar {
+			margin-left: rem-calc(15); /*<- Fix for last column margin-right 30*/
+			a {
+			margin-right: rem-calc(30);
+			margin-bottom: rem-calc(30);
+			}
+		}
+
+		/*LIST FIX*/
+		ul {
+			padding: 0;
+			list-style-type: none;
+			-webkit-margin-before: 0em;
+			-webkit-margin-after: 0em;
+			-webkit-margin-start: 0px;
+			-webkit-margin-end: 0px;
+			-webkit-padding-start: 0px;
+		}
+		ul li {
+			padding: 0 rem-calc(54) 0 rem-calc(39);
+			color: #000;
+			display: inline;
+		}
+
+		h1 {
+			font-size: rem-calc(30);
+			font-weight: bold;
+			margin-bottom: rem-calc(20);
+		}
 	}
 
-  }
+}
 }

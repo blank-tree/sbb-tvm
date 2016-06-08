@@ -113,6 +113,16 @@ gulp.task('copy:jquery', function(cb) {
 	cb();
 });
 
+// Gulp Task to copy datetimepicker to the assets js folder in build
+gulp.task('copy:datetimepicker', function(cb) {
+	gulp.src('bower_components/jquery/dist/jquery.js')
+		//.pipe($.uglify())
+		.pipe(gulp.dest('./build/assets/js'))
+	;
+
+	cb();
+});
+
 // Gulp Task to copy angular-i18n to the assets js folder in build
 gulp.task('copy:i18n', function(cb) {
 	gulp.src('bower_components/angular-i18n/angular-locale_de-ch.js')

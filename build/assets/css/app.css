@@ -6488,15 +6488,36 @@ popup {
   background-color: rgba(38, 39, 43, 0.8); }
   popup .popup-content {
     position: absolute;
-    top: 9.5rem;
-    left: 4.75rem;
-    width: 75.875rem;
-    height: 41.25rem;
+    top: 7.5rem;
+    left: 7.875rem;
+    width: 69.625rem;
+    height: 45rem;
     background-color: white;
-    z-index: 1000; }
+    z-index: 1000;
+    box-shadow: 0px 0.9375rem 3.125rem -1.25rem black; }
     popup .popup-content .datepicker, popup .popup-content .time-row {
-      margin: 3.75rem auto 0 auto;
-      text-align: center; }
-      popup .popup-content .datepicker a, popup .popup-content .time-row a {
-        margin-right: 1.875rem;
-        margin-bottom: 1.875rem; }
+      margin: 2.8125rem auto 0 auto;
+      text-align: center;
+      /*LIST FIX*/ }
+      popup .popup-content .datepicker .calendar, popup .popup-content .time-row .calendar {
+        margin-left: 0.9375rem;
+        /*<- Fix for last column margin-right 30*/ }
+        popup .popup-content .datepicker .calendar a, popup .popup-content .time-row .calendar a {
+          margin-right: 1.875rem;
+          margin-bottom: 1.875rem; }
+      popup .popup-content .datepicker ul, popup .popup-content .time-row ul {
+        padding: 0;
+        list-style-type: none;
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 0px; }
+      popup .popup-content .datepicker ul li, popup .popup-content .time-row ul li {
+        padding: 0 3.375rem 0 2.4375rem;
+        color: #000;
+        display: inline; }
+      popup .popup-content .datepicker h1, popup .popup-content .time-row h1 {
+        font-size: 1.875rem;
+        font-weight: bold;
+        margin-bottom: 1.25rem; }
