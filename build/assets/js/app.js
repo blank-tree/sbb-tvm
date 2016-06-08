@@ -64,22 +64,21 @@
 
 		this.mainStateHandler = function (next) {
 
-			var statusRoute = logic.mainFrom != '' && logic.mainTo != '' && logic.mainFrom != logic.location;
+			var statusRoute = logic.mainFrom != '' && logic.mainTo != '';
+			var statusMainVia = logic.mainVia != '';
+			var statusMainType = logic.mainType != '';
+			var statusMainClass = logic.mainClass != '';
+			var statusMainAmount = logic.mainAmount.full != 0
+				|| logic.mainAmount.half != 0
+				|| logic.mainAmount.dog != 0
+				|| logic.mainAmount.bike != 0;
 
-			if (statusRoute) {
+			if (statusMainVia || (statusRoute && logic.mainFrom != logic.location)) {
 				if (next === 'home') {
 					logic.connections = '';
 					logic.getConnections();
 					next = 'schedule';
 				} else {
-					var statusMainVia = logic.mainVia != '';
-					var statusMainType = logic.mainType != '';
-					var statusMainClass = logic.mainClass != '';
-					var statusMainAmount = logic.mainAmount.full != 0
-						|| logic.mainAmount.half != 0
-						|| logic.mainAmount.dog != 0
-						|| logic.mainAmount.bike != 0;
-
 					if (statusMainVia
 						&& statusMainType
 						&& statusMainClass
@@ -155,8 +154,8 @@
 
 			if (logic.cache[logic.mainFrom + '.' + logic.mainTo] == undefined) {
 				$http({
-				method: 'GET',
-				url: 'http://transport.opendata.ch/v1/connections?from=' + logic.mainFrom + '&to=' + logic.mainTo + '&date=' + $filter('date')(logic.mainTime, 'yyyy-MM-dd') + '&time=' + $filter('date')(logic.mainTime, 'HH:mm')
+					method: 'GET',
+					url: 'http://transport.opendata.ch/v1/connections?from=' + logic.mainFrom + '&to=' + logic.mainTo + '&date=' + $filter('date')(logic.mainTime, 'yyyy-MM-dd') + '&time=' + $filter('date')(logic.mainTime, 'HH:mm')
 				}).then(function successCallback(response) {
 					for (var i = 0; i < response.data.connections.length; i++) {
 						response.data.connections[i].duration = response.data.connections[i].duration.slice(3, 8);
@@ -174,7 +173,7 @@
 				logic.connections = logic.cache[logic.mainFrom + '.' + logic.mainTo];
 			}
 
-			
+
 		};
 
 		// Ticket options
@@ -240,7 +239,6 @@
 		this.back = function () {
 			window.history.back();
 		};
-
 
 
 	});
@@ -315,7 +313,7 @@
 				$scope.chooseDate = function (newDayToSet) {
 
 					var currentDate = new Date();
-					
+
 					var newTimeToSet = moment([2016, 5, newDayToSet, currentDate.getHours(), currentDate.getMinutes(), 0, 0]).unix() * 1000;
 					// var newTimeToSet = moment([2016, 5, newDayToSet, 19, 0, 0, 0]).unix() * 1000;
 					$scope.setNewTime(newTimeToSet);
