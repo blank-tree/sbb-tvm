@@ -1,10 +1,8 @@
-# Foundation for Apps Template
+# SBB-TVM Prototype
 
-[![devDependency Status](https://david-dm.org/zurb/foundation-apps-template/dev-status.svg)](https://david-dm.org/zurb/foundation-apps-template#info=devDependencies)
+## by Fernando Obieta - [blanktree.ch](http://blanktree.ch), Simon Fischer & Claudio Rainolter
 
-This is the default template project for Foundation for Apps, powered by Gulp, Angular, and libsass. It provides you with a basic template to get started with Foundation for Apps and Angular.
-
-If you're already an Angular developer, you may instead want to install the components into your own stack using Bower: `bower install foundation-apps`
+Functional prototype of a new ticket vending machine (TVM) for the Swiss Federal Railways (SBB).
 
 ## Requirements
 
@@ -18,18 +16,6 @@ You'll need the following software installed to get started.
 
 ## Get Started
 
-Clone this repository, where `app` is the name of your app.
-
-```bash
-git clone https://github.com/zurb/foundation-apps-template.git app
-```
-
-Change into the directory.
-
-```bash
-cd app
-```
-
 Install the dependencies. If you're running Mac OS or Linux, you may need to run `sudo npm install` instead, depending on how your machine is configured.
 
 ```bash
@@ -37,7 +23,7 @@ npm install
 bower install
 ```
 
-While you're working on your project, run:
+While you're working on your project or just want to look at a local version, run:
 
 ```bash
 npm start
@@ -50,3 +36,11 @@ To run the compiling process once, without watching any files, use the `build` c
 ```bash
 npm start build
 ```
+
+## Built with
+- [Foundation for Apps](http://foundation.zurb.com/apps.html)
+- [Angular 1.4.11](https://angularjs.org/)
+- [Moment.js](http://momentjs.com/)
+
+## Mirror
+- [http://sbb-tvm.blanktree.ch/build](http://sbb-tvm.blanktree.ch/build)
